@@ -1,5 +1,7 @@
-## Day1 
-# Graph DB - 
+# Day1 
+## 
+
+## Graph DB - 
 - Video 8 talks about how to use Langchain to give multishot examples in the prompt and retrieve the correct chunks. The graph db has to be created in the first place. Creating the cyphers is really difficult, but Langchain's GraphCypherQAChain can create the prompt as well as execute them at one go. Here though we have to define schema in the prompt template, since we pass the graph itself as parameter, we do not have to secify it manually
 
 ```python
