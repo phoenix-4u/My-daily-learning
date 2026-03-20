@@ -1,8 +1,13 @@
-# Day1 
-## 
+# Day 2 - 20/03/2026
+## Expectation Minimization vs K means
+- K means algorithm is deterministic in nature. This creates a problem that if a particular datapoint is equidistant from both the centroids, the point has to be assigned to any one of the centroids randomly. This makes the assignment asymmetric. Expectation Maximization introduces the idea of a probabilistic model instead of a deterministic one. The idea is to assign probability to all the points to be placed at any one of the centroids and then taking an weigted probability for all the clusters for that point. That way the centroid allocation is much more accurate than determinsitic apporach of k means
 
-## Graph DB - 
-- Video 8 talks about how to use Langchain to give multishot examples in the prompt and retrieve the correct chunks. The graph db has to be created in the first place. Creating the cyphers is really difficult, but Langchain's GraphCypherQAChain can create the prompt as well as execute them at one go. Here though we have to define schema in the prompt template, since we pass the graph itself as parameter, we do not have to secify it manually
+- <img width="920" height="806" alt="image" src="https://github.com/user-attachments/assets/2c4de131-3dea-499a-9b40-cf809a1427bd" />
+
+
+# Day 1 - 19/03/2026 
+## Graph DB
+- Video 8 talks about how to use Langchain to give multishot examples in the prompt and retrieve the correct chunks. The graph DB has to be created in the first place. Creating the cyphers is really difficult, but Langchain's GraphCypherQAChain can create the prompt as well as execute them at one go. Here, though, we have to define schema in the prompt template, since we pass the graph itself as a parameter, we do not have to specify it manually
 
 ```python
 CYPHER_GENERATION_TEMPLATE = """Task:Generate Cypher statement to query a graph database.
