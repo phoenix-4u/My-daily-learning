@@ -1,6 +1,16 @@
+# Day 3 - 21/03/2026
+## Why use Agent Skills
+- Agent skills are workflow patterns that guide an LLM on what to do
+- It is more than a prompt library as it can have instructions for reading reference files, executing scripts, and other styling information
+- It is more than an MCP tool calling as it can orchestrate the entire workflow, so that it guides the LLM on what to do without the LLM having to decide based on the doc string on the MCP server
+- To avoid clogging the context window, agent skills work on the principle of progressive disclosure. At the start of every skill, which is instruction defined in markdown format, there is a YAML section that contains the skill name and description (sort of like the doc-string of the mcp server), which contains information on what that skill does. For all the skills, only this first part is initially loaded. Based on the user query, the LLM decides which skill is to be used. Once the skill is decided, the LLM then loads the instructions and executes any scripts or MCP server calls. That way, the context window does not overflow even if there are many skills in the skills.md file.
+- The folder structure is as follows. The top-level folder is the skill name, which has to match the name definition of the YAML file
+
+<img width="1217" height="524" alt="image" src="https://github.com/user-attachments/assets/724dc148-f9e4-4935-b270-7310211b481c" />
+
 # Day 2 - 20/03/2026
 ## Expectation Minimization vs K means
-- K means algorithm is deterministic in nature. This creates a problem that if a particular datapoint is equidistant from both the centroids, the point has to be assigned to any one of the centroids randomly. This makes the assignment asymmetric. Expectation Maximization introduces the idea of a probabilistic model instead of a deterministic one. The idea is to assign probability to all the points to be placed at any one of the centroids and then taking an weigted probability for all the clusters for that point. That way the centroid allocation is much more accurate than determinsitic apporach of k means
+- K means algorithm is deterministic in nature. This creates a problem that if a particular datapoint is equidistant from both the centroids, the point has to be assigned to any one of the centroids randomly. This makes the assignment asymmetric. Expectation Maximization introduces the idea of a probabilistic model instead of a deterministic one. The idea is to assign probability to all the points to be placed at any one of the centroids and then taking an weigted probability for all the clusters for that point. That way, the centroid allocation is much more accurate than determinsitic apporach of k means
 
 - <img width="920" height="806" alt="image" src="https://github.com/user-attachments/assets/2c4de131-3dea-499a-9b40-cf809a1427bd" />
 
