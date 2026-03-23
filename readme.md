@@ -1,3 +1,13 @@
+# Day 4 - 22/03/2026
+## How Agent Skill interacts with other GenAI workflow components
+
+- Agent skills can define specific and repeatable workflows that can use sub-agents and MCP tools.
+- These can be integrated within the workflow definitions
+- Think of tools like hammers, nails, etc. and the skills as the recipe of how to build a bookshelf
+- Specific repeatable workflows like code analyzer agent, test case creation agent, etc., can utilize specific skills and MCP servers to execute that specific function
+
+<img width="1905" height="735" alt="image" src="https://github.com/user-attachments/assets/fa482fb7-8430-43f5-8c45-1db73c3b6ead" />
+
 # Day 3 - 21/03/2026
 ## Why use Agent Skills
 - Agent skills are workflow patterns that guide an LLM on what to do
@@ -9,7 +19,7 @@
 <img width="1217" height="524" alt="image" src="https://github.com/user-attachments/assets/724dc148-f9e4-4935-b270-7310211b481c" />
 
 # Day 2 - 20/03/2026
-## Expectation Minimization vs K means
+## Expectation Maximization vs K means
 - K means algorithm is deterministic in nature. This creates a problem that if a particular datapoint is equidistant from both the centroids, the point has to be assigned to any one of the centroids randomly. This makes the assignment asymmetric. Expectation Maximization introduces the idea of a probabilistic model instead of a deterministic one. The idea is to assign probability to all the points to be placed at any one of the centroids and then taking an weigted probability for all the clusters for that point. That way, the centroid allocation is much more accurate than determinsitic apporach of k means
 
 - <img width="920" height="806" alt="image" src="https://github.com/user-attachments/assets/2c4de131-3dea-499a-9b40-cf809a1427bd" />
