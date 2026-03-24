@@ -1,3 +1,13 @@
+# Day 5 - 23/03/2026
+## How Agent Skill can be combined
+- Agent skills also come in predefined packages.
+- One skill that is called skill creator is specifically useful for creating new skills as necessary.
+- Multiple custom skills or prebuilt skills can be combined to create a holistic workflow.
+- Anthropic has an open source skill library https://github.com/anthropics/skills
+
+<img width="917" height="208" alt="image" src="https://github.com/user-attachments/assets/5a02b5bd-7f73-4950-ac3e-b36a689d926f" />
+
+
 # Day 4 - 22/03/2026
 ## How Agent Skill interacts with other GenAI workflow components
 
