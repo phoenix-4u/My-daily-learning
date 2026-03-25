@@ -1,3 +1,15 @@
+# Day 6 - 24/03/2026
+## How to create custom scripts
+- Define the YAML frontmatter effectively
+<img width="1542" height="782" alt="image" src="https://github.com/user-attachments/assets/6d672bdf-e836-4a69-9a2a-11507606f46a" />
+- Provide step by step instruction in the body content
+  <img width="1844" height="681" alt="image" src="https://github.com/user-attachments/assets/2666f673-5095-4d54-bcda-d1c44099f339" />
+- Decide on how loose or tight the instructions have to be
+  <img width="1410" height="630" alt="image" src="https://github.com/user-attachments/assets/595654ec-8e38-485c-902a-ead9f3f01937" />
+- Organize all external references in a separate directory and link it from the skill boy. These references also work in terms of progressive disclosure.
+  <img width="1784" height="454" alt="image" src="https://github.com/user-attachments/assets/b159178f-1bd2-4479-b544-5c5d6c043925" />
+
+
 # Day 5 - 23/03/2026
 ## How Agent Skill can be combined
 - Agent skills also come in predefined packages.
@@ -29,15 +41,15 @@
 <img width="1217" height="524" alt="image" src="https://github.com/user-attachments/assets/724dc148-f9e4-4935-b270-7310211b481c" />
 
 # Day 2 - 20/03/2026
-## Expectation Maximization vs K means
-- K means algorithm is deterministic in nature. This creates a problem that if a particular datapoint is equidistant from both the centroids, the point has to be assigned to any one of the centroids randomly. This makes the assignment asymmetric. Expectation Maximization introduces the idea of a probabilistic model instead of a deterministic one. The idea is to assign probability to all the points to be placed at any one of the centroids and then taking an weigted probability for all the clusters for that point. That way, the centroid allocation is much more accurate than determinsitic apporach of k means
+## Expectation Maximization vs K-means
+- K means algorithm is deterministic in nature. This creates a problem that if a particular datapoint is equidistant from both the centroids, the point has to be assigned to any one of the centroids randomly. This makes the assignment asymmetric. Expectation Maximization introduces the idea of a probabilistic model instead of a deterministic one. The idea is to assign probability to all the points to be placed at any one of the centroids and then taking an weigted probability for all the clusters for that point. That way, the centroid allocation is much more accurate than determinsitic apporach of k-means
 
 - <img width="920" height="806" alt="image" src="https://github.com/user-attachments/assets/2c4de131-3dea-499a-9b40-cf809a1427bd" />
 
 
 # Day 1 - 19/03/2026 
 ## Graph DB
-- Video 8 talks about how to use Langchain to give multishot examples in the prompt and retrieve the correct chunks. The graph DB has to be created in the first place. Creating the cyphers is really difficult, but Langchain's GraphCypherQAChain can create the prompt as well as execute them at one go. Here, though, we have to define schema in the prompt template, since we pass the graph itself as a parameter, we do not have to specify it manually
+- Video 8 talks about how to use Langchain to give multishot examples in the prompt and retrieve the correct chunks. The graph DB has to be created in the first place. Creating the cyphers is really difficult, but Langchain's GraphCypherQAChain can create the prompt as well as execute them at one go. Here, though, we have to define the schema in the prompt template, since we pass the graph itself as a parameter, we do not have to specify it manually
 
 ```python
 CYPHER_GENERATION_TEMPLATE = """Task:Generate Cypher statement to query a graph database.
