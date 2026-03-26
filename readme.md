@@ -1,3 +1,15 @@
+# Day 7 - 25/03/2026
+## How to create custom scripts
+- An Agent itself has 3 components
+  - Router: This is the brain of the AI agent and decides which skill (or tool to call)
+  - Skills/Tools: This can be custom skills that define entire workflows defined in skills.md, or can be tool calls where a Python function executes everything
+  - Memory is where context, retrieved chunks, and previous history are stored
+<img width="1602" height="746" alt="image" src="https://github.com/user-attachments/assets/7b34cae6-e3a2-44e5-aa16-ea221f782d43" />
+
+- For example
+  <img width="988" height="355" alt="image" src="https://github.com/user-attachments/assets/a59fd846-3fcc-403c-8cfa-92322d5d2acf" />
+
+
 # Day 6 - 24/03/2026
 ## How to create custom scripts
 - Define the YAML frontmatter effectively
