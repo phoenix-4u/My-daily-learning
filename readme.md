@@ -1,3 +1,15 @@
+# Day 9 - 27/03/2026
+## What is observability
+- Generic software concept for having visibility of all layers of the application
+- It consists of traces and spans. spans are smaller elements that sum up together to make traces
+<img width="956" height="484" alt="image" src="https://github.com/user-attachments/assets/f22784d9-5ce2-4bd4-bc3a-e13e5f8d8d24" />
+<br><br>
+-Traces work on the Open Telemetry protocol. They have a process of instrumentation to capture and process spans, and then collectors and processors to collect and visualize those spans
+<img width="827" height="494" alt="image" src="https://github.com/user-attachments/assets/d29bfa93-d6fa-464d-8959-e313045686a9" />
+<br><br>
+- This simplifies debugging, provides detailed production usage and then uses it to generate insights
+
+
 # Day 8 - 26/03/2026
 ## How to create an orchestrated agent workflow
 - For this example, first define the tool for data query. This is a simple DB call in SQL, where the SQL is created by the LLM
