@@ -4,7 +4,7 @@
 - The core idea is to use coordinate descent to solve a chicken-and-egg problem.
 - Initially, mu sigma and pi (mixture parameter) are initialized randomly.
 - Then an initial MLE estimation is performed with these values
-- The E(expectation) step is to calculate the posterior using the formula. The gamma value is calculated for each point for every cluster and  provides an indication of how much each cluster contribute to evey point
+- The E(expectation) step is to calculate the posterior using the formula. The gamma value is calculated for each point for every cluster and  indicates how much each cluster contribute to evey point
 - <img width="720" height="124" alt="image" src="https://github.com/user-attachments/assets/beaf1c44-4715-4a84-a3dd-007a7d724270" />
 <br><br>
 - The M (Maximization) step is to then use the gamma values and recalculate the mu sigma and pi.
@@ -12,8 +12,10 @@
 <br><br>
 -This goes on till the values of mu sigma and pi converges
 <br><br>
+
 ### Example
-<img width="407" height="499" alt="image" src="https://github.com/user-attachments/assets/17a013c3-6afc-4ebf-9a46-32b14b1aba34" />
+<br>
+- <img width="407" height="499" alt="image" src="https://github.com/user-attachments/assets/17a013c3-6afc-4ebf-9a46-32b14b1aba34" />
 
 
 
