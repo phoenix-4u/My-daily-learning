@@ -11,6 +11,7 @@
 <img width="731" height="463" alt="image" src="https://github.com/user-attachments/assets/f2532d49-c6e2-4125-9118-794020325bac" />
 <br><br>
 -This goes on till the values of mu sigma and pi converges
+<br><br>
 ### Example
 <img width="407" height="499" alt="image" src="https://github.com/user-attachments/assets/17a013c3-6afc-4ebf-9a46-32b14b1aba34" />
 
