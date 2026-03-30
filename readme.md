@@ -1,16 +1,34 @@
+# Day 11 - 29/03/2026
+## Multivariate Normal Distribution
+- MVN distribution is characterized by distribution in more than one dimension, such that there is a mean vector with a collection of all means and a covariance matrix sigma with all the covariances between various dimensions
+- It is represented in the form below
+- <img width="924" height="961" alt="image" src="https://github.com/user-attachments/assets/66825fb6-f585-48ce-8d00-d91105c92be7" />
+<br><br>
+- If all Xis are independent of each other, where each xi is a normal distribution, then their concatenation is also multivariate normal
+- In this case, the covariance matrix will only be a diagonal matrix with variance as the diagonal elements
+- If we divide an MVN distribution into multiple parts, then the marginal distribution of each part will also be a normal distribution
+- If we divide an MVN distribution into multiple parts, then the conditional distribution of each part will also be a normal distribution
+- <img width="525" height="320" alt="image" src="https://github.com/user-attachments/assets/27f7f66c-3d9d-4d79-b1d5-228fed012396" />
+<br><br>
+- If a linear transformation is applied on mvn distribution, the transformed distribution is also MVN
+- <img width="860" height="823" alt="image" src="https://github.com/user-attachments/assets/2e1b295b-2b15-4ed2-b016-e083af79c331" />
+<br><br>
+-
+
+
 # Day 10 - 28/03/2026
 ## Expectation Maximization Algorithm
 - It is an approximation of the maximum log likelihood estimate.
 - The core idea is to use coordinate descent to solve a chicken-and-egg problem.
 - Initially, mu sigma and pi (mixture parameter) are initialized randomly.
 - Then an initial MLE estimation is performed with these values
-- The E(expectation) step is to calculate the posterior using the formula. The gamma value is calculated for each point for every cluster and  indicates how much each cluster contribute to evey point
+- The E(expectation) step is to calculate the posterior using the formula. The gamma value is calculated for each point for every cluster and  indicates how much each cluster contributes to every point
 - <img width="720" height="124" alt="image" src="https://github.com/user-attachments/assets/beaf1c44-4715-4a84-a3dd-007a7d724270" />
 <br><br>
-- The M (Maximization) step is to then use the gamma values and recalculate the mu sigma and pi.
+- The M (Maximization) step is to then use the gamma values and recalculate the mu, sigma, and pi.
 <img width="731" height="463" alt="image" src="https://github.com/user-attachments/assets/f2532d49-c6e2-4125-9118-794020325bac" />
 <br><br>
--This goes on till the values of mu sigma and pi converges
+-This goes on till the values of mu sigma and pi converge
 <br><br>
 
 ### Example
