@@ -1,3 +1,12 @@
+# Day 14 - 01/04/2026
+## Activation Functions
+- Activation functions are the ones that make the model nonlinear 
+- Relu(x) - max(x,0)
+- Leaky Relu - max(alpha.x,0)
+- sigmoid
+- <img width="495" height="148" alt="image" src="https://github.com/user-attachments/assets/c772ba1f-f2ec-4fa5-80df-548e95847bd1" />
+
+
 # Day 13 - 31/03/2026
 ## Kernel Function part 1
 - Non-linear functions help to predict data in the real world better
