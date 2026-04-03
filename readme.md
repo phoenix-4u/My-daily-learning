@@ -1,3 +1,51 @@
+# Day 15 - 02/04/2026
+## How to setup tracing
+- Tracing can be setup either with the 'with' clause or tracer decorator on a function
+- Primarily there are 3 types of tracing calls, tracer.tools, tracer.agents and tracer.chain
+- While using the 'with' clause, we need to include tracer. set_input and set_output to log the calls.
+- For the function decorator the input and out put of the function is captured by default.
+- There are few standard APIs for LLMs which can be defined one time which will capture all the calls.
+- Below is example for both decorator as well as 'with' clause
+```python
+tracer_provider = register(
+    project_name=PROJECT_NAME,
+    endpoint= get_phoenix_endpoint() + "v1/traces"
+)
+tracer = tracer_provider.get_tracer(__name__)
+OpenAIInstrumentor().instrument(tracer_provider = tracer_provider)
+@tracer.tool()
+def lookup_sales_data(prompt: str) -> str:
+    """Implementation of sales data lookup from parquet file using SQL"""
+    try:
+
+        # define the table name
+        table_name = "sales"
+        
+        # step 1: read the parquet file into a DuckDB table
+        df = pd.read_parquet(TRANSACTION_DATA_FILE_PATH)
+        duckdb.sql(f"CREATE TABLE IF NOT EXISTS {table_name} AS SELECT * FROM df")
+
+        # step 2: generate the SQL code
+        sql_query = generate_sql_query(prompt, df.columns, table_name)
+        # clean the response to make sure it only includes the SQL code
+        sql_query = sql_query.strip()
+        sql_query = sql_query.replace("```sql", "").replace("```", "")
+
+        with tracer.start_as_current_span(
+            "execute_sql_query", 
+            openinference_span_kind="chain"
+        ) as span:
+            span.set_input(sql_query)
+            # step 3: execute the SQL query
+            result = duckdb.sql(sql_query).df()
+            span.set_output(value=str(result))
+            span.set_status(StatusCode.OK)
+        
+        return result.to_string()
+    except Exception as e:
+        return f"Error accessing data: {str(e)}"
+```
+
 # Day 14 - 01/04/2026
 ## Activation Functions
 - Activation functions are the ones that make the model nonlinear 
