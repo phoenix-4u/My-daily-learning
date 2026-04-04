@@ -1,11 +1,21 @@
+# Day 16 - 03/04/2026
+## How does Evaluation Work?
+- There are 3 types of evaluations: Code-based evals, LLM-as-a-judge, and human annotations
+- <img width="822" height="585" alt="image" src="https://github.com/user-attachments/assets/fca0b292-90e6-4a49-8c38-f5b03189441c" />
+<br><br>
+- These skills can be applied to the router, or the path, or a particular skill or function
+- For the router, we can evaluate whether the Function Calling was correct and if the parameters it passed to those functions were correct.
+- Skills can be evaluated both using standard LLM or code-based evals
+- <img width="1081" height="557" alt="image" src="https://github.com/user-attachments/assets/fe46ebce-b4c0-4215-8ab2-5f52a0325dfa" />
+
 # Day 15 - 02/04/2026
-## How to setup tracing
-- Tracing can be setup either with the 'with' clause or tracer decorator on a function
-- Primarily there are 3 types of tracing calls, tracer.tools, tracer.agents and tracer.chain
+## How to set up tracing
+- Tracing can be set up either with the 'with' clause or tracer decorator on a function
+- Primarily, there are 3 types of tracing calls: tracer.tools, tracer.agents, and tracer.chain
 - While using the 'with' clause, we need to include tracer. set_input and set_output to log the calls.
-- For the function decorator the input and out put of the function is captured by default.
-- There are few standard APIs for LLMs which can be defined one time which will capture all the calls.
-- Below is example for both decorator as well as 'with' clause
+- For the function decorator, the input and output of the function are captured by default.
+- There are a few standard APIs for LLMs that can be defined one time, which will capture all the calls.
+- Below is an example for both the decorator and the 'with' clause
 ```python
 tracer_provider = register(
     project_name=PROJECT_NAME,
