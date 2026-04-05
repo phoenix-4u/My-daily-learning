@@ -1,3 +1,23 @@
+# Day 17 - 04/04/2026
+## Alternatives to RAG
+### Long Context Windows
+#### Pros
+- No RAG infra required, all information is dumped in the context window
+- Retrieval lottery avoidance - Reduces the chance of retrieving irrelevant documents
+- Whole book problem solved - If a question is asked like what was not in a particular release, traditional RAG might retrieve all documents that are for the release. Since the entire context is passed, the long context mitigates that risk to an extent
+#### Cons
+- Re-reading - for dynamic context, the document has to be rewritten every time
+- Needle in the haystack - If it's a very specific retrieval, like one line within a 500-page document, this approach is prone to hallucinations
+- If the dataset is too large, this approach is not feasible
+### Vectorless RAG
+- Here, the idea is to create a content table of index based on important events in the document.
+- Each of these forms a node of a tree
+- These main events can be linked to specific sub-chapters within them
+- These sub-chapters form sub-nodes.
+- The idea is to do a tree-based traversal when a user queries something.
+- Context retrieval is based on any tree-based algorithm by traversing to the leaf node, which is a pointer to pages where the required context exists.
+- LLM makes the tree, so parsing is easy for them
+- This can only be done by thinking/reasoning models, so it takes more time.
 # Day 16 - 03/04/2026
 ## How does Evaluation Work?
 - There are 3 types of evaluations: Code-based evals, LLM-as-a-judge, and human annotations
