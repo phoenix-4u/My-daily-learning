@@ -1,3 +1,14 @@
+# Day 18 - 05/04/2026
+## How is the Standard Kernel equivalent to an infinite basis Function
+- It can be proven that the Standard Kernel representation is equivalent to the infinite basis function
+- This is possible because it depends on a limited number of data points, and the regularization term heavily penalizes higher order polynomial
+- <img width="696" height="820" alt="image" src="https://github.com/user-attachments/assets/46dbcf1c-06a7-4fbf-a262-7d3993234f13" />
+- <img width="691" height="451" alt="image" src="https://github.com/user-attachments/assets/167dfae9-4005-437a-83a2-c5c0408229a1" />
+<br><br>
+- A Gaussian RBF Kernel can also be represented in terms of this infinite series problem.
+- This can be done due to the exponential term being expanded as in the Taylor series
+- <img width="607" height="875" alt="image" src="https://github.com/user-attachments/assets/7daa0f5c-5b78-491d-9998-413647fa9cbb" />
+
 # Day 17 - 04/04/2026
 ## Alternatives to RAG
 ### Long Context Windows
