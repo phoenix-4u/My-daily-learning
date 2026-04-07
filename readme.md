@@ -1,4 +1,4 @@
-# Day 18 - 06/04/2026
+# Day 19 - 06/04/2026
 ## How to set up custom evals
 - define the LLM as a judge (or custom) prompt template
 - Query the required span
