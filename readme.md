@@ -10,6 +10,9 @@
 - Convergence evals should always evaluate fully completed agent runs.
 - Below is the convergence calculation
 <img width="1908" height="904" alt="image" src="https://github.com/user-attachments/assets/44425ced-2595-4e20-a238-db091c4241a7" />
+
+
+
 # Day 19 - 06/04/2026
 ## How to set up custom evals
 - define the LLM as a judge (or custom) prompt template
