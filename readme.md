@@ -1,3 +1,16 @@
+# Day 20 - 07/04/2026
+## Agent Trajectory and Convergence
+- Agent trajectory is the path through router steps, tool call, and logic steps that the agent took for a given input
+- As we have multiple tool-calls within an agent trajectory or we have a multi-agent system, the agent trajectory can become quite complicated.
+- The agent trajectory matters because, through it, we can optimize agent steps and eliminate unnecessary tool calls.
+- Convergence measures how closely the agents follow the optimal path for a given query
+- Below is the convergence calculation
+<img width="1908" height="904" alt="image" src="https://github.com/user-attachments/assets/44425ced-2595-4e20-a238-db091c4241a7" />
+- This measures what percentage of time the agent is taking the optimal path given the same set of inputs
+- Convergence score of 1 means 100% of the time, the optimal path is being chosen by the agent
+- Convergence evals won't catch inefficiencies if an unnecessary step is taken by the agent every time.
+- Convergence evals should always evaluate fully completed agent runs.
+
 # Day 19 - 06/04/2026
 ## How to set up custom evals
 - define the LLM as a judge (or custom) prompt template
