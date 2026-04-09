@@ -1,3 +1,12 @@
+# Day 21 - 08/04/2026
+## Agent Experiment
+- An experiment is a complete run of defining a dataset and evaluating the convergence metrics for an agent
+- <img width="654" height="262" alt="image" src="https://github.com/user-attachments/assets/b9609105-f82c-467f-81b7-d569210fc12c" />
+- The dataset can be uploaded as a dataframe, and then experiments can be run for evaluations
+- Once the eval is done, the score looks like below
+<img width="1687" height="364" alt="image" src="https://github.com/user-attachments/assets/9e04e3b5-2051-4e2b-9662-5936ff033512" />
+
+
 # Day 20 - 07/04/2026
 ## Agent Trajectory and Convergence
 - Agent trajectory is the path through router steps, tool call, and logic steps that the agent took for a given input
@@ -20,7 +29,7 @@
 ```python
 query = SpanQuery().where(
     # Filter for the `LLM` span kind.
-    # The filter condition is a string of valid Python boolean expression.
+    # The filter condition is a string of valid Python boolean expressions.
     "span_kind == 'LLM'",
 ).select(
     question="input.value",
@@ -51,7 +60,7 @@ tool_call_eval['score'] = tool_call_eval.apply(lambda x: 1 if x['label']=='corre
 
 tool_call_eval.head()
 ```
-- Upload into observability platform
+- Upload into the observability platform
 ``` python
 px.Client().log_evaluations(
     SpanEvaluations(eval_name="Tool Calling Eval", dataframe=tool_call_eval),
