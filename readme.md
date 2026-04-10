@@ -5,9 +5,7 @@
 - Tracking changes include changing prompt tool router skills models etc.
 - Evaluating experiments comes down to running code as eval or LLM-as-a-judge eval
 - This includes learning from prod to be put in dev
-- <img width="1015" height="513" alt="image" src="https://github.com/user-attachments/assets/cf33d3da-5a91-4c79-a4d9-c809459e0256" />
-
-
+- <img width="982" height="492" alt="image" src="https://github.com/user-attachments/assets/989de4d4-b537-46b5-96e5-14d8a9848bc9" />
 
 # Day 21 - 08/04/2026
 ## Agent Experiment
