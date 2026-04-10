@@ -1,3 +1,14 @@
+# Day 22 - 09/04/2026
+## Evaluation-driven development
+- It's a cycle of curating a dataset, tracking model changes, prompt tool, etc., as experiments, running evaluation for each experiment, and assigning an evaluation score.
+- Curating a dataset comes down to evaluating a comprehensive dataset representative of the sample size, rather than exhaustive use cases
+- Tracking changes include changing prompt tool router skills models etc.
+- Evaluating experiments comes down to running code as eval or LLM-as-a-judge eval
+- This includes learning from prod to be put in dev
+- <img width="1015" height="513" alt="image" src="https://github.com/user-attachments/assets/cf33d3da-5a91-4c79-a4d9-c809459e0256" />
+
+
+
 # Day 21 - 08/04/2026
 ## Agent Experiment
 - An experiment is a complete run of defining a dataset and evaluating the convergence metrics for an agent
