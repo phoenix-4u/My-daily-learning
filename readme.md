@@ -1,3 +1,37 @@
+# Day 23 - 10/04/2026
+## Levenshtein distance
+- Levenshtein distance is just a way to count the minimum number of single-character edits needed to change one word into another, where the allowed edits are insert, delete, and substitute.
+- Levenshtein distance is sensitive to insertions, deletions, and substitutions at the character level, so it works well for typos, OCR noise, and small string variations such as bok vs book.
+- Cosine similarity ignores character edit paths and instead compares vector direction, which is why it is commonly used for bag-of-words features, TF-IDF, and embeddings.
+- A typical way to use both is a 20 80 ratio between cosine similarity and Levenshtein distance
+```python
+def hybrid_similarity(query, candidates, w_lev=0.4, w_cos=0.6):
+    texts = [query] + candidates
+
+    vectorizer = TfidfVectorizer()
+    X = vectorizer.fit_transform(texts)
+
+    query_vec = X[0]
+    candidate_vecs = X[1:]
+
+    cos_scores = cosine_similarity(query_vec, candidate_vecs).flatten()
+
+    results = []
+    for candidate, cos_score in zip(candidates, cos_scores):
+        lev_score = normalized_levenshtein_similarity(query, candidate)
+        hybrid_score = w_lev * lev_score + w_cos * cos_score
+
+        results.append({
+            "candidate": candidate,
+            "levenshtein_similarity": round(lev_score, 4),
+            "cosine_similarity": round(float(cos_score), 4),
+            "hybrid_score": round(float(hybrid_score), 4)
+        })
+
+    return sorted(results, key=lambda x: x["hybrid_score"], reverse=True)
+```
+
+
 # Day 22 - 09/04/2026
 ## Evaluation-driven development
 - It's a cycle of curating a dataset, tracking model changes, prompt tool, etc., as experiments, running evaluation for each experiment, and assigning an evaluation score.
