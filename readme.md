@@ -1,3 +1,12 @@
+# Day 24 - 11/04/2026
+## Evaluating the performance of LLM as a judge
+- It is important to judge if the LLM judging the quality is actually good itself.
+- There are 2 ways to do it
+- 1. Code-based eval:- you submit the entire response that you want to evaluate and supply the ground truth in terms of true and false. Now check if the LLM judgement and ground truth match based on Code level eval
+- 2. Cosine similarity-based eval:- If the ground truth is a sentence or two, then code-based eval would not work. In that case, we can use cosine similarity to judge the judgment accuracy
+- Below is an example
+- <img width="1209" height="552" alt="image" src="https://github.com/user-attachments/assets/989f5588-c8c4-49f6-bde7-042ca56f6067" />
+
 # Day 23 - 10/04/2026
 ## Levenshtein distance
 - Levenshtein distance is just a way to count the minimum number of single-character edits needed to change one word into another, where the allowed edits are insert, delete, and substitute.
