@@ -1,3 +1,12 @@
+# Day 25 - 12/04/2026
+## Cursor vs GitHub Copilot agent mode vs Claude code
+- | Aspect              | Cursor                                                                                                | GitHub Copilot agent mode                                                                            | Claude Code                                                                                        |
+| ------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Primary environment | Cursor’s own IDE experience. javascript.plainenglish                                                  | Supported IDEs and GitHub features. reddit                                                           | Terminal, plus availability in IDE, desktop app, and browser. code.claude                          |
+| Default style       | AI-first, with agent mode as the default for complex tasks. javascript.plainenglish                   | Copilot still spans chat, inline suggestions, edits, and agents. reddit                              | Agentic coding tool focused on reading code, editing files, and running commands. code.claude      |
+| Autonomy            | Explores the codebase, edits multiple files, runs commands, and fixes errors. javascript.plainenglish | Chooses files, proposes edits and terminal commands, and iterates until the task is complete. reddit | Reads the codebase, edits files, runs commands, and integrates with development tools. code.claude |
+| Best fit            | People who want the editor itself optimized around AI workflows. javascript.plainenglish              | Teams already standardized on GitHub and mainstream IDEs. reddit                                     | Developers who prefer terminal-native, automation-friendly workflows. code.claude                  |
+
 # Day 24 - 11/04/2026
 ## Evaluating the performance of LLM as a judge
 - It is important to judge if the LLM judging the quality is actually good itself.
