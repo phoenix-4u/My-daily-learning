@@ -1,10 +1,8 @@
 # Day 25 - 12/04/2026
 ## Cursor vs GitHub Copilot agent mode vs Claude code
-Aspect	Cursor	GitHub Copilot agent mode	Claude Code
-Primary environment	Cursorâ€™s own IDE experience. javascript.plainenglish	Supported IDEs and GitHub features. reddit	Terminal, plus availability in IDE, desktop app, and browser. code.claude
-Default style	AI-first, with agent mode as the default for complex tasks. javascript.plainenglish	Copilot still spans chat, inline suggestions, edits, and agents. reddit	Agentic coding tool focused on reading code, editing files, and running commands. code.claude
-Autonomy	Explores the codebase, edits multiple files, runs commands, and fixes errors. javascript.plainenglish	Chooses files, proposes edits and terminal commands, and iterates until the task is complete. reddit	Reads the codebase, edits files, runs commands, and integrates with development tools. code.claude
-Best fit	People who want the editor itself optimized around AI workflows. javascript.plainenglish	Teams already standardized on GitHub and mainstream IDEs. reddit	Developers who prefer terminal-native, automation-friendly workflows. code.claude
+- Choose Cursor if you want the strongest AI-first editor experience for interactive implementation, refactoring, and codebase-wide edits.
+- Choose GitHub Copilot agent mode if you already live in GitHub and want agentic help without changing editors or team workflow too much.
+- Choose Claude Code if you want a terminal-first agent that is editor-agnostic and more scriptable for advanced automation.
 
 
 
