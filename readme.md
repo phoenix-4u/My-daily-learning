@@ -1,3 +1,11 @@
+# Day 26 - 13/04/2026
+## Microsoft Agent framework
+- Microsoft agent framework brings the best of Symantic Kernel and Autogen
+<img width="849" height="470" alt="image" src="https://github.com/user-attachments/assets/19512f11-8185-4895-b3f9-c5ea0a10d704" />
+- We can define the connection details in the client and then define the agent with the client.
+- This can then be defined as MCP clients, and all tools can be utilized.
+- They can also be integrated with Microsoft AI Foundry, and the agents can be managed from the AI portal.
+
 # Day 25 - 12/04/2026
 ## Cursor vs GitHub Copilot agent mode vs Claude code
 - Choose Cursor if you want the strongest AI-first editor experience for interactive implementation, refactoring, and codebase-wide edits.
