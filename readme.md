@@ -1,3 +1,14 @@
+# Day 27 - 14/04/2026
+## Microsoft Agent framework contd..
+- MAF has two types of memory, full thread and long term.
+- Full thread means all the chat interaction information is stored in memory
+- Long term means only key behavioural attributes from overall chat is stored.
+- It also has 4 tupes of middleware-
+  1. Timing - Measures the overall time for agent interaction
+  2. Security - blocks PHI/PII or other sensetive information
+  3. Functional- Lists all the tool interaction
+  4. Token counter -Keeps track of overall cost.
+
 # Day 26 - 13/04/2026
 ## Microsoft Agent framework
 - Microsoft agent framework brings the best of Symantic Kernel and Autogen
