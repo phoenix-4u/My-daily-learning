@@ -1,12 +1,22 @@
+# Day 28 - 15/04/2026
+## Deep Neural Network
+- It is another type of adaptive basis function
+- While the kernel function calculates the similarity of one point with all the other points to provide a grand matrix k, neural network provides another set of parameters which can linearly combine with features to provide a different state, which can then be used to finally predict y.
+- The initial function that provides the inner linear transformation to a non linear function within the neurons is called an activation function
+- Examples, Relu, leaky relu, sigmoid, Thesholding functions
+- Solving Neural network is a non convex optimization problem
+- Neural Networks can be solved using gradient descent
+- Each Neuron can be thought of a template when trained. Where the feaure (digit recognition) will be maximized when the corresponding neuron is fired.
+
 # Day 27 - 14/04/2026
 ## Microsoft Agent framework contd..
-- MAF has two types of memory, full thread and long term.
+- MAF has two types of memory, full thread and long-term.
 - Full thread means all the chat interaction information is stored in memory
-- Long term means only key behavioural attributes from overall chat is stored.
-- It also has 4 tupes of middleware-
+- Long-term means only key behavioural attributes from the overall chat are stored.
+- It also has 4 types of middleware-
   1. Timing - Measures the overall time for agent interaction
-  2. Security - blocks PHI/PII or other sensetive information
-  3. Functional- Lists all the tool interaction
+  2. Security - blocks PHI/PII or other sensitive information
+  3. Functional- Lists all the tool interactions
   4. Token counter -Keeps track of overall cost.
 
 # Day 26 - 13/04/2026
