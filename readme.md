@@ -1,12 +1,21 @@
 # Day 28 - 15/04/2026
 ## Deep Neural Network
 - It is another type of adaptive basis function
-- While the kernel function calculates the similarity of one point with all the other points to provide a grand matrix k, neural network provides another set of parameters which can linearly combine with features to provide a different state, which can then be used to finally predict y.
-- The initial function that provides the inner linear transformation to a non linear function within the neurons is called an activation function
-- Examples, Relu, leaky relu, sigmoid, Thesholding functions
-- Solving Neural network is a non convex optimization problem
+- While the kernel function calculates the similarity of one point with all the other points to provide a grand matrix k, the neural network provides another set of parameters that can linearly combine with features to provide a different state, which can then be used to finally predict y.
+- The initial function that provides the inner linear transformation to a nonlinear function within the neurons is called an activation function
+- Examples: ReLU, Leaky ReLU, sigmoid, Threshold functions
+- Solving a neural network is a nonconvex optimization problem
 - Neural Networks can be solved using gradient descent
-- Each Neuron can be thought of a template when trained. Where the feaure (digit recognition) will be maximized when the corresponding neuron is fired.
+- Each Neuron can be thought of as a template to represent a particular feature when trained. Where the feature (digit recognition) will be maximized when the corresponding neuron is fired, as the similarity of the template to the features would be maximized.
+- If there is a large number of neurons, then any linear prediction can be approximated.
+- So each interval can be approximated with the activation function curve between that interval
+- Since a neural network is a nested linear combination of activation functions, it can be represented as in the diagram below
+- <img width="1159" height="800" alt="image" src="https://github.com/user-attachments/assets/0b80c04b-5108-4c02-a195-fe320e2750bc" />
+<br><br>
+- A deep neural network is nothing but a nesting of the activation functions, and finally getting the output with final weights.
+- <img width="1150" height="764" alt="image" src="https://github.com/user-attachments/assets/174d286d-c33a-4845-9efe-b28a50e3d760" />
+- The weights are updated based on back propagation using the chain rule of differentiation.
+- <img width="1221" height="734" alt="image" src="https://github.com/user-attachments/assets/69ecc55b-8cfb-4e9f-9507-9d076f71a147" />
 
 # Day 27 - 14/04/2026
 ## Microsoft Agent framework contd..
