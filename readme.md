@@ -1,3 +1,16 @@
+# Day 29 - 16/04/2026
+## 8 Agentic Architecture Design Patterns
+1. Agentic System Design - This covers workflow and orchestration. How agents will interact with Agents, tools, and the database
+2. Tool Definition and Contract - This defines how the agent leverages all tools using protocols such as MCP
+3. Data Design - All data sources from which data can be retrieved as context. Such as Vector DB/ Relational DB/ Graph DB
+4. Prompt Library - Maintaining a Robust prompt library which can be finetuned as necessary.
+5. Reliability Design - Incorporate logic to ensure that agentic design does not fail
+6. Security and safety - Ensure that the guardrails are well-maintained
+7. Evaluation and observability - Ensure that production systems have well-orchestrated evaluation loops and an observability platform to view them
+8. End User Experience - A very well orchestrated system can fail if it does not stand uto the user experience. Hence, UI-UX design is critical
+<img width="341" height="621" alt="image" src="https://github.com/user-attachments/assets/cb71ca11-c101-45ab-9477-acdf2c2ed66f" />
+<img width="355" height="604" alt="image" src="https://github.com/user-attachments/assets/a3336f91-b97b-481e-9b99-6f88bfffdc0c" />
+
 # Day 28 - 15/04/2026
 ## Deep Neural Network
 - It is another type of adaptive basis function
@@ -12,7 +25,7 @@
 - Since a neural network is a nested linear combination of activation functions, it can be represented as in the diagram below
 - <img width="1159" height="800" alt="image" src="https://github.com/user-attachments/assets/0b80c04b-5108-4c02-a195-fe320e2750bc" />
 <br><br>
-- A deep neural network is nothing but a nesting of the activation functions, and finally getting the output with final weights.
+- A deep neural network is nothing but a nesting of the activation functions, and finally getting the output with the final weights.
 - <img width="1150" height="764" alt="image" src="https://github.com/user-attachments/assets/174d286d-c33a-4845-9efe-b28a50e3d760" />
 - The weights are updated based on back propagation using the chain rule of differentiation.
 - <img width="1221" height="734" alt="image" src="https://github.com/user-attachments/assets/69ecc55b-8cfb-4e9f-9507-9d076f71a147" />
@@ -41,8 +54,6 @@
 - Choose Cursor if you want the strongest AI-first editor experience for interactive implementation, refactoring, and codebase-wide edits.
 - Choose GitHub Copilot agent mode if you already live in GitHub and want agentic help without changing editors or team workflow too much.
 - Choose Claude Code if you want a terminal-first agent that is editor-agnostic and more scriptable for advanced automation.
-
-
 
 # Day 24 - 11/04/2026
 ## Evaluating the performance of LLM as a judge
