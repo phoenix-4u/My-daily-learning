@@ -1,3 +1,15 @@
+# Day 30 - 17/04/2026
+## Microsoft Afent Framework - Workflow
+- The whole agent integration can be orchestrated by the workflow components of the agent framework.
+- Executors and handlers are sort of langgraph nodes that carry out different tasks in a workflow. These themselves can house agents.
+- Edges are what connect the executors to build the graph workflow
+- Events are used for interactivity. They are used to pause and run the workflow, bring human-in-the-loop and provide observability.
+- The power of MAF lies with its flexible workflow types.
+- Sequential workflow is straightforward, executing one task after the other
+- Parallel workflow is used to spawn multiple parallel threads, and finally, a collector/merger executor collects all of them
+- Branching workflow is where, based on a switch case business rule logic, the workflow dynamically takes various paths
+- There is a visualizer built-in that helps visualise the workflow graph in Mermaid. 
+
 # Day 29 - 16/04/2026
 ## 8 Agentic Architecture Design Patterns
 1. Agentic System Design - This covers workflow and orchestration. How agents will interact with Agents, tools, and the database
@@ -7,7 +19,7 @@
 5. Reliability Design - Incorporate logic to ensure that agentic design does not fail
 6. Security and safety - Ensure that the guardrails are well-maintained
 7. Evaluation and observability - Ensure that production systems have well-orchestrated evaluation loops and an observability platform to view them
-8. End User Experience - A very well orchestrated system can fail if it does not stand uto the user experience. Hence, UI-UX design is critical
+8. End User Experience - A very well-orchestrated system can fail if it does not stand up to the user experience. Hence, UI-UX design is critical
 <img width="341" height="621" alt="image" src="https://github.com/user-attachments/assets/cb71ca11-c101-45ab-9477-acdf2c2ed66f" />
 <img width="355" height="604" alt="image" src="https://github.com/user-attachments/assets/a3336f91-b97b-481e-9b99-6f88bfffdc0c" />
 
@@ -17,9 +29,9 @@
 - While the kernel function calculates the similarity of one point with all the other points to provide a grand matrix k, the neural network provides another set of parameters that can linearly combine with features to provide a different state, which can then be used to finally predict y.
 - The initial function that provides the inner linear transformation to a nonlinear function within the neurons is called an activation function
 - Examples: ReLU, Leaky ReLU, sigmoid, Threshold functions
-- Solving a neural network is a nonconvex optimization problem
+- Solving a neural network is a nonconvex optimisation problem
 - Neural Networks can be solved using gradient descent
-- Each Neuron can be thought of as a template to represent a particular feature when trained. Where the feature (digit recognition) will be maximized when the corresponding neuron is fired, as the similarity of the template to the features would be maximized.
+- Each Neuron can be thought of as a template to represent a particular feature when trained. Where the feature (digit recognition) will be maximised when the corresponding neuron is fired, as the similarity of the template to the features would be maximised.
 - If there is a large number of neurons, then any linear prediction can be approximated.
 - So each interval can be approximated with the activation function curve between that interval
 - Since a neural network is a nested linear combination of activation functions, it can be represented as in the diagram below
@@ -46,7 +58,7 @@
 - Microsoft agent framework brings the best of Symantic Kernel and Autogen
 <img width="849" height="470" alt="image" src="https://github.com/user-attachments/assets/19512f11-8185-4895-b3f9-c5ea0a10d704" />
 - We can define the connection details in the client and then define the agent with the client.
-- This can then be defined as MCP clients, and all tools can be utilized.
+- This can then be defined as MCP clients, and all tools can be utilised.
 - They can also be integrated with Microsoft AI Foundry, and the agents can be managed from the AI portal.
 
 # Day 25 - 12/04/2026
