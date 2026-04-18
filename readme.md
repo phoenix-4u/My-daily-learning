@@ -1,5 +1,5 @@
 # Day 30 - 17/04/2026
-## Microsoft Afent Framework - Workflow
+## Microsoft Agent Framework - Workflow
 - The whole agent integration can be orchestrated by the workflow components of the agent framework.
 - Executors and handlers are sort of langgraph nodes that carry out different tasks in a workflow. These themselves can house agents.
 - Edges are what connect the executors to build the graph workflow
