@@ -1,3 +1,16 @@
+# Day 31 - 18/04/2026
+## Monitoring Agents in Production
+- In production, the system might need to scale up to a multi-agent system. This means all agentic interaction needs to be tracked.
+- The agents in production might need to subsequently scale to multi-modality, thereby requiring new methods for monitoring.
+- In production, agents can improve based on the feedback, which is curated in real-time, making agent behaviour unpredictable.
+- These changes might introduce new failure modes, higher complexity while calling new tools via MCP servers, or if the agentic patterns need to be changed
+- The same evals that are used in Dev can be carried over to monitor system performance. Some new evals might be necessary based on production usage.
+- Use  LLM-as-a-judge, code-based evals, and human annotation to judge system performance.
+- These can be useful for CI/CD deployments as they can point out flaws related to a new enhancement (model change, code change, etc.)
+- Maintain the golden dataset, augment it with new production scenarios and run the evals in the dev env before shipping changes to production
+- An example of this
+<img width="1884" height="879" alt="image" src="https://github.com/user-attachments/assets/a927123e-ca9b-416a-bc38-9e01ae8be592" />
+
 # Day 30 - 17/04/2026
 ## Microsoft Agent Framework - Workflow
 - The whole agent integration can be orchestrated by the workflow components of the agent framework.
