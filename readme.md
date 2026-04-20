@@ -1,3 +1,12 @@
+# Day 32 - 19/04/2026
+## Maximum Likelihood Estimate
+- MLE is a way to estimate an unknown parameter based on observed data points.
+- The precondition is that we should know what kind of distribution we are drawing the data from.
+- Based on the assumption that the samples in the distribution are identically and independently drawn, the MLE takes the form of a product of probabilities of the individual data points.
+- Then the job is to maximise the parameter that we are interested in (In a head-tail problem, the parameter is the probability of getting heads, in a Gaussian distribution, it is the mean and variance)
+- Maximising the likelihood is the same as maximising the log likelihood, as log is a monotonically increasing function. This is done so that handling the sum of items is easier than handling the product of items.
+- The final step is to take the derivative of the log likelihood function and set it to 0 to get the maximum point.
+
 # Day 31 - 18/04/2026
 ## Monitoring Agents in Production
 - In production, the system might need to scale up to a multi-agent system. This means all agentic interaction needs to be tracked.
