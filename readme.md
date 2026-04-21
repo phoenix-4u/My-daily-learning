@@ -1,3 +1,12 @@
+# Day 33 - 20/04/2026
+## Bayes theorem for posterior distribution
+- While MLE is good for estimating Parameters based on a given data, it does not incorporate any prior belief
+- Bayes Theorem provides a posterior distribution where the theta is the variable given the distribution D
+- It is given by <img width="753" height="125" alt="image" src="https://github.com/user-attachments/assets/557d6292-3080-4717-a16f-8b6c04fdd392" />
+- Often the denominator is not considered as it is not dependent on theta, and hence it is proportionally computed against the Likelihood and the prior
+- Prior and likelihood 
+
+
 # Day 32 - 19/04/2026
 ## Maximum Likelihood Estimate
 - MLE is a way to estimate an unknown parameter based on observed data points.
