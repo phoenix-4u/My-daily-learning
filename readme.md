@@ -1,3 +1,13 @@
+# Day 34 - 21/04/2026
+## Relational tables vs a knowledge graph
+- Relational tables are great for storing structured data, but fall short when there are questions connecting back to the same entity via a relationship
+- <img width="1252" height="620" alt="Screenshot 2026-04-21 at 11 45 09 PM" src="https://github.com/user-attachments/assets/b574b96f-23fe-4d02-8a93-6565afaf7a2b" />
+- Knowledge graphs are a much nicer way to represent such a messy situation
+- <img width="1247" height="610" alt="Screenshot 2026-04-21 at 11 47 00 PM" src="https://github.com/user-attachments/assets/605b5dda-0f08-4400-bd6b-4e26c05eb796" />
+- The query Language of a knowledge graph is called Cypher
+- Since it's very close to natural language, it's easy for LLMs to understand.
+- Knowledge graphs are good for both structured and unstructured data.
+
 # Day 33 - 20/04/2026
 ## Bayes theorem for posterior distribution
 - While MLE is good for estimating Parameters based on a given data, it does not incorporate any prior belief
