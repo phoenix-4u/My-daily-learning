@@ -1,3 +1,14 @@
+# Day 35 - 22/04/2026
+## Mixture of Experts
+- A mixture of experts model is when you have multiple blocks of feedforward layers and only some of them are activated at a time
+- In the input block of a transformer, there is an attention block and a feedforward block that any token has to pass through for next word prediction
+- In the case of MoE, these feedforward blocks are duplicated for various kinds of next-word prediction.
+- To choose experts, a router will be activated.
+- When a new token comes, the router maps the top k feedforward blocks and ignores the rest.
+- That way, only a few billion parameters from the expert are activated at any time.
+- <img width="620" height="537" alt="Screenshot 2026-04-22 at 11 53 36 PM" src="https://github.com/user-attachments/assets/cded58aa-e0f9-4490-a3a8-b07b623b95d2" />
+
+
 # Day 34 - 21/04/2026
 ## Relational tables vs a knowledge graph
 - Relational tables are great for storing structured data, but fall short when there are questions connecting back to the same entity via a relationship
