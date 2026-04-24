@@ -1,6 +1,15 @@
+# Day 36 - 23/04/2026
+## Mixture of Experts
+- An agent is a control flow operator that repeats in a loop until the condition for the loop is met.
+- It has an LLM that is guided by the prompt, keeps track of the user conversation and decides on what action to take based on the available tools
+- There is a switch that performs action and a memory that is shared by the LLM and all tools
+- Below are the pros and cons of a single agent system
+- <img width="999" height="488" alt="image" src="https://github.com/user-attachments/assets/f2d79635-96ff-4ee0-99b2-8f78c1531210" />
+
+
 # Day 35 - 22/04/2026
 ## Mixture of Experts
-- A mixture of experts model is when you have multiple blocks of feedforward layers and only some of them are activated at a time
+- A mixture of experts model is when you have multiple blocks of feedforward layers, and only some of them are activated at a time
 - In the input block of a transformer, there is an attention block and a feedforward block that any token has to pass through for next word prediction
 - In the case of MoE, these feedforward blocks are duplicated for various kinds of next-word prediction.
 - To choose experts, a router will be activated.
