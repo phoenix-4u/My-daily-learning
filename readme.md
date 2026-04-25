@@ -1,3 +1,10 @@
+# Day 36 - 24/04/2026
+## Pytorch utility
+- Before PyTorch, a simple addition of 2 numbers required 5 lines of code
+- This is because early frameworks depended on a static computation graph that compiled the code before runs, resulting in it being static and not changeable during runtime
+- This structure also made it impossible to debug the code line by line, and errors were cryptic rather than pointing to a specific code problem
+- Pytorch solved all of these issues.
+
 # Day 36 - 23/04/2026
 ## Mixture of Experts
 - An agent is a control flow operator that repeats in a loop until the condition for the loop is met.
