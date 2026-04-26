@@ -1,3 +1,12 @@
+# Day 37 - 25/04/2026
+## Single Neuron
+- A single Neuron is initialised randomly.
+- Then, its weight and bias terms are adjusted based on the activation function
+- If the number of features increases, then the weight matrix also keeps on increasing.
+- Finally, based on differentiation, the weights and bias are adjusted.
+- <img width="1893" height="800" alt="image" src="https://github.com/user-attachments/assets/e4e17007-8212-478d-b1a8-a0e22b21a23d" />
+- <img width="1782" height="876" alt="image" src="https://github.com/user-attachments/assets/c886aa0d-b67d-43ca-9988-5d84fdf8553d" />
+
 # Day 36 - 24/04/2026
 ## Pytorch utility
 - Before PyTorch, a simple addition of 2 numbers required 5 lines of code
@@ -9,8 +18,8 @@
 ## Mixture of Experts
 - An agent is a control flow operator that repeats in a loop until the condition for the loop is met.
 - It has an LLM that is guided by the prompt, keeps track of the user conversation and decides on what action to take based on the available tools
-- There is a switch that performs action and a memory that is shared by the LLM and all tools
-- Below are the pros and cons of a single agent system
+- There is a switch that performs an action and a memory that is shared by the LLM and all tools
+- Below are the pros and cons of a single-agent system
 - <img width="999" height="488" alt="image" src="https://github.com/user-attachments/assets/f2d79635-96ff-4ee0-99b2-8f78c1531210" />
 
 
