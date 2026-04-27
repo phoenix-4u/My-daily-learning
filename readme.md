@@ -2,29 +2,29 @@
 ## Caching strategy
 - Caching is a strategy to store the most frequently accessed data in a place that can be served the quickest.
 - There are 4 places that a cache can be placed
-  1. External Caching - The Cache in this case is stored outside the server as a dedicated server like Redis. It suffers from network hops, but if there are multiple application servers, all can get help from having a single cache
-  2. In-Process / Internal Caching - This Caching strategy utilises the app server's own memory to store the cache. This is the fastest, but if there are multiple servers, each server would need to store its own copy of the same cache.
-  3. Content Delivery Network - This is mostly used for files, images and video when they have to be distributed across the world. This provides low latency.
-  4. Client-side caching - In the form of browser cookies and app memory, to deliver similar information quickly
-- There are 4 types of cache Architectures:
-  1. Cache aside - Most common and most used, in this strategy, the application server first searches the data in the cache and if there is a cache miss goes and searches the data in the DB and stores a copy in the cache
-  2. Write through Caching - The logic is to first write to the DB and then sync with the database. Extremely hard to do this in practice for distributed databases.
-  3. Write Behind Caching - In this case, the write is to the cache and the read is from the same cache, while the database is updated in batches asynchronously. This strategy risks data loss if the cache server crashes.
-  4. Read through caching - In this case, if there is a cache miss, then the cache server itself fetches the data from the DB without going back to the app server. The downside is that there needs to be special logic implemented at the Cache server to be able to implement this strategy
+  1. **External Caching** - The Cache in this case is stored outside the server as a dedicated server like Redis. It suffers from network hops, but if there are multiple application servers, all can get help from having a single cache
+  2. **In-Process / Internal Caching** - This Caching strategy utilises the app server's own memory to store the cache. This is the fastest, but if there are multiple servers, each server would need to store its own copy of the same cache.
+  3. **Content Delivery Network** - This is mostly used for files, images and video when they have to be distributed across the world. This provides low latency.
+  4. **Client-side caching** - In the form of browser cookies and app memory, to deliver similar information quickly
+- There are 4 types of **cache Architectures**:
+  1. **Cache aside** - Most common and most used, in this strategy, the application server first searches the data in the cache and if there is a cache miss goes and searches the data in the DB and stores a copy in the cache
+  2. **Write through Caching** - The logic is to first write to the DB and then sync with the database. Extremely hard to do this in practice for distributed databases.
+  3. **Write Behind Caching** - In this case, the write is to the cache and the read is from the same cache, while the database is updated in batches asynchronously. This strategy risks data loss if the cache server crashes.
+  4. **Read through caching** - In this case, if there is a cache miss, then the cache server itself fetches the data from the DB without going back to the app server. The downside is that there needs to be special logic implemented at the Cache server to be able to implement this strategy
 - There are 4 types of Cache eviction policies:
-  1. Least recently used - Generally, the default
-  2. Least frequently used - prioritises frequency of access over recency. Useful in scenarios where access patterns are highly skewed
-  3. FIFO - Simple and the most ineffective
-  4. Time to live - Great for data that can go stale, like API responses
+  1. **Least recently used** - Generally, the default
+  2. **Least frequently used** - prioritises frequency of access over recency. Useful in scenarios where access patterns are highly skewed
+  3. **FIFO** - Simple and the most ineffective
+  4. **Time to live** - Great for data that can go stale, like API responses
 - Common Caching Issues:
-  1. Cache stampede - If a very high-frequency cache item is out of cache because of TTL, thousands of transactions can hit the DB at the same time, causing the DB to crash. Mitigated by either implementing a first transaction fetch cache, rest wait policy or refreshing the high-frequency cache item proactively before its TTL expires
-  2. Cache consistency - Since writes are to the DB and reads are from the cache, the users can read the old cache even though new information (like profile picture) has been updated in the DB. This can be mitigated either by waiting out the TTL or by implementing an invalidate cache on write policy, whereby a new cache has to be read when there is a corresponding write.
-  3. Hot Keys - If a particular cache item is used many times more times than other items, then it can cause failure due to load. This can be mitigated by sharding that item to multiple cache nodes or by implementing the internal caching mechanism in each app server.
+  1. **Cache stampede** - If a very high-frequency cache item is out of cache because of TTL, thousands of transactions can hit the DB at the same time, causing the DB to crash. Mitigated by either implementing a first transaction fetch cache, rest wait policy or refreshing the high-frequency cache item proactively before its TTL expires
+  2. **Cache consistency** - Since writes are to the DB and reads are from the cache, the users can read the old cache even though new information (like profile picture) has been updated in the DB. This can be mitigated either by waiting out the TTL or by implementing an invalidate cache on write policy, whereby a new cache has to be read when there is a corresponding write.
+  3. **Hot Keys** - If a particular cache item is used many times more times than other items, then it can cause failure due to load. This can be mitigated by sharding that item to multiple cache nodes or by implementing the internal caching mechanism in each app server.
 - What are the uses ofses of caching
-  1. Read heavy workloads
-  2. Expensive queries
-  3. High CPU utilisation of the database
-  4. Low latency requirements.
+  1. **Read heavy workloads**
+  2. **Expensive queries**
+  3. **High CPU utilisation of the database**
+  4. **Low latency requirements**.
 
 # Day 37 - 25/04/2026
 ## Single Neuron
