@@ -1,4 +1,4 @@
-# Day 38 - 26/04/2026
+# Day 39 - 27/04/2026
 ## Sharding strategy
 - Sharding is the strategy to partition the database into multiple groups to increase scalability
 - Sharding can be done based on a shard key. Good strategy for choosing the key is below
@@ -9,7 +9,13 @@
   2. Hash-based with consistent hashing:- the partition key is hashed based on the number of shards. Very easy to add a new shard with a consistent Has-ing technique. Put Hashes in a cycle. Default sharding technique.
   3. Directory-based sharding:- Uses a directory to map the shard. Good for Celebrity shards, but includes one extra hop, decreasing performance
 - Challenges
-  1. Celebrity Shards
+  1. Celebrity Shards/Hotspots: One shard is hot for a particular reason: Can be handled either by directory sharding or by a compound shard key
+  2. Cross-Shard operation: A query hitting multiple shards. Can be mitigated to an extent by adding a cache or by duplicating frequently used data across shards (The second approach is bad as this introduces a writing operation)
+  3. Consistency:- Atomic operation might be a challenge as an operation across multiple shards. This can be mitigated by attaching a compensating operation (saga pattern) to the first transaction. So if the second transaction fails, the first transaction is undone.
+  - 140 TB, 50K writes per second etc., needs to be sharded
+  - Below are the cases when sharding is necessary
+  - <img width="567" height="338" alt="image" src="https://github.com/user-attachments/assets/134f5b43-44a6-4d48-b458-f530c7e57cd1" />
+
 
 # Day 38 - 26/04/2026
 ## Caching strategy
