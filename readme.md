@@ -1,4 +1,17 @@
 # Day 38 - 26/04/2026
+## Sharding strategy
+- Sharding is the strategy to partition the database into multiple groups to increase scalability
+- Sharding can be done based on a shard key. Good strategy for choosing the key is below
+- <img width="581" height="330" alt="image" src="https://github.com/user-attachments/assets/fb6ba2b6-efd4-47a4-8e97-642e20fa0aba" />
+- Here, cardinality means keys that can split the data into many groups. A contrary example includes any Boolean flag, as it will only split in 2 groups
+- Data distribution strategy
+  1. Range-based sharding - Divides the shard into a fixed range. Downside includes recency, i.e., all new user activities will hit the latest shard, and other shards will not be utilized that much
+  2. Hash-based with consistent hashing:- the partition key is hashed based on the number of shards. Very easy to add a new shard with a consistent Has-ing technique. Put Hashes in a cycle. Default sharding technique.
+  3. Directory-based sharding:- Uses a directory to map the shard. Good for Celebrity shards, but includes one extra hop, decreasing performance
+- Challenges
+  1. Celebrity Shards
+
+# Day 38 - 26/04/2026
 ## Caching strategy
 - Caching is a strategy to store the most frequently accessed data in a place that can be served the quickest.
 - There are 4 places that a cache can be placed
