@@ -1,3 +1,13 @@
+# Day 40 - 28/04/2026
+## Six stages of ML pipeline
+<img width="975" height="314" alt="image" src="https://github.com/user-attachments/assets/cc5ec6ec-910c-40f1-8283-ba32628033f8" />
+- Data Ingestion: Collecting data to be fed into the model. The data can be of any shape or form
+- Data preparation: Preparing the data for the model training. This is the most time-consuming aspect of any ML pipeline and determines whether an ML experience is successful or not
+- Model architecture: In this part, the best-fit model is determined based on the available data. Generally, EDA is performed in this stage. In the case of a neural network, factors such as the number of nodes, the number of hidden layers, etc., are decided
+- Model training: Once the model architecture is decided, model training starts. Things like hyperparameters, training batches, number of epochs, optimizer, etc., are decided
+- Model Evaluation: Once the model training is done, it is tested on unseen data to judge the model's accuracy. This is done with a cross-validation dataset or hold out data set
+- Model deployment. Once the model is evaluated to be of a certain Threshold accuracy, the model is deployed as a production pipeline.
+
 # Day 39 - 27/04/2026
 ## Sharding strategy
 - Sharding is the strategy to partition the database into multiple groups to increase scalability
@@ -12,7 +22,7 @@
   1. Celebrity Shards/Hotspots: One shard is hot for a particular reason: Can be handled either by directory sharding or by a compound shard key
   2. Cross-Shard operation: A query hitting multiple shards. Can be mitigated to an extent by adding a cache or by duplicating frequently used data across shards (The second approach is bad as this introduces a writing operation)
   3. Consistency:- Atomic operation might be a challenge as an operation across multiple shards. This can be mitigated by attaching a compensating operation (saga pattern) to the first transaction. So if the second transaction fails, the first transaction is undone.
-  - 140 TB, 50K writes per second etc., needs to be sharded
+  - 140 TB, 50K writes per second, etc., needs to be sharded
   - Below are the cases when sharding is necessary
   - <img width="567" height="338" alt="image" src="https://github.com/user-attachments/assets/134f5b43-44a6-4d48-b458-f530c7e57cd1" />
 
@@ -23,10 +33,10 @@
 - There are 4 places that a cache can be placed
   1. **External Caching** - The Cache in this case is stored outside the server as a dedicated server like Redis. It suffers from network hops, but if there are multiple application servers, all can get help from having a single cache
   2. **In-Process / Internal Caching** - This Caching strategy utilises the app server's own memory to store the cache. This is the fastest, but if there are multiple servers, each server would need to store its own copy of the same cache.
-  3. **Content Delivery Network** - This is mostly used for files, images and video when they have to be distributed across the world. This provides low latency.
+  3. **Content Delivery Network** - This is mostly used for files, images, and video when they have to be distributed across the world. This provides low latency.
   4. **Client-side caching** - In the form of browser cookies and app memory, to deliver similar information quickly
 - There are 4 types of **cache Architectures**:
-  1. **Cache aside** - Most common and most used, in this strategy, the application server first searches the data in the cache and if there is a cache miss goes and searches the data in the DB and stores a copy in the cache
+  1. **Cache aside** - Most common and most used, in this strategy, the application server first searches the data in the cache, and if there is a cache miss goes and searches the data in the DB and stores a copy in the cache
   2. **Write through Caching** - The logic is to first write to the DB and then sync with the database. Extremely hard to do this in practice for distributed databases.
   3. **Write Behind Caching** - In this case, the write is to the cache and the read is from the same cache, while the database is updated in batches asynchronously. This strategy risks data loss if the cache server crashes.
   4. **Read through caching** - In this case, if there is a cache miss, then the cache server itself fetches the data from the DB without going back to the app server. The downside is that there needs to be special logic implemented at the Cache server to be able to implement this strategy
@@ -36,7 +46,7 @@
   3. **FIFO** - Simple and the most ineffective
   4. **Time to live** - Great for data that can go stale, like API responses
 - Common Caching Issues:
-  1. **Cache stampede** - If a very high-frequency cache item is out of cache because of TTL, thousands of transactions can hit the DB at the same time, causing the DB to crash. Mitigated by either implementing a first transaction fetch cache, rest wait policy or refreshing the high-frequency cache item proactively before its TTL expires
+  1. **Cache stampede** - If a very high-frequency cache item is out of cache because of TTL, thousands of transactions can hit the DB at the same time, causing the DB to crash. Mitigated by either implementing a first transaction fetch cache, rest wait policy, or refreshing the high-frequency cache item proactively before its TTL expires
   2. **Cache consistency** - Since writes are to the DB and reads are from the cache, the users can read the old cache even though new information (like profile picture) has been updated in the DB. This can be mitigated either by waiting out the TTL or by implementing an invalidate cache on write policy, whereby a new cache has to be read when there is a corresponding write.
   3. **Hot Keys** - If a particular cache item is used many times more times than other items, then it can cause failure due to load. This can be mitigated by sharding that item to multiple cache nodes or by implementing the internal caching mechanism in each app server.
 - What are the uses ofses of caching
