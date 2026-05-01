@@ -1,3 +1,22 @@
+# Day 41 - 29/04/2026
+## Message Queues
+- A message queue is a link between a producer and a consumer. This temporarily holds messages/instructions that the producer sends and forgets, and consumers pull and process at their own pace.
+- Analogy is where waiters place the order on the rails for the chefs to pick up. Queues are only necessary when the process is not synchronous.
+- Properties of an MQ
+  1. It has to send an acknowledgement that it has processed a message. Until the ack is sent, the message sits in the queue, so that in the event of failure, the message can be processed by another worker.
+  2. This creates another issue of how the other worker knows that the message is being worked on by a worker in the first place. There are many ways to do it: by providing a time period for ack, by making the message invisible till ack is received, by having each partition block one consumer, etc.
+  3. There might be issues that, before sending an ack, the worker crashes, but the message has actually been processed. In that case, there are 3 ways to deal with it
+     a. At least once - Default strategy. The message will be delivered at least once, but the logic has to ensure that the transaction is idempotent so that there is no duplicate charge
+     b. At most once - that means the message will be deleted immediately after the consumption, so it might or might not be processed
+     c. Exactly once - this means that the message will definitely be delivered exactly one time. Extremely difficult to achieve in reality
+- When to use a queue
+  1. If the work is asynchronous
+  2. If there is a burst of traffic
+  3. If there is a mismatch between the load for the producer and the consumer
+  4. And if reliability is required, so that the queue can hold the messages even if the consumer is down.
+-How to handle high message throughput
+
+
 # Day 40 - 28/04/2026
 ## Six stages of ML pipeline
 <img width="975" height="314" alt="image" src="https://github.com/user-attachments/assets/cc5ec6ec-910c-40f1-8283-ba32628033f8" />
