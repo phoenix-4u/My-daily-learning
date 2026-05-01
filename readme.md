@@ -4,17 +4,26 @@
 - Analogy is where waiters place the order on the rails for the chefs to pick up. Queues are only necessary when the process is not synchronous.
 - Properties of an MQ
   1. It has to send an acknowledgement that it has processed a message. Until the ack is sent, the message sits in the queue, so that in the event of failure, the message can be processed by another worker.
-  2. This creates another issue of how the other worker knows that the message is being worked on by a worker in the first place. There are many ways to do it: by providing a time period for ack, by making the message invisible till ack is received, by having each partition block one consumer, etc.
+  2. This creates another issue of how the other worker knows that a worker is working on the message in the first place. There are many ways to do it: by providing a timeout for ack, by making the message invisible until ack is received, by having each partition block one consumer, etc.
   3. There might be issues that, before sending an ack, the worker crashes, but the message has actually been processed. In that case, there are 3 ways to deal with it
-     a. At least once - Default strategy. The message will be delivered at least once, but the logic has to ensure that the transaction is idempotent so that there is no duplicate charge
-     b. At most once - that means the message will be deleted immediately after the consumption, so it might or might not be processed
-     c. Exactly once - this means that the message will definitely be delivered exactly one time. Extremely difficult to achieve in reality
+     i. At least once - Default strategy. The message will be delivered at least once, but the logic has to ensure that the transaction is idempotent so that there is no duplicate charge
+     ii. At most once - that means the message will be deleted immediately after the consumption, so it might or might not be processed
+     iii. Exactly once - this means that the message will definitely be delivered exactly one time. Extremely difficult to achieve in reality
 - When to use a queue
   1. If the work is asynchronous
   2. If there is a burst of traffic
   3. If there is a mismatch between the load for the producer and the consumer
   4. And if reliability is required, so that the queue can hold the messages even if the consumer is down.
--How to handle high message throughput
+- How to handle high message throughput
+  1. Create queue partitions - This will ensure that all queues are getting loaded with messages
+  2. Create/scale up more consumers - This ensures that as partitions increase, there are more consumers to consume those messages
+  3. Consumers should not be more than the number of queue partitions, as more consumers will not have dedicated partitions to pull messages from
+  4. The partition key should be chosen based on high cardinality so that messages can be distributed across partitions, and at the same time, this key should also ensure ordering, i.e., if a $100 bill is deposited and a $50 bill is withdrawn, then the transaction should be executed in that order.
+- Challenges of a queue
+  1. If the producers produce more than consumers can consume, they can either scale the consumers up dynamically using a hyperscaler or provide system down messages using backpressure, or at least provide an alert for someone to take action.
+  2. Poison Message - If a message fails to process after multiple retries, then the message should be moved to a dead letter queue (exception queue) for an admin to later come and look at
+  3. If the queue itself goes down, then the best thing to do is to use a replica queue(persisted on disk with a configurable retention window), as such, provided by Kafka
+- Few examples of MQ - Kafka (the most used), Amazon SQS (simple and easy), RabbitMQ (sophisticated and complex processing)
 
 
 # Day 40 - 28/04/2026
