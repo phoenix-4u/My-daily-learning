@@ -4,15 +4,15 @@
 - To create features that an NN can consume in PyTorch, they are converted to tensors
 - Each tensor consists of a batch (outer bracket) and each batch consists of samples (inner bracket)
 - <img width="830" height="162" alt="image" src="https://github.com/user-attachments/assets/25c01e8c-369d-4998-aa16-83102e35757e" />
-- Then the model is defined and here the number of input and out put nodes are also provided
+- Then the model is defined, and here the number of input and output nodes is also provided
 - <img width="451" height="71" alt="image" src="https://github.com/user-attachments/assets/3daffde8-4ba1-49ff-9e57-a2fa657d9366" />
-- Then the los function and optimizer are defined
+- Then the loss function and optimizer are defined
 - <img width="578" height="81" alt="image" src="https://github.com/user-attachments/assets/f518dd00-4283-4ff7-97ad-2c346b62bc8a" />
-- Finally the entire training is done in a loop with multiple epochs
+- The entire training is done in a loop with multiple epochs
 - <img width="609" height="301" alt="image" src="https://github.com/user-attachments/assets/5e0fb109-3e2b-46fa-9ca6-f6a847afd203" />
-
-
-
+- An epoch is an entire pass of the given data once. Like this, multiple passes of the same data constitute multiple epochs
+- Finally, the trained model is used for inference. The no grad specifies that the model is being used for inference and no longer for training.
+- <img width="1009" height="133" alt="image" src="https://github.com/user-attachments/assets/3055562c-ced8-400d-875d-2f192c5ea86a" />
 
 
 # Day 41 - 29/04/2026
