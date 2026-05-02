@@ -1,3 +1,20 @@
+# Day 42 - 30/04/2026
+## Building a Neural network with pytorch
+- 3 essential components that have to be imported - torch for core functionality, torch.nn for building a neural network, and torch.optim for importing various optimizers
+- To create features that an NN can consume in PyTorch, they are converted to tensors
+- Each tensor consists of a batch (outer bracket) and each batch consists of samples (inner bracket)
+- <img width="830" height="162" alt="image" src="https://github.com/user-attachments/assets/25c01e8c-369d-4998-aa16-83102e35757e" />
+- Then the model is defined and here the number of input and out put nodes are also provided
+- <img width="451" height="71" alt="image" src="https://github.com/user-attachments/assets/3daffde8-4ba1-49ff-9e57-a2fa657d9366" />
+- Then the los function and optimizer are defined
+- <img width="578" height="81" alt="image" src="https://github.com/user-attachments/assets/f518dd00-4283-4ff7-97ad-2c346b62bc8a" />
+- Finally the entire training is done in a loop with multiple epochs
+- <img width="609" height="301" alt="image" src="https://github.com/user-attachments/assets/5e0fb109-3e2b-46fa-9ca6-f6a847afd203" />
+
+
+
+
+
 # Day 41 - 29/04/2026
 ## Message Queues
 - A message queue is a link between a producer and a consumer. This temporarily holds messages/instructions that the producer sends and forgets, and consumers pull and process at their own pace.
