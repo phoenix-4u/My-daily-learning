@@ -1,3 +1,15 @@
+# Day 43 - 01/05/2026
+## Activation Function
+- A linear function cannot model complex curved data patterns
+- Even after adding multiple neurons, it will still be a linear combination and cannot mimic nonlinear patterns
+- Activation functions help here as they convert a linear combination of each weight and bias to a nonlinear function
+- ReLU (Rectified Linear Unit) is the most common activation function, which is max(0, linear function).
+- Sigmoid, Leaky Relu, Tanh, etc., are common alternatives
+- Below is the way PyTorch implements this
+- <img width="921" height="441" alt="image" src="https://github.com/user-attachments/assets/3ef7647a-e51e-4dfd-9666-cd16a06aa570" />
+- This is similar to the way RBF kernels work. RBF works on the similarity of Gaussian functions to approximate the curve, the activation function does it by turning a linear function into a non-linear function, and then combines the outputs of each neuron to approximate a complex curve.
+- <img width="1097" height="630" alt="image" src="https://github.com/user-attachments/assets/06d337a2-23ce-4686-820f-cdbbf95ec5c7" />
+
 # Day 42 - 30/04/2026
 ## Building a Neural network with pytorch
 - 3 essential components that have to be imported - torch for core functionality, torch.nn for building a neural network, and torch.optim for importing various optimizers
@@ -13,7 +25,6 @@
 - An epoch is an entire pass of the given data once. Like this, multiple passes of the same data constitute multiple epochs
 - Finally, the trained model is used for inference. The no grad specifies that the model is being used for inference and no longer for training.
 - <img width="1009" height="133" alt="image" src="https://github.com/user-attachments/assets/3055562c-ced8-400d-875d-2f192c5ea86a" />
-
 
 # Day 41 - 29/04/2026
 ## Message Queues
@@ -41,7 +52,6 @@
   2. Poison Message - If a message fails to process after multiple retries, then the message should be moved to a dead letter queue (exception queue) for an admin to later come and look at
   3. If the queue itself goes down, then the best thing to do is to use a replica queue(persisted on disk with a configurable retention window), as such, provided by Kafka
 - Few examples of MQ - Kafka (the most used), Amazon SQS (simple and easy), RabbitMQ (sophisticated and complex processing)
-
 
 # Day 40 - 28/04/2026
 ## Six stages of ML pipeline
