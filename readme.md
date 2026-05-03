@@ -1,3 +1,17 @@
+# Day 44 - 02/05/2026
+## Tensor
+- Tensor.shape returns the tensor size. For example, a tensor.size(6,1) means there are 6 samples(rows) and 1 feature(column)
+- When building neural networks, such as ```model = nn.linear(1,3)```, passing the above tensor works because by default the 1st dimension of any tensor is expected to be the number of samples
+- PyTorch itself infers data types; however, the explicit dtype can be set using the dtype parameter.
+- PyTorch handles type promotion while mixing dtypes automatically
+- Tensors can be created from lists and numpy arrays. numpy and tensor share memory space, so changing one changes the other as well.
+- torch.zeros, torch.ones, torch.rand works similarly to numpy.
+- To convert a scalar to a tensor to add a dimension (there should be a minimum of 2 dimensions), the unsqueeze method can be used
+- Squeeze does the opposite, it reduces the dimension, when the dimension is 1
+- Slicing works in a similar way as it does in Python.
+- To convert tensors to Python, the item method can be used. It can work only on a tensor with exactly 1 element
+  
+
 # Day 43 - 01/05/2026
 ## Activation Function
 - A linear function cannot model complex curved data patterns
