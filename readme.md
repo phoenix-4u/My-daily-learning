@@ -1,3 +1,18 @@
+# Day 45 - 03/05/2026
+## System Design: Twitter
+- Start with the client, Web, and mobile apps
+- LoadBalancer: Keep it simple with round robin and the OSI layer 7, i.e., application
+- Load balancer routes the traffic to API gateways, which are responsible for executing the functional requirements
+- These services will primarily include
+  1. TWEET CRUD service: Create, edit, and delete tweets, likes, and retweets, as well as store metadata. Should have a high throughput. For this, the primary database would be a NoSQL database, as it scales very fast and there are no complex joins on tweets. Also, since tweets are more like a JSON structure, it is a good choice. The media should be stored in a blob storage and use a CDN for content delivery, and Redis should be used for read cache. We should add a rate limiter so that bots cannot flood the system.
+  2. Reply, retweet CRUD: Similar to Tweet CRUD, just indexed by tweetID for a snappier reply
+  3. Tweet Search: Reverse index on Tweet content, username, and hashtags. We can use Elastic Search as it has the capability of full-text search. Change Data Capture (CDC) will be used to update the Elastic Search index.
+  4. Timeline Service: We can use Fanout on the write strategy, as when every tweet is written, it will be put in a message queue. The MQ will then call the consumer worker, who will create the timeline cache for each follower of that tweet. For hot content (celebrity tweet), we will need to have a hybrid approach with Fanout on the read approach, where the content is only pulled when the user logs in.
+  5. Profile Service: User creation and deletion will be a SQL DB as the data is structured. For followers structuring, an agraph DB makes more sense, as it allows accurate relationships to be established.
+  6. Auth and Security: Authentication and authorization, data encryption via HTTPS, rate limiting for DDOS attack by limiting ip address related request and input validation both on client and server.
+  7. Monitoring:- Healthchecks via Prometheus and Grafana. ELK (Elastic search log stash in Kibana). Alert manager/ pager duty with Grafana
+  8. Load testing, automated testing with GHA pipelines, and backup and recovery.
+
 # Day 44 - 02/05/2026
 ## Tensor
 - Tensor.shape returns the tensor size. For example, a tensor.size(6,1) means there are 6 samples(rows) and 1 feature(column)
