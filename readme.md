@@ -1,3 +1,10 @@
+# Day 46 - 04/05/2026
+## Math behind tensors
+- Scalars are applied element-wise on a tensor. Hence, 2 * [[1],[2],[3]] becomes [[2],[4],[6]]
+- This is done by broadcasting a scalar to match the dimension of the tensor.
+- Broadcasting can also be applied to tensors where [[1],[2]] + [[2]] is automatically extended to [[1],[2]] + [[2],[2]] to give [[3],[4]]
+- Broadcasting also works on multi-dimensional tensor shapes of (1,2) + (2,1), which is first converted into (2,2) + (2,2) by repeating the values and then adding them
+
 # Day 45 - 03/05/2026
 ## System Design: Twitter
 - Start with the client, Web, and mobile apps
@@ -9,7 +16,7 @@
   3. Tweet Search: Reverse index on Tweet content, username, and hashtags. We can use Elastic Search as it has the capability of full-text search. Change Data Capture (CDC) will be used to update the Elastic Search index.
   4. Timeline Service: We can use Fanout on the write strategy, as when every tweet is written, it will be put in a message queue. The MQ will then call the consumer worker, who will create the timeline cache for each follower of that tweet. For hot content (celebrity tweet), we will need to have a hybrid approach with Fanout on the read approach, where the content is only pulled when the user logs in.
   5. Profile Service: User creation and deletion will be a SQL DB as the data is structured. For followers structuring, an agraph DB makes more sense, as it allows accurate relationships to be established.
-  6. Auth and Security: Authentication and authorization, data encryption via HTTPS, rate limiting for DDOS attack by limiting ip address related request and input validation both on client and server.
+  6. Auth and Security: Authentication and authorization, data encryption via HTTPS, rate limiting for DDOS attack by limiting IP address-related requests and input validation both on client and server.
   7. Monitoring:- Healthchecks via Prometheus and Grafana. ELK (Elastic search log stash in Kibana). Alert manager/ pager duty with Grafana
   8. Load testing, automated testing with GHA pipelines, and backup and recovery.
 
