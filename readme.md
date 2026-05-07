@@ -1,15 +1,14 @@
 # Day 47 - 05/05/2026
 ## Data Preprocessing in PyTorch
 - Pytorch has a standard way to handle data
-- If the data is numeric, generally the data is first transformed to a tensor, then is normalized
+- If the data is numeric, generally, the data is first transformed into a tensor, then it is normalized
 - <img width="1011" height="335" alt="image" src="https://github.com/user-attachments/assets/0b9f1725-b538-49a9-9793-4f103237531e" />
-- This is followd by the data load where the transformation is applied
+- This is followed by the data load, where the transformation is applied
 - <img width="1013" height="97" alt="image" src="https://github.com/user-attachments/assets/629cabdd-dd83-4abb-8c9f-7ad75a138097" />
-- Finally data loader is used on the dataset to complete preprocessing
+- Finally, the data loader is used on the dataset to complete preprocessing
 - <img width="1005" height="82" alt="image" src="https://github.com/user-attachments/assets/5008871b-4000-4684-a1e8-ce2dd6d05e4f" />
-
-
-
+- The entire pipeline looks something like this
+- <img width="1005" height="356" alt="image" src="https://github.com/user-attachments/assets/66cc941b-d37f-4098-b46e-c2d060a821c8" />
 
 # Day 46 - 04/05/2026
 ## Math behind tensors
