@@ -1,7 +1,25 @@
+# Day 48 - 06/05/2026
+## Model definition pipeline in PyTorch
+- Rather than defining a neural network model using sequential, the better practice is to use a class that inherits nn.Module
+- This class mandatorily defines 1 constructor and the forward method
+- The constructor calls super to inherit the tracking mechanism from the superclass and defines the layers
+- The forward method orchestrates the layers by combining them one after the other
+- The forward method does not need to be called explicitly; PyTorch calls it automatically
+- The training always follows a defined pattern of
+  1. Looping over the data in epochs
+  2. Setting the optimizer to zero grad.
+  3. Forward pass by calling the model with the epoch data.
+  4. Calculating the backward pass and backpropagation losses based on model output and the true label
+  5. Applying the back propagation losses
+  6. Taking the next step by calling optimizer.step()
+- For evaluation, model.eval() is setfollowed by torch.no_grad(), so that no further gradient is calculated.
+- Test data calculates the actual accuracy of the model
+- If the model needs to be retrained, the model needs to be put into training mode by calling model.train()
+
 # Day 47 - 05/05/2026
 ## Data Preprocessing in PyTorch
 - Pytorch has a standard way to handle data
-- If the data is numeric, generally, the data is first transformed into a tensor, then it is normalized
+- If the data is numeric, generally, the data is first transformed into a tensor, and then it is normalized
 - <img width="1011" height="335" alt="image" src="https://github.com/user-attachments/assets/0b9f1725-b538-49a9-9793-4f103237531e" />
 - This is followed by the data load, where the transformation is applied
 - <img width="1013" height="97" alt="image" src="https://github.com/user-attachments/assets/629cabdd-dd83-4abb-8c9f-7ad75a138097" />
