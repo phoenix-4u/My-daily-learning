@@ -1,3 +1,13 @@
+# Day 49 - 07/05/2026
+## Types of Loss
+- MSE Loss used for linear regression models
+- <img width="304" height="137" alt="image" src="https://github.com/user-attachments/assets/615527bb-9534-4add-ab5b-eb35b78ce3bf" />
+- Cross-Entropy Loss is a soft loss for Logistic Regression models
+- <img width="1014" height="327" alt="image" src="https://github.com/user-attachments/assets/cd1d7c9a-4f90-495d-bc1b-f1f3682d4f43" />
+- MSE and cross-entropy loss should not be used interchangeably
+- There are various types of loss functions as given below
+- <img width="1005" height="319" alt="image" src="https://github.com/user-attachments/assets/f8e13e0c-ec65-4aac-8377-ccfa081e21b3" />
+
 # Day 48 - 06/05/2026
 ## Model definition pipeline in PyTorch
 - Rather than defining a neural network model using sequential, the better practice is to use a class that inherits nn.Module
@@ -62,8 +72,7 @@
 - Squeeze does the opposite, it reduces the dimension, when the dimension is 1
 - Slicing works in a similar way as it does in Python.
 - To convert tensors to Python, the item method can be used. It can work only on a tensor with exactly 1 element
-  
-
+ 
 # Day 43 - 01/05/2026
 ## Activation Function
 - A linear function cannot model complex curved data patterns
