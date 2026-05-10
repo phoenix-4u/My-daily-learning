@@ -1,3 +1,11 @@
+# Day 50 - 08/05/2026
+## Optimizers and Gradients
+- `loss.backwards()` calculate the gradients, which is how much each weight should change to have a minimal loss.
+- Generally, SGD and Adam are used as optimizers
+- Learning rate defines the step size
+- The actual update is done by `optimizer.step()`.
+- `optimizer.zero_grad()` clears all gradient calculations at the start of each epoch
+
 # Day 49 - 07/05/2026
 ## Types of Loss
 - MSE Loss used for linear regression models
