@@ -1,3 +1,15 @@
+# Day 51 - 09/05/2026
+## Optimizers and Gradients
+- PyTorch by default uses CPU unless a GPU is specified.
+- The availability of CUDA or MPS can be tested with the code below
+- ```import torch
+print(torch.mps.is_available())```
+- Both the model weights and training data need to be shifted to the device
+- The method `.to(device)` is not inplace. Therefore, it always needs to be assigned to a variable
+- Batch size should be carefully considered so that we don't end up getting CUDA/MPS OOM errors.
+- The entire revised workflow looks like below
+- <img width="910" height="393" alt="Screenshot 2026-05-10 at 11 29 54 PM" src="https://github.com/user-attachments/assets/cc38c346-a29f-4200-9128-a49f148a7eef" />
+
 # Day 50 - 08/05/2026
 ## Optimizers and Gradients
 - `loss.backwards()` calculate the gradients, which is how much each weight should change to have a minimal loss.
