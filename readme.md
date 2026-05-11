@@ -2,8 +2,10 @@
 ## Optimizers and Gradients
 - PyTorch by default uses CPU unless a GPU is specified.
 - The availability of CUDA or MPS can be tested with the code below
-- ```import torch
-print(torch.mps.is_available())```
+- ```python
+  import torch
+  print(torch.mps.is_available())
+  ```
 - Both the model weights and training data need to be shifted to the device
 - The method `.to(device)` is not inplace. Therefore, it always needs to be assigned to a variable
 - Batch size should be carefully considered so that we don't end up getting CUDA/MPS OOM errors.
