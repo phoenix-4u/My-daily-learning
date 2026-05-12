@@ -1,7 +1,12 @@
 # Day 52 - 10/05/2026
-## MNIST classification using pytorch part 1
+## MNIST classification using PyTorch part 1
 - For vision models, PyTorch used the torchvision module
-- transforms from torchvision module is used to convert digits to tensors and normalize it 
+- Transforms from torchvision module is used to convert digits to tensors and normalize them using a defined mean and variance.
+- MNIST dataset loading is done using the torchvision module
+- Data is loaded with dataloader. The train set has shuffle set to true, but the test set is set to False.
+- Below is how we can define the classifier class. Flatten is used to convert the channel and pixel values to a flat array
+- <img width="516" height="427" alt="image" src="https://github.com/user-attachments/assets/8bcb7781-ee43-48c3-9be6-60b2cec990a1" />
+
 
 # Day 51 - 09/05/2026
 ## Optimizers and Gradients
@@ -14,7 +19,7 @@
 - Both the model weights and training data need to be shifted to the device
 - The method `.to(device)` is not inplace. Therefore, it always needs to be assigned to a variable
 - Batch size should be carefully considered so that we don't end up getting CUDA/MPS OOM errors.
-- The entire revised workflow looks like below
+- The entire revised workflow looks like this:
 - <img width="910" height="393" alt="Screenshot 2026-05-10 at 11 29 54 PM" src="https://github.com/user-attachments/assets/cc38c346-a29f-4200-9128-a49f148a7eef" />
 
 # Day 50 - 08/05/2026
