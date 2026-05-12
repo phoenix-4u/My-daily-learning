@@ -1,3 +1,8 @@
+# Day 52 - 10/05/2026
+## MNIST classification using pytorch part 1
+- For vision models, PyTorch used the torchvision module
+- transforms from torchvision module is used to convert digits to tensors and normalize it 
+
 # Day 51 - 09/05/2026
 ## Optimizers and Gradients
 - PyTorch by default uses CPU unless a GPU is specified.
