@@ -1,10 +1,11 @@
-# Day 52 - 10/05/2026
+# Day 53 - 11/05/2026
 ## MNIST classification using PyTorch part 2
 - Next, check the device to make sure the GPU is available
 - Initialize the model and move it to the device. Both the model and the data need to reside on the device
 - Define the loss, cross entropy, and optimizer as Adam
-- Run training loops for around 10 epochs, where you put the model in the training mode, load the data on the device, and clear any gradient get the output from the data and the calculate the loss and apply them on the gradient
-
+- Run training loops for around 10 epochs, where you put the model in the training mode, load the data on the device, clear any gradients, get the output from the data, calculate the loss, and apply the loss to the gradient
+- You can calculate the progress and see how the loss is decreasing, and the accuracy is increasing.
+-  Testing loop follows the same cycle with the test data, just the model is now set to eval, the loops are run with torch.no_grad and the accuracy is calculated on the unseen data.
 
 # Day 52 - 10/05/2026
 ## MNIST classification using PyTorch part 1
