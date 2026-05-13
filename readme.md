@@ -1,4 +1,12 @@
 # Day 52 - 10/05/2026
+## MNIST classification using PyTorch part 2
+- Next, check the device to make sure the GPU is available
+- Initialize the model and move it to the device. Both the model and the data need to reside on the device
+- Define the loss, cross entropy, and optimizer as Adam
+- Run training loops for around 10 epochs, where you put the model in the training mode, load the data on the device, and clear any gradient get the output from the data and the calculate the loss and apply them on the gradient
+
+
+# Day 52 - 10/05/2026
 ## MNIST classification using PyTorch part 1
 - For vision models, PyTorch used the torchvision module
 - Transforms from torchvision module is used to convert digits to tensors and normalize them using a defined mean and variance.
@@ -83,7 +91,7 @@
 - LoadBalancer: Keep it simple with round robin and the OSI layer 7, i.e., application
 - Load balancer routes the traffic to API gateways, which are responsible for executing the functional requirements
 - These services will primarily include
-  1. TWEET CRUD service: Create, edit, and delete tweets, likes, and retweets, as well as store metadata. Should have a high throughput. For this, the primary database would be a NoSQL database, as it scales very fast and there are no complex joins on tweets. Also, since tweets are more like a JSON structure, it is a good choice. The media should be stored in a blob storage and use a CDN for content delivery, and Redis should be used for read cache. We should add a rate limiter so that bots cannot flood the system.
+  1. TWEET CRUD service: Create, edit, and delete tweets, likes, and retweets, as well as store metadata. It should have a high throughput. For this, the primary database would be a NoSQL database, as it scales very fast, and there are no complex joins on tweets. Also, since tweets are more like a JSON structure, it is a good choice. The media should be stored in a blob storage and use a CDN for content delivery, and Redis should be used for read cache. We should add a rate limiter so that bots cannot flood the system.
   2. Reply, retweet CRUD: Similar to Tweet CRUD, just indexed by tweetID for a snappier reply
   3. Tweet Search: Reverse index on Tweet content, username, and hashtags. We can use Elastic Search as it has the capability of full-text search. Change Data Capture (CDC) will be used to update the Elastic Search index.
   4. Timeline Service: We can use Fanout on the write strategy, as when every tweet is written, it will be put in a message queue. The MQ will then call the consumer worker, who will create the timeline cache for each follower of that tweet. For hot content (celebrity tweet), we will need to have a hybrid approach with Fanout on the read approach, where the content is only pulled when the user logs in.
