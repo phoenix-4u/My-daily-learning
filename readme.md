@@ -1,4 +1,16 @@
 # Day 53 - 11/05/2026
+## How to build a custom dataset in Pytorch
+- Custom dataset classes inherit the Dataset superclass
+- It mandatorily has to implement 3 dunder methods: __init__, __len__, __getitem__
+- __init__ is used for lazy initialization, so that data is loaded when necessary.
+- This is just defined to provide the paths of where the data is available
+- <img width="1004" height="296" alt="image" src="https://github.com/user-attachments/assets/171db8ee-ac79-4189-b56f-102cc55d6dab" />
+- __len__ method just gets the length of all data samples in the dataset
+- <img width="1001" height="178" alt="image" src="https://github.com/user-attachments/assets/f201d0c0-fdb5-409f-ab6c-5b15e3599305" />
+- __getitem__ gets a specific data sample based on the index and returns it with the corresponding label
+- <img width="1015" height="443" alt="image" src="https://github.com/user-attachments/assets/86c3c893-e6d7-49f6-8618-4282326c6a1b" />
+
+# Day 53 - 11/05/2026
 ## MNIST classification using PyTorch part 2
 - Next, check the device to make sure the GPU is available
 - Initialize the model and move it to the device. Both the model and the data need to reside on the device
