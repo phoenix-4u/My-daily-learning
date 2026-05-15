@@ -1,3 +1,15 @@
+# Day 56 - 14/05/2026
+## Data Loader
+- After creating the dataset and the transform pipeline, dataloaders are used to serve the data in batches for training and validation
+- First, the train test validation split has to be created, and it is done using a PyTorch module called random_split
+- After this, the data loaders are used for loading the data in various batch sizes.
+- Generally, a small batch size of 32 epochs is preferred to avoid CUDA/MPS memory failure issues
+- If there are 10 batches required to load the entire data set once, and then there are 10 epochs (one pass of the full dataset), then in total there are 100 batches
+- The data loader completes the entire epoch. That means if the batch size is 32 and at last there are 4 samples left, the last batch will be of size 4
+- For train dataloaders, shuffle = true needs to be mandatorily set. For training and validation, it's optional as the model is then in an eval mode.
+- Loading of data should always be done in __init__ and never in __getitem__
+- <img width="981" height="600" alt="Screenshot 2026-05-15 at 12 42 25 AM" src="https://github.com/user-attachments/assets/8cdeb422-f9c6-4546-88c3-d276e9099362" />
+
 # Day 55 - 13/05/2026
 ## Transform Pipelines
 - After the data set class is created, we need a transformation pipeline to properly format the data
@@ -6,9 +18,8 @@
 - Crop center will then just get the center of the image, thereby creating a square image
 - To Tensor will transform the image to a Tensor
 - Normalize will scale the tensors between 0 and 1 and then center the value using mean and standard deviation
-- Ultimately, it can be added to the Dataset's __init__ method as self.transform
+- Ultimately, it can be added to the Dataset's __init__ method as self.transform and then used in the __getitem__ method to return the transformed image.
 - <img width="1097" height="346" alt="Screenshot 2026-05-15 at 12 02 17 AM" src="https://github.com/user-attachments/assets/a48e5547-a7e4-4f6a-93c3-0ba29479299c" />
-
 
 # Day 54 - 12/05/2026
 ## How to build a custom dataset in Pytorch
@@ -42,7 +53,7 @@
 
 
 # Day 51 - 09/05/2026
-## Optimizers and Gradients
+## Loading on Device
 - PyTorch by default uses CPU unless a GPU is specified.
 - The availability of CUDA or MPS can be tested with the code below
 - ```python
