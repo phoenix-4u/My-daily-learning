@@ -7,7 +7,8 @@
 - To Tensor will transform the image to a Tensor
 - Normalize will scale the tensors between 0 and 1 and then center the value using mean and standard deviation
 - Ultimately, it can be added to the Dataset's __init__ method as self.transform
-- <img width="910" height="393" alt="Screenshot 2026-05-10 at 11 29 54 PM" src="https://github.com/user-attachments/assets/b2c4a4a9-6095-4b11-8f50-79c5f8ff6838" />
+- <img width="1097" height="346" alt="Screenshot 2026-05-15 at 12 02 17 AM" src="https://github.com/user-attachments/assets/a48e5547-a7e4-4f6a-93c3-0ba29479299c" />
+
 
 # Day 54 - 12/05/2026
 ## How to build a custom dataset in Pytorch
