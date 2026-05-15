@@ -1,11 +1,13 @@
-# Day 55 - 12/05/2026
+# Day 55 - 13/05/2026
 ## Transform Pipelines
 - After the data set class is created, we need a transformation pipeline to properly format the data
 - The transforms module for image data formatting has various steps
 - It starts with the resize component, which resizes the image to the desired pixel value on the shorter side
 - Crop center will then just get the center of the image, thereby creating a square image
 - To Tensor will transform the image to a Tensor
-- 
+- Normalize will scale the tensors between 0 and 1 and then center the value using mean and standard deviation
+- Ultimately, it can be added to the Dataset's __init__ method as self.transform
+- <img width="910" height="393" alt="Screenshot 2026-05-10 at 11 29 54 PM" src="https://github.com/user-attachments/assets/b2c4a4a9-6095-4b11-8f50-79c5f8ff6838" />
 
 # Day 54 - 12/05/2026
 ## How to build a custom dataset in Pytorch
