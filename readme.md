@@ -1,4 +1,13 @@
-# Day 53 - 11/05/2026
+# Day 55 - 12/05/2026
+## Transform Pipelines
+- After the data set class is created, we need a transformation pipeline to properly format the data
+- The transforms module for image data formatting has various steps
+- It starts with the resize component, which resizes the image to the desired pixel value on the shorter side
+- Crop center will then just get the center of the image, thereby creating a square image
+- To Tensor will transform the image to a Tensor
+- 
+
+# Day 54 - 12/05/2026
 ## How to build a custom dataset in Pytorch
 - Custom dataset classes inherit the Dataset superclass
 - It mandatorily has to implement 3 dunder methods: __init__, __len__, __getitem__
