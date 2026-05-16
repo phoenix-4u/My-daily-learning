@@ -1,3 +1,13 @@
+# Day 57 - 15/05/2026
+## Pipeline Debugging
+- To make the transform pipeline more robust, Images can be augmented to enhance training
+- Augmentation can be flipping the image, rotating the image, or changing the color/condition of the image.
+- The only thing is to ensure that this is not overdone, as then the model will be trained on junk data
+- Catching errors and keeping track of them is another important part of a robust pipeline
+- Error tracking can be for image corruption, image size, image color, etc.
+- Monitoring the errors can help in identifying shuffling bugs (where all the images are not getting loaded because of buggy shuffling), Latency issues, and data imbalance ( 1/ set of images being loaded multiple times)
+
+
 # Day 56 - 14/05/2026
 ## Data Loader
 - After creating the dataset and the transform pipeline, dataloaders are used to serve the data in batches for training and validation
