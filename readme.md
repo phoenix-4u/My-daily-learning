@@ -1,3 +1,9 @@
+# Day 58 - 16/05/2026
+## CNN
+- From individual pixels its hard to recognize any patterns.
+- Filters in CNN help in identifying patterns in the image.
+- These filters are auto-detected by CNNs based on the sample images
+
 # Day 57 - 15/05/2026
 ## Pipeline Debugging
 - To make the transform pipeline more robust, Images can be augmented to enhance training
