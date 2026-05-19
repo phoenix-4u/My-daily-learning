@@ -1,6 +1,19 @@
+# Day 59 - 17/05/2026
+## CNN continued
+- In Pytorch, Conv NN is defined by the nn.conv2d module.
+- It takes a few inputs
+  1. in_channels, which is generally 3 based on RGB
+  2. out_channels defines how many filters we want the CNN to use
+  3. kernel_size defines the size of the filter matrix. A size of 3 means it's a 3*3 matrix filter, and can focus on the pixel and each of its 8 surrounding neighbouring pixels
+  4. Stride defines how the sliding window of the filter moves; a size of 1 means the filter is applied to each pixel
+  5. Padding is applied so that the sliding window for filters can scan the corner pixels as well. For example, a kernel size of 5 will mean the padding has to be 2. Gor kernel size of 3, padding is 1.
+  - <img width="1808" height="717" alt="image" src="https://github.com/user-attachments/assets/5bc38545-6d38-406b-80f2-a87fc4d4bbdf" />
+
+
+
 # Day 58 - 16/05/2026
 ## CNN
-- From individual pixels its hard to recognize any patterns.
+- From individual pixels, it's hard to recognize any patterns.
 - Filters in CNN help in identifying patterns in the image.
 - These filters are auto-detected by CNNs based on the sample images
 
