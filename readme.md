@@ -1,3 +1,10 @@
+# Day 60 - 18/05/2026
+## CNN continued
+- The init method for a CNN comprises a conv2d layer, followed by RELU and then by a maxPool2D layer
+- The MaxPool2D layer extracts the most important pixel information by applying a filter
+- The dimension of the fully connected layer at the end is the number of channels, followed by the reduced dimension of the original pixels because of max pooling
+- <img width="944" height="415" alt="image" src="https://github.com/user-attachments/assets/1404ac08-6215-4799-88b6-075e32ba23b9" />
+
 # Day 59 - 17/05/2026
 ## CNN continued
 - In Pytorch, Conv NN is defined by the nn.conv2d module.
@@ -8,8 +15,6 @@
   4. Stride defines how the sliding window of the filter moves; a size of 1 means the filter is applied to each pixel
   5. Padding is applied so that the sliding window for filters can scan the corner pixels as well. For example, a kernel size of 5 will mean the padding has to be 2. Gor kernel size of 3, padding is 1.
   - <img width="1808" height="717" alt="image" src="https://github.com/user-attachments/assets/5bc38545-6d38-406b-80f2-a87fc4d4bbdf" />
-
-
 
 # Day 58 - 16/05/2026
 ## CNN
