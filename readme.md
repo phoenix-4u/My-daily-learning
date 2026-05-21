@@ -1,3 +1,8 @@
+# Day 61 - 19/05/2026
+## CNN continued
+- Generally, classification models have multiple convolutional layers.
+- In the fully connected layer, we add a dropout layer so that the model cannot overfit. Randomly, it is set to 50% (percentage might vary) deactivation
+
 # Day 60 - 18/05/2026
 ## CNN continued
 - The init method for a CNN comprises a conv2d layer, followed by RELU and then by a maxPool2D layer
