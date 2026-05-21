@@ -1,11 +1,13 @@
 # Day 61 - 19/05/2026
 ## CNN continued
 - Generally, classification models have multiple convolutional layers.
-- In the fully connected layer, we add a dropout layer so that the model cannot overfit. Randomly, it is set to 50% (percentage might vary) deactivation
+- In the fully connected layer, we add a dropout layer so that the model cannot overfit. Randomly, it is set to 20% - 50% (percentage might vary) deactivation
+- Weight decay is added to the optimizer to avoid overfitting. They do it by adding a penalty to Large weights for any neuron-to-neuron connection, thereby smoothening the curve
+- <img width="1189" height="575" alt="Screenshot 2026-05-21 at 12 09 18 AM" src="https://github.com/user-attachments/assets/05c1e7fc-d902-4604-94d0-42a8d1c1350d" />
 
 # Day 60 - 18/05/2026
 ## CNN continued
-- The init method for a CNN comprises a conv2d layer, followed by RELU and then by a maxPool2D layer
+- The init method for a CNN comprises a conv2d layer, followed by RELU, and then by a maxPool2D layer
 - The MaxPool2D layer extracts the most important pixel information by applying a filter
 - The dimension of the fully connected layer at the end is the number of channels, followed by the reduced dimension of the original pixels because of max pooling
 - <img width="944" height="415" alt="image" src="https://github.com/user-attachments/assets/1404ac08-6215-4799-88b6-075e32ba23b9" />
