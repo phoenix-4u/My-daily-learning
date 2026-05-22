@@ -1,3 +1,8 @@
+# Day 62 - 20/05/2026
+## CNN continued
+- In the Sequential module, the computation graph is static, thereby not allowing the use of loops, ifs, etc.
+- The tradeoff to this is that the sequential neural networks are faster.
+
 # Day 61 - 19/05/2026
 ## CNN continued
 - Generally, classification models have multiple convolutional layers.
