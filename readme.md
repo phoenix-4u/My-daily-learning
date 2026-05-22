@@ -2,12 +2,13 @@
 ## CNN continued
 - In the Sequential module, the computation graph is static, thereby not allowing the use of loops, ifs, etc.
 - The tradeoff to this is that the sequential neural networks are faster.
+- Use nn.module, instead of nn.sequential
 
 # Day 61 - 19/05/2026
 ## CNN continued
 - Generally, classification models have multiple convolutional layers.
 - In the fully connected layer, we add a dropout layer so that the model cannot overfit. Randomly, it is set to 20% - 50% (percentage might vary) deactivation
-- Weight decay is added to the optimizer to avoid overfitting. They do it by adding a penalty to Large weights for any neuron-to-neuron connection, thereby smoothening the curve
+- Weight decay is added to the optimiser to avoid overfitting. They do it by adding a penalty to Large weights for any neuron-to-neuron connection, thereby smoothening the curve
 - <img width="1189" height="575" alt="Screenshot 2026-05-21 at 12 09 18 AM" src="https://github.com/user-attachments/assets/05c1e7fc-d902-4604-94d0-42a8d1c1350d" />
 
 # Day 60 - 18/05/2026
