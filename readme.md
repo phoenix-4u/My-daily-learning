@@ -1,3 +1,9 @@
+# Day 63 - 21/05/2026
+## Modularisation and refactoring
+- The ideal scenario, both the approaches (nn.module and nn.sequential) together
+- Instead of repeating the same blocks over and over again in the forward method, group them in a sequential module and then just use those blocks in the forward method
+- Instead of defining the convolution, relu, maxpool block, we can define a class encompassing these 3 modules and then define only the class in the init module.
+
 # Day 62 - 20/05/2026
 ## CNN continued
 - In the Sequential module, the computation graph is static, thereby not allowing the use of loops, ifs, etc.
