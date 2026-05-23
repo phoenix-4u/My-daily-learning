@@ -2,7 +2,8 @@
 ## Modularisation and refactoring
 - The ideal scenario, both the approaches (nn.module and nn.sequential) together
 - Instead of repeating the same blocks over and over again in the forward method, group them in a sequential module and then just use those blocks in the forward method
-- Instead of defining the convolution, relu, maxpool block, we can define a class encompassing these 3 modules and then define only the class in the init module.
+- Instead of defining the convolution, relu, and maxpool block, we can define a class encompassing these 3 modules and then define only the class in the init module.
+- <img width="922" height="294" alt="image" src="https://github.com/user-attachments/assets/1a49d5e3-0236-4200-8f07-72147760c023" />
 
 # Day 62 - 20/05/2026
 ## CNN continued
