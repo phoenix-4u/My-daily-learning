@@ -1,3 +1,16 @@
+# Day 64 - 22/05/2026
+## Model inspecting and debugging
+- Basic model parameters can be just printed using print(model)
+- <img width="1008" height="389" alt="image" src="https://github.com/user-attachments/assets/a3f8b84e-6082-40eb-a799-c814baf6fb6a" />
+- model.param.shape prints the parameters of each layer
+- <img width="388" height="345" alt="image" src="https://github.com/user-attachments/assets/fe8f4d11-181e-4cc5-8434-1c3fef322305" />
+- numel provides the total parameter list
+- <img width="828" height="270" alt="image" src="https://github.com/user-attachments/assets/a7e49772-75d9-43c3-90b1-fd7717f8bbd4" />
+- named parameter provides the name and parameter shape for that layer
+- <img width="524" height="382" alt="image" src="https://github.com/user-attachments/assets/dc9b1d1e-0fab-4c9d-97d2-1349b3aad65c" />
+- named children provides just the first-level children, whereas module provides the entire hierarchy
+- <img width="995" height="215" alt="image" src="https://github.com/user-attachments/assets/e21feb93-6b88-445c-a583-72890fa81886" />
+
 # Day 63 - 21/05/2026
 ## Modularisation and refactoring
 - The ideal scenario, both the approaches (nn.module and nn.sequential) together
