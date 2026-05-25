@@ -1,3 +1,12 @@
+# Day 65 - 23/05/2026
+## Model inspecting and debugging
+- Accuracy is not a good ML metric when there is an imbalanced data set
+- Precision measures cases where false positives have more impact (falsely detecting disease and then performing expensive treatment.
+- Its formula = `TP/(TP + FP)`
+- Recall measures the impact of false negative cases (not being able to detect cancer when he has cancer might mean that the patient might die)
+- Its formula is = `TP/(TP+FN)`
+- A better metric is the F1 score = 2* 
+
 # Day 64 - 22/05/2026
 ## Model inspecting and debugging
 - Basic model parameters can be just printed using print(model)
