@@ -1,5 +1,5 @@
 # Day 65 - 23/05/2026
-## Model inspecting and debugging
+## Evaluation Metrics
 - Accuracy is not a good ML metric when there is an imbalanced data set
 - Precision measures cases where false positives have more impact (falsely detecting disease and then performing expensive treatment.
 - Its formula = `TP/(TP + FP)`
