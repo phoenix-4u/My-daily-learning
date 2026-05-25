@@ -5,7 +5,7 @@
 - Its formula = `TP/(TP + FP)`
 - Recall measures the impact of false negative cases (not being able to detect cancer when he has cancer might mean that the patient might die)
 - Its formula is = `TP/(TP+FN)`
-- A better metric is the F1 score = 2* 
+- A better metric is the F1 score =`2* ((Precesion*Recall)/(Precision+Recall))`
 
 # Day 64 - 22/05/2026
 ## Model inspecting and debugging
