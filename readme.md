@@ -1,3 +1,11 @@
+# Day 66 - 24/05/2026
+## Optimization
+- Optimization in ML means either maximizing or minimizing hyperparameters
+- Maximizing hyperparameters includes precision, recall, accuracy, and F1 score
+- Minimizing hyperparameters includes log loss, mean-squared errors, training time, etc.
+- Models can be externally improved by improving the quality of the sample dataset, with more data, and having better feature representation
+- Models can be internally improved 
+
 # Day 65 - 23/05/2026
 ## Evaluation Metrics
 - Accuracy is not a good ML metric when there is an imbalanced data set
