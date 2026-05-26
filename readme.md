@@ -4,7 +4,7 @@
 - Maximizing hyperparameters includes precision, recall, accuracy, and F1 score
 - Minimizing hyperparameters includes log loss, mean-squared errors, training time, etc.
 - Models can be externally improved by improving the quality of the sample dataset, with more data, and having better feature representation
-- Models can be internally improved 
+- Models can be internally improved by tweaking the number of layers, dropouts, and batch sizes
 
 # Day 65 - 23/05/2026
 ## Evaluation Metrics
