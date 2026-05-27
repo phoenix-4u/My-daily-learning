@@ -1,3 +1,16 @@
+# Day 67 - 25/05/2026
+## Learning rate scheduler
+- Learning rate schedulers are used to dynamically adjust the learning rate.
+- It's done so that the model learns faster during initial epochs and then gradually updates in smaller iterations to improve accuracy and reach global minima
+- There are 3 types of LR schedulers available in PyTorch
+- Step LR reduces the LR in a fixed epoch interval by a fixed amount
+- <img width="1579" height="243" alt="image" src="https://github.com/user-attachments/assets/e37aeca3-c56b-4c5c-bf1a-4d58241e25b8" />
+- Reduce LR on Plateau dynamically decides when to reduce the learning rate if the epochs do not improve accuracy
+- The monitoring in this case is done on a metric like validation accuracy
+- <img width="1520" height="279" alt="image" src="https://github.com/user-attachments/assets/56282046-d02e-4d16-88b6-522ab1c40850" />
+- Cosine Annealing LR reduces the learning rate smoothly following a cosine curve, with the number of epochs and the minimum learning rate being the hyperparameters
+- <img width="1369" height="269" alt="image" src="https://github.com/user-attachments/assets/c2dbf9da-07f1-424f-bd5c-be90d9f8cc2c" />
+
 # Day 66 - 24/05/2026
 ## Optimization
 - Optimization in ML means either maximizing or minimizing hyperparameters
