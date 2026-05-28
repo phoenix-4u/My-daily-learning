@@ -12,8 +12,10 @@
   1. By weight decay (L2 regularisation)
      <img width="1247" height="121" alt="image" src="https://github.com/user-attachments/assets/d4f97671-fc42-4645-8e2b-2cd8bd8c6520" />
   2. By dropouts
-  3. By early stopping
-  4. by batch normalisation 
+     <img width="557" height="58" alt="image" src="https://github.com/user-attachments/assets/a3b2b98c-9397-4852-a5bb-f7b2e67044e1" />
+  4. By early stopping
+  5. by batch normalisation
+     <img width="925" height="65" alt="image" src="https://github.com/user-attachments/assets/0ccc3259-6ea9-43b9-b7e9-4d5a293fbe0c" />
 
 # Day 67 - 25/05/2026
 ## Learning rate scheduler
