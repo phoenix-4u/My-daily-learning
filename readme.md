@@ -6,8 +6,14 @@
   3. Activation functions (Relu/Softmax, etc.)
 - Training
   1. Learning rate + scheduler (see below)
-  2. Optimizer (Gradient Descent/RMS prop/ Adaptive momentum - ADAM, etc.)
-  3. Batch Size - A larger batch size means faster learning but requires more memory and runs the risk of overshooting the minima, whereas a smaller batch size batch size is slower but memory efficient and finds the minima
+  2. Optimiser (Gradient Descent/RMS prop/ Adaptive momentum - ADAM, etc.)
+  3. Batch Size - A larger batch size means faster learning but requires more memory and runs the risk of overshooting the minima, whereas a smaller batch size is slower but memory efficient and finds the minima
+- Regularization
+  1. By weight decay (L2 regularisation)
+     <img width="1247" height="121" alt="image" src="https://github.com/user-attachments/assets/d4f97671-fc42-4645-8e2b-2cd8bd8c6520" />
+  2. By dropouts
+  3. By early stopping
+  4. by batch normalisation 
 
 # Day 67 - 25/05/2026
 ## Learning rate scheduler
@@ -24,9 +30,9 @@
 
 # Day 66 - 24/05/2026
 ## Optimization
-- Optimization in ML means either maximizing or minimizing hyperparameters
-- Maximizing hyperparameters includes precision, recall, accuracy, and F1 score
-- Minimizing hyperparameters includes log loss, mean-squared errors, training time, etc.
+- Optimisation in ML means either maximising or minimising hyperparameters
+- Maximising hyperparameters includes precision, recall, accuracy, and F1 score
+- Minimising hyperparameters includes log loss, mean-squared errors, training time, etc.
 - Models can be externally improved by improving the quality of the sample dataset, with more data, and having better feature representation
 - Models can be internally improved by tweaking the number of layers, dropouts, and batch sizes
 
