@@ -1,3 +1,14 @@
+# Day 68 - 26/05/2026
+## Hyperparameter tuning
+- Architectural
+  1. Number of Layers
+  2. Number of neurons per layer (including filters, paddings for CNNs)
+  3. Activation functions (Relu/Softmax, etc.)
+- Training
+  1. Learning rate + scheduler (see below)
+  2. Optimizer (Gradient Descent/RMS prop/ Adaptive momentum - ADAM, etc.)
+  3. Batch Size - A larger batch size means faster learning but requires more memory and runs the risk of overshooting the minima, whereas a smaller batch size batch size is slower but memory efficient and finds the minima
+
 # Day 67 - 25/05/2026
 ## Learning rate scheduler
 - Learning rate schedulers are used to dynamically adjust the learning rate.
