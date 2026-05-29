@@ -1,4 +1,4 @@
-# Day 69 - 27/05/2026
+# Day 70 - 27/05/2026
 ## Flexible architecture
 - A Flexible CNN architecture comprises of several components
 - <img width="1020" height="481" alt="image" src="https://github.com/user-attachments/assets/5eacb1e2-328d-4a79-a4a5-472b83d8a577" />
@@ -10,7 +10,7 @@
    <img width="806" height="330" alt="image" src="https://github.com/user-attachments/assets/3a549f47-8942-4e33-8fd8-1d87946b71d7" />
 4. The number of nodes in the fully connected layer (denoted by fc_size) is also a hyperparameter
 
-# Day 68 - 26/05/2026
+# Day 69 - 26/05/2026
 ## Hyperparameter tuning
 - Architectural
   1. Number of Layers
@@ -29,7 +29,7 @@
   5. by batch normalisation
      <img width="925" height="65" alt="image" src="https://github.com/user-attachments/assets/0ccc3259-6ea9-43b9-b7e9-4d5a293fbe0c" />
 
-# Day 67 - 25/05/2026
+# Day 68 - 25/05/2026
 ## Learning rate scheduler
 - Learning rate schedulers are used to dynamically adjust the learning rate.
 - It's done so that the model learns faster during initial epochs and then gradually updates in smaller iterations to improve accuracy and reach global minima
@@ -42,7 +42,7 @@
 - Cosine Annealing LR reduces the learning rate smoothly following a cosine curve, with the number of epochs and the minimum learning rate being the hyperparameters
 - <img width="1369" height="269" alt="image" src="https://github.com/user-attachments/assets/c2dbf9da-07f1-424f-bd5c-be90d9f8cc2c" />
 
-# Day 66 - 24/05/2026
+# Day 67 - 24/05/2026
 ## Optimization
 - Optimisation in ML means either maximising or minimising hyperparameters
 - Maximising hyperparameters includes precision, recall, accuracy, and F1 score
@@ -50,7 +50,7 @@
 - Models can be externally improved by improving the quality of the sample dataset, with more data, and having better feature representation
 - Models can be internally improved by tweaking the number of layers, dropouts, and batch sizes
 
-# Day 65 - 23/05/2026
+# Day 66 - 23/05/2026
 ## Evaluation Metrics
 - Accuracy is not a good ML metric when there is an imbalanced data set
 - Precision measures cases where false positives have more impact (falsely detecting disease and then performing expensive treatment.
@@ -59,7 +59,7 @@
 - Its formula is = `TP/(TP+FN)`
 - A better metric is the F1 score =`2* ((Precesion*Recall)/(Precision+Recall))`
 
-# Day 64 - 22/05/2026
+# Day 65 - 22/05/2026
 ## Model inspecting and debugging
 - Basic model parameters can be just printed using print(model)
 - <img width="1008" height="389" alt="image" src="https://github.com/user-attachments/assets/a3f8b84e-6082-40eb-a799-c814baf6fb6a" />
@@ -72,34 +72,34 @@
 - named children provides just the first-level children, whereas module provides the entire hierarchy
 - <img width="995" height="215" alt="image" src="https://github.com/user-attachments/assets/e21feb93-6b88-445c-a583-72890fa81886" />
 
-# Day 63 - 21/05/2026
+# Day 64 - 21/05/2026
 ## Modularisation and refactoring
 - The ideal scenario, both the approaches (nn.module and nn.sequential) together
 - Instead of repeating the same blocks over and over again in the forward method, group them in a sequential module and then just use those blocks in the forward method
 - Instead of defining the convolution, relu, and maxpool block, we can define a class encompassing these 3 modules and then define only the class in the init module.
 - <img width="922" height="294" alt="image" src="https://github.com/user-attachments/assets/1a49d5e3-0236-4200-8f07-72147760c023" />
 
-# Day 62 - 20/05/2026
+# Day 63 - 20/05/2026
 ## CNN continued
 - In the Sequential module, the computation graph is static, thereby not allowing the use of loops, ifs, etc.
 - The tradeoff to this is that the sequential neural networks are faster.
 - Use nn.module, instead of nn.sequential
 
-# Day 61 - 19/05/2026
+# Day 62 - 19/05/2026
 ## CNN continued
 - Generally, classification models have multiple convolutional layers.
 - In the fully connected layer, we add a dropout layer so that the model cannot overfit. Randomly, it is set to 20% - 50% (percentage might vary) deactivation
 - Weight decay is added to the optimiser to avoid overfitting. They do it by adding a penalty to Large weights for any neuron-to-neuron connection, thereby smoothening the curve
 - <img width="1189" height="575" alt="Screenshot 2026-05-21 at 12 09 18 AM" src="https://github.com/user-attachments/assets/05c1e7fc-d902-4604-94d0-42a8d1c1350d" />
 
-# Day 60 - 18/05/2026
+# Day 61 - 18/05/2026
 ## CNN continued
 - The init method for a CNN comprises a conv2d layer, followed by RELU, and then by a maxPool2D layer
 - The MaxPool2D layer extracts the most important pixel information by applying a filter
 - The dimension of the fully connected layer at the end is the number of channels, followed by the reduced dimension of the original pixels because of max pooling
 - <img width="944" height="415" alt="image" src="https://github.com/user-attachments/assets/1404ac08-6215-4799-88b6-075e32ba23b9" />
 
-# Day 59 - 17/05/2026
+# Day 60 - 17/05/2026
 ## CNN continued
 - In Pytorch, Conv NN is defined by the nn.conv2d module.
 - It takes a few inputs
@@ -110,13 +110,13 @@
   5. Padding is applied so that the sliding window for filters can scan the corner pixels as well. For example, a kernel size of 5 will mean the padding has to be 2. Gor kernel size of 3, padding is 1.
   - <img width="1808" height="717" alt="image" src="https://github.com/user-attachments/assets/5bc38545-6d38-406b-80f2-a87fc4d4bbdf" />
 
-# Day 58 - 16/05/2026
+# Day 59 - 16/05/2026
 ## CNN
 - From individual pixels, it's hard to recognize any patterns.
 - Filters in CNN help in identifying patterns in the image.
 - These filters are auto-detected by CNNs based on the sample images
 
-# Day 57 - 15/05/2026
+# Day 58 - 15/05/2026
 ## Pipeline Debugging
 - To make the transform pipeline more robust, Images can be augmented to enhance training
 - Augmentation can be flipping the image, rotating the image, or changing the color/condition of the image.
@@ -126,7 +126,7 @@
 - Monitoring the errors can help in identifying shuffling bugs (where all the images are not getting loaded because of buggy shuffling), Latency issues, and data imbalance ( 1/ set of images being loaded multiple times)
 
 
-# Day 56 - 14/05/2026
+# Day 57 - 14/05/2026
 ## Data Loader
 - After creating the dataset and the transform pipeline, dataloaders are used to serve the data in batches for training and validation
 - First, the train test validation split has to be created, and it is done using a PyTorch module called random_split
@@ -138,7 +138,7 @@
 - Loading of data should always be done in __init__ and never in __getitem__
 - <img width="981" height="600" alt="Screenshot 2026-05-15 at 12 42 25 AM" src="https://github.com/user-attachments/assets/8cdeb422-f9c6-4546-88c3-d276e9099362" />
 
-# Day 55 - 13/05/2026
+# Day 56 - 13/05/2026
 ## Transform Pipelines
 - After the data set class is created, we need a transformation pipeline to properly format the data
 - The transforms module for image data formatting has various steps
@@ -149,7 +149,7 @@
 - Ultimately, it can be added to the Dataset's __init__ method as self.transform and then used in the __getitem__ method to return the transformed image.
 - <img width="1097" height="346" alt="Screenshot 2026-05-15 at 12 02 17 AM" src="https://github.com/user-attachments/assets/a48e5547-a7e4-4f6a-93c3-0ba29479299c" />
 
-# Day 54 - 12/05/2026
+# Day 55 - 12/05/2026
 ## How to build a custom dataset in Pytorch
 - Custom dataset classes inherit the Dataset superclass
 - It mandatorily has to implement 3 dunder methods: __init__, __len__, __getitem__
@@ -161,7 +161,7 @@
 - __getitem__ gets a specific data sample based on the index and returns it with the corresponding label
 - <img width="1015" height="443" alt="image" src="https://github.com/user-attachments/assets/86c3c893-e6d7-49f6-8618-4282326c6a1b" />
 
-# Day 53 - 11/05/2026
+# Day 54 - 11/05/2026
 ## MNIST classification using PyTorch part 2
 - Next, check the device to make sure the GPU is available
 - Initialize the model and move it to the device. Both the model and the data need to reside on the device
@@ -170,7 +170,7 @@
 - You can calculate the progress and see how the loss is decreasing, and the accuracy is increasing.
 -  Testing loop follows the same cycle with the test data, just the model is now set to eval, the loops are run with torch.no_grad and the accuracy is calculated on the unseen data.
 
-# Day 52 - 10/05/2026
+# Day 53 - 10/05/2026
 ## MNIST classification using PyTorch part 1
 - For vision models, PyTorch used the torchvision module
 - Transforms from torchvision module is used to convert digits to tensors and normalize them using a defined mean and variance.
@@ -180,7 +180,7 @@
 - <img width="516" height="427" alt="image" src="https://github.com/user-attachments/assets/8bcb7781-ee43-48c3-9be6-60b2cec990a1" />
 
 
-# Day 51 - 09/05/2026
+# Day 52 - 09/05/2026
 ## Loading on Device
 - PyTorch by default uses CPU unless a GPU is specified.
 - The availability of CUDA or MPS can be tested with the code below
@@ -194,7 +194,7 @@
 - The entire revised workflow looks like this:
 - <img width="910" height="393" alt="Screenshot 2026-05-10 at 11 29 54 PM" src="https://github.com/user-attachments/assets/cc38c346-a29f-4200-9128-a49f148a7eef" />
 
-# Day 50 - 08/05/2026
+# Day 51 - 08/05/2026
 ## Optimizers and Gradients
 - `loss.backwards()` calculate the gradients, which is how much each weight should change to have a minimal loss.
 - Generally, SGD and Adam are used as optimizers
@@ -202,7 +202,7 @@
 - The actual update is done by `optimizer.step()`.
 - `optimizer.zero_grad()` clears all gradient calculations at the start of each epoch
 
-# Day 49 - 07/05/2026
+# Day 50 - 07/05/2026
 ## Types of Loss
 - MSE Loss used for linear regression models
 - <img width="304" height="137" alt="image" src="https://github.com/user-attachments/assets/615527bb-9534-4add-ab5b-eb35b78ce3bf" />
@@ -212,7 +212,7 @@
 - There are various types of loss functions as given below
 - <img width="1005" height="319" alt="image" src="https://github.com/user-attachments/assets/f8e13e0c-ec65-4aac-8377-ccfa081e21b3" />
 
-# Day 48 - 06/05/2026
+# Day 49 - 06/05/2026
 ## Model definition pipeline in PyTorch
 - Rather than defining a neural network model using sequential, the better practice is to use a class that inherits nn.Module
 - This class mandatorily defines 1 constructor and the forward method
@@ -230,7 +230,7 @@
 - Test data calculates the actual accuracy of the model
 - If the model needs to be retrained, the model needs to be put into training mode by calling model.train()
 
-# Day 47 - 05/05/2026
+# Day 48 - 05/05/2026
 ## Data Preprocessing in PyTorch
 - Pytorch has a standard way to handle data
 - If the data is numeric, generally, the data is first transformed into a tensor, and then it is normalized
@@ -242,14 +242,14 @@
 - The entire pipeline looks something like this
 - <img width="1005" height="356" alt="image" src="https://github.com/user-attachments/assets/66cc941b-d37f-4098-b46e-c2d060a821c8" />
 
-# Day 46 - 04/05/2026
+# Day 47 - 04/05/2026
 ## Math behind tensors
 - Scalars are applied element-wise on a tensor. Hence, 2 * [[1],[2],[3]] becomes [[2],[4],[6]]
 - This is done by broadcasting a scalar to match the dimension of the tensor.
 - Broadcasting can also be applied to tensors where [[1],[2]] + [[2]] is automatically extended to [[1],[2]] + [[2],[2]] to give [[3],[4]]
 - Broadcasting also works on multi-dimensional tensor shapes of (1,2) + (2,1), which is first converted into (2,2) + (2,2) by repeating the values and then adding them
 
-# Day 45 - 03/05/2026
+# Day 46 - 03/05/2026
 ## System Design: Twitter
 - Start with the client, Web, and mobile apps
 - LoadBalancer: Keep it simple with round robin and the OSI layer 7, i.e., application
@@ -264,7 +264,7 @@
   7. Monitoring:- Healthchecks via Prometheus and Grafana. ELK (Elastic search log stash in Kibana). Alert manager/ pager duty with Grafana
   8. Load testing, automated testing with GHA pipelines, and backup and recovery.
 
-# Day 44 - 02/05/2026
+# Day 45 - 02/05/2026
 ## Tensor
 - Tensor.shape returns the tensor size. For example, a tensor.size(6,1) means there are 6 samples(rows) and 1 feature(column)
 - When building neural networks, such as ```model = nn.linear(1,3)```, passing the above tensor works because by default the 1st dimension of any tensor is expected to be the number of samples
@@ -277,7 +277,7 @@
 - Slicing works in a similar way as it does in Python.
 - To convert tensors to Python, the item method can be used. It can work only on a tensor with exactly 1 element
  
-# Day 43 - 01/05/2026
+# Day 44 - 01/05/2026
 ## Activation Function
 - A linear function cannot model complex curved data patterns
 - Even after adding multiple neurons, it will still be a linear combination and cannot mimic nonlinear patterns
@@ -289,7 +289,7 @@
 - This is similar to the way RBF kernels work. RBF works on the similarity of Gaussian functions to approximate the curve, the activation function does it by turning a linear function into a non-linear function, and then combines the outputs of each neuron to approximate a complex curve.
 - <img width="1097" height="630" alt="image" src="https://github.com/user-attachments/assets/06d337a2-23ce-4686-820f-cdbbf95ec5c7" />
 
-# Day 42 - 30/04/2026
+# Day 43 - 30/04/2026
 ## Building a Neural network with pytorch
 - 3 essential components that have to be imported - torch for core functionality, torch.nn for building a neural network, and torch.optim for importing various optimizers
 - To create features that an NN can consume in PyTorch, they are converted to tensors
@@ -305,7 +305,7 @@
 - Finally, the trained model is used for inference. The no grad specifies that the model is being used for inference and no longer for training.
 - <img width="1009" height="133" alt="image" src="https://github.com/user-attachments/assets/3055562c-ced8-400d-875d-2f192c5ea86a" />
 
-# Day 41 - 29/04/2026
+# Day 42 - 29/04/2026
 ## Message Queues
 - A message queue is a link between a producer and a consumer. This temporarily holds messages/instructions that the producer sends and forgets, and consumers pull and process at their own pace.
 - Analogy is where waiters place the order on the rails for the chefs to pick up. Queues are only necessary when the process is not synchronous.
@@ -332,7 +332,7 @@
   3. If the queue itself goes down, then the best thing to do is to use a replica queue(persisted on disk with a configurable retention window), as such, provided by Kafka
 - Few examples of MQ - Kafka (the most used), Amazon SQS (simple and easy), RabbitMQ (sophisticated and complex processing)
 
-# Day 40 - 28/04/2026
+# Day 41 - 28/04/2026
 ## Six stages of ML pipeline
 <img width="975" height="314" alt="image" src="https://github.com/user-attachments/assets/cc5ec6ec-910c-40f1-8283-ba32628033f8" />
 - Data Ingestion: Collecting data to be fed into the model. The data can be of any shape or form
@@ -342,7 +342,7 @@
 - Model Evaluation: Once the model training is done, it is tested on unseen data to judge the model's accuracy. This is done with a cross-validation dataset or hold out data set
 - Model deployment. Once the model is evaluated to be of a certain Threshold accuracy, the model is deployed as a production pipeline.
 
-# Day 39 - 27/04/2026
+# Day 40 - 27/04/2026
 ## Sharding strategy
 - Sharding is the strategy to partition the database into multiple groups to increase scalability
 - Sharding can be done based on a shard key. Good strategy for choosing the key is below
@@ -361,7 +361,7 @@
   - <img width="567" height="338" alt="image" src="https://github.com/user-attachments/assets/134f5b43-44a6-4d48-b458-f530c7e57cd1" />
 
 
-# Day 38 - 26/04/2026
+# Day 39 - 26/04/2026
 ## Caching strategy
 - Caching is a strategy to store the most frequently accessed data in a place that can be served the quickest.
 - There are 4 places that a cache can be placed
@@ -389,7 +389,7 @@
   3. **High CPU utilisation of the database**
   4. **Low latency requirements**.
 
-# Day 37 - 25/04/2026
+# Day 38 - 25/04/2026
 ## Single Neuron
 - A single Neuron is initialised randomly.
 - Then, its weight and bias terms are adjusted based on the activation function
@@ -398,7 +398,7 @@
 - <img width="1893" height="800" alt="image" src="https://github.com/user-attachments/assets/e4e17007-8212-478d-b1a8-a0e22b21a23d" />
 - <img width="1782" height="876" alt="image" src="https://github.com/user-attachments/assets/c886aa0d-b67d-43ca-9988-5d84fdf8553d" />
 
-# Day 36 - 24/04/2026
+# Day 37 - 24/04/2026
 ## Pytorch utility
 - Before PyTorch, a simple addition of 2 numbers required 5 lines of code
 - This is because early frameworks depended on a static computation graph that compiled the code before runs, resulting in it being static and not changeable during runtime
