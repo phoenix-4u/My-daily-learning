@@ -1,3 +1,15 @@
+# Day 69 - 27/05/2026
+## Flexible architecture
+- A Flexible CNN architecture comprises of several components
+- <img width="1020" height="481" alt="image" src="https://github.com/user-attachments/assets/5eacb1e2-328d-4a79-a4a5-472b83d8a577" />
+1. The number of layers, the number of filters and the size of the kernel can be dynamically tuned
+   <img width="786" height="410" alt="image" src="https://github.com/user-attachments/assets/f0a34ba6-22e2-489f-8494-5d100a9fe693" />
+2. Since we do not know the flattened size for the first fully connected layer, we have to determine that in the first pass of the feed-forward method.
+   <img width="726" height="350" alt="image" src="https://github.com/user-attachments/assets/cc07b497-0f4d-4e3c-a627-2173927d2cc1" />
+3. The dropout rate can be assigned dynamically as a hyperparameter
+   <img width="806" height="330" alt="image" src="https://github.com/user-attachments/assets/3a549f47-8942-4e33-8fd8-1d87946b71d7" />
+4. The number of nodes in the fully connected layer (denoted by fc_size) is also a hyperparameter
+
 # Day 68 - 26/05/2026
 ## Hyperparameter tuning
 - Architectural
