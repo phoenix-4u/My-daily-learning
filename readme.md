@@ -1,6 +1,19 @@
+# Day 71 - 28/05/2026
+## Hyperparameter optimisation with Optuna
+- It is very difficult to search for the best combination of hyperparameters iteratively, as that is time-consuming
+- Random searches are faster but might not give an optimal solution.
+- The best approach is to follow a tree-based search to find the optimal hyperparameter set, which Optuna does
+- First, we have to define the search space with a combination of ranges for the hyperparameter search
+- <img width="895" height="271" alt="image" src="https://github.com/user-attachments/assets/aa8f0e5b-251c-48bd-be5f-6b605cac3d5f" />
+- Then we have to create and run the study
+- <img width="909" height="206" alt="image" src="https://github.com/user-attachments/assets/f780dea0-575b-4e37-a07f-2774079dcd4c" />
+- Finally, we will have to get the best parameter set
+- <img width="563" height="387" alt="image" src="https://github.com/user-attachments/assets/e9ec42b6-0590-4f22-87a6-2090a3f0fed9" />
+- Optuna also provides various visualisations which help to understand the best hyperparameter combination.
+
 # Day 70 - 27/05/2026
 ## Flexible architecture
-- A Flexible CNN architecture comprises of several components
+- A Flexible CNN architecture comprises several components
 - <img width="1020" height="481" alt="image" src="https://github.com/user-attachments/assets/5eacb1e2-328d-4a79-a4a5-472b83d8a577" />
 1. The number of layers, the number of filters and the size of the kernel can be dynamically tuned
    <img width="786" height="410" alt="image" src="https://github.com/user-attachments/assets/f0a34ba6-22e2-489f-8494-5d100a9fe693" />
