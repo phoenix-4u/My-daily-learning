@@ -1,3 +1,14 @@
+# Day 72 - 29/05/2026
+## Optimizing Model efficiency
+- Apart from accuracy (Or F1 scores), other constraints like model size and inference time also determine model applicability based on the situation
+- To get the model size, we have to sum up all elements within all parameters and multiply by the parameter size
+- <img width="917" height="443" alt="image" src="https://github.com/user-attachments/assets/d5fb9f97-0003-4b65-92c0-279e433abef1" />
+- For evaluating inference time, we have to run multiple iterations for time evaluations and then take the average
+- <img width="946" height="467" alt="image" src="https://github.com/user-attachments/assets/fc9fb989-d18c-48bc-9a74-253319ed6945" />
+- The model can then be selected based on either the constraints or on a weighted-based approach.
+- For a weighted-based approach, the metrics first need to be normalized, and then the weights should be calculated
+- <img width="1126" height="443" alt="image" src="https://github.com/user-attachments/assets/425fff69-47d3-4db1-b09f-44dbaacedd13" />
+
 # Day 71 - 28/05/2026
 ## Hyperparameter optimisation with Optuna
 - It is very difficult to search for the best combination of hyperparameters iteratively, as that is time-consuming
@@ -15,7 +26,7 @@
 ## Flexible architecture
 - A Flexible CNN architecture comprises several components
 - <img width="1020" height="481" alt="image" src="https://github.com/user-attachments/assets/5eacb1e2-328d-4a79-a4a5-472b83d8a577" />
-1. The number of layers, the number of filters and the size of the kernel can be dynamically tuned
+1. The number of layers, the number of filters, and the size of the kernel can be dynamically tuned
    <img width="786" height="410" alt="image" src="https://github.com/user-attachments/assets/f0a34ba6-22e2-489f-8494-5d100a9fe693" />
 2. Since we do not know the flattened size for the first fully connected layer, we have to determine that in the first pass of the feed-forward method.
    <img width="726" height="350" alt="image" src="https://github.com/user-attachments/assets/cc07b497-0f4d-4e3c-a627-2173927d2cc1" />
