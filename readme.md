@@ -1,3 +1,11 @@
+# Day 73 - 30/05/2026
+## Torch vision modules
+- There are 4 main fundamental modules within Torch Vision. These include:
+  1. Transforms - This contains predefined libraries for image processing (cropping/flipping/rotating/resizing, etc.)
+  2. Utility function - These contain various functions such as decode_images to tensor, save_images, make_grid, etc.
+  3. Datasets - These contain all predefined datasets commonly used for machine learning
+  4. Models - Predefined architecture or pretrained models such as ResNet50
+
 # Day 72 - 29/05/2026
 ## Optimizing Model efficiency
 - Apart from accuracy (Or F1 scores), other constraints like model size and inference time also determine model applicability based on the situation
