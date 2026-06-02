@@ -1,4 +1,19 @@
 # Day 73 - 30/05/2026
+## Torch vision modules - Transforms
+- ToTensor transforms a PIL image to a tensor
+- <img width="697" height="333" alt="image" src="https://github.com/user-attachments/assets/22dcf932-b897-494a-954b-730742f2f598" />
+- ToPILImage transforms an image back to a tensor
+- <img width="753" height="189" alt="image" src="https://github.com/user-attachments/assets/f1d6c28d-7159-4884-b46a-c6f37cf877ff" />
+- Resize scales down the original image to the resized image (2048*2048) to (50*50)
+- <img width="567" height="168" alt="image" src="https://github.com/user-attachments/assets/fb9b3c52-fcf4-473c-87df-95626ac2e5b7" />
+- Centercrop crops the center of the image to the desired pixel size.
+- <img width="683" height="159" alt="image" src="https://github.com/user-attachments/assets/13a4907c-571a-4272-a856-89fdbe8c8e5a" />
+- Transform normalizes an image to a 0 mean and unit standard deviation.
+- The values for the mean and standard deviation are derived from values of a much larger dataset.
+- <img width="573" height="71" alt="image" src="https://github.com/user-attachments/assets/b3dbf59a-d54e-4d49-bbb2-a1ccfa4bea61" />
+
+
+# Day 73 - 30/05/2026
 ## Torch vision modules
 - There are 4 main fundamental modules within Torch Vision. These include:
   1. Transforms - This contains predefined libraries for image processing (cropping/flipping/rotating/resizing, etc.)
