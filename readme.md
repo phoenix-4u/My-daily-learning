@@ -1,4 +1,4 @@
-# Day 73 - 30/05/2026
+# Day 74 - 31/05/2026
 ## Torch vision modules - Transforms
 - ToTensor transforms a PIL image to a tensor
 - <img width="697" height="333" alt="image" src="https://github.com/user-attachments/assets/22dcf932-b897-494a-954b-730742f2f598" />
