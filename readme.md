@@ -2,9 +2,10 @@
 ## Torch vision modules - Transforms pipelines and Augmentation
 - The compose method can be used to construct a custom pipeline.
 - Image augmentation is necessary for creating additional sample data points.
-- Random resized crop can randomply crop the image to a specified size
+- Random resized crop can randomly crop the image to a specified size
 - Random Horizontal flip can flip the image based on a probability
-- Color jitter can randomly increase brightenes and contrast  
+- Color jitter can randomly increase brightness and contrast
+- Custom classes (such as adding salt and pepper noise or adding Gaussian noise) can also be applied to the pipeline
 
 # Day 74 - 31/05/2026
 ## Torch vision modules - Transforms
