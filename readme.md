@@ -5,7 +5,7 @@
 - For custom data loading, the images need to be segregated into their own class folder.
 - If a validation test set is provided, then it also needs to be segregated.
 - <img width="802" height="302" alt="image" src="https://github.com/user-attachments/assets/b7065c0c-eae7-488c-a5e1-4c3c25c94385" />
-
+- The Fake dataset creates a random dataset based on channels and pixel configurations
 
 # Day 75 - 01/06/2026
 ## Torch vision modules - Transforms pipelines and Augmentation
