@@ -1,3 +1,9 @@
+# Day 76 - 03/06/2026
+## Torch distribution
+- We can define various distributions using torch.distribution module
+- These can include Bernoulli, normal, and so on.
+- It is important to remember that even when we specify 1000s of samples, the value of the mean and variance (in case of normal distribution) will never be equal to the specified value. It will always have slight randomness
+
 # Day 75 - 02/06/2026
 ## Torch vision dataset
 - We can load a prebuilt dataset like CIFAR10, MNIST, and so on
