@@ -1,8 +1,12 @@
-# Day 76 - 03/06/2026
+# Day 77 - 04/06/2026
 ## Torch vision models
 - Many default models are available in PyTorch that are pretrained
 - Various architectures like Google Net, ResNet 50, and so on
-- Pretrained models need to be put in the eval model and then input batches should be fed for prediction
+- Pretrained models need to be put in the eval model, and then input batches should be fed for prediction
+- The prediction is in terms of logits, which is converted to probability with softmax
+- then top_k is used to choose the top probabilistic classes.
+- The output classes can be either fetched from a JSON mapping or from class metadata
+- The class metadata can be used to load an empty model and then use the latest weights
 
 # Day 76 - 03/06/2026
 ## Torch distribution
