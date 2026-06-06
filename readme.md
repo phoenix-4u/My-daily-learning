@@ -1,4 +1,10 @@
 # Day 76 - 03/06/2026
+## Torch vision models
+- Many default models are available in PyTorch that are pretrained
+- Various architectures like Google Net, ResNet 50, and so on
+- Pretrained models need to be put in the eval model and then input batches should be fed for prediction
+
+# Day 76 - 03/06/2026
 ## Torch distribution
 - We can define various distributions using the `torch.distribution` module
 - These can include Bernoulli, normal, and so on.
