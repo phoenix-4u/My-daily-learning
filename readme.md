@@ -1,3 +1,15 @@
+# Day 78 - 05/06/2026
+## Statistics tidbits
+- Probability mass function (discrete) has to always sum to 1, but probability density function (continuous) can sum to more than one. The reason is that for discrete events, there is always a probability assigned at a point, but the probability of a point for a continuous function is very close to 0.
+- For discrete events, variance is finite, but for continuous events, the sum can be infinite.
+- There are 3 types of distributions
+  1. Data Generating - The real-world events that generate a distribution
+  2. Empirical - The data that we measure in the real world
+  3. Model - Based on the data collected, predict the data
+- Sampling example includes any real-world event, such as hitting a key while typing or clicking a picture to take a snapshot in time.
+- Samples are always Biased, while sampling is not. For example, if we repeat the process of a fair coin toss over and over again, the chance of getting exactly 50% for each experiment is 0
+- Labelling data is the process of associating a meaning with the data
+
 # Day 77 - 04/06/2026
 ## Torch vision models
 - Many default models are available in PyTorch that are pretrained
