@@ -1,4 +1,11 @@
-# Day 78 - 05/06/2026
+# Day 80 - 06/06/2026
+## Transfer Learning
+- To train deep neural networks, sometimes there is not enough data, and sometimes there are not enough resources.
+- In that case, we can either freeze the hidden layers and train only the output layers (to change the number of output classes) or we can finetune the existing block of hidden layers to further increase accuracy.
+- In torchvision, the last block can either be accessed via fc, or if it's the entire classification block, it is accessed via the index.
+- <img width="1207" height="598" alt="image" src="https://github.com/user-attachments/assets/314531e6-f6d4-4040-8922-abe2e4108ce3" />
+
+# Day 79 - 05/06/2026
 ## Statistics tidbits
 - Probability mass function (discrete) has to always sum to 1, but probability density function (continuous) can sum to more than one. The reason is that for discrete events, there is always a probability assigned at a point, but the probability of a point for a continuous function is very close to 0.
 - For discrete events, variance is finite, but for continuous events, the sum can be infinite.
@@ -10,7 +17,7 @@
 - Samples are always Biased, while sampling is not. For example, if we repeat the process of a fair coin toss over and over again, the chance of getting exactly 50% for each experiment is 0
 - Labelling data is the process of associating a meaning with the data
 
-# Day 77 - 04/06/2026
+# Day 78 - 04/06/2026
 ## Torch vision models
 - Many default models are available in PyTorch that are pretrained
 - Various architectures like Google Net, ResNet 50, and so on
@@ -20,13 +27,13 @@
 - The output classes can be either fetched from a JSON mapping or from class metadata
 - The class metadata can be used to load an empty model and then use the latest weights
 
-# Day 76 - 03/06/2026
+# Day 77 - 03/06/2026
 ## Torch distribution
 - We can define various distributions using the `torch.distribution` module
 - These can include Bernoulli, normal, and so on.
 - It is important to remember that even when we specify 1000s of samples, the value of the mean and variance (in case of normal distribution) will never be equal to the specified value. It will always have slight randomness
 
-# Day 75 - 02/06/2026
+# Day 76 - 02/06/2026
 ## Torch vision dataset
 - We can load a prebuilt dataset like CIFAR10, MNIST, and so on
 - The Loading mechanism differs from dataset to dataset
@@ -57,7 +64,6 @@
 - Transform normalizes an image to a 0 mean and unit standard deviation.
 - The values for the mean and standard deviation are derived from values of a much larger dataset.
 - <img width="573" height="71" alt="image" src="https://github.com/user-attachments/assets/b3dbf59a-d54e-4d49-bbb2-a1ccfa4bea61" />
-
 
 # Day 73 - 30/05/2026
 ## Torch vision modules
