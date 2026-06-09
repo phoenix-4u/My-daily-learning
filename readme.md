@@ -1,3 +1,8 @@
+# Day 81 - 07/06/2026
+## Torch vision visualization
+- For images, there are primarily 2 types of visualization, bounding boxes and segmentation mask
+- For bounding boxes, once the model predicts the object class, then 
+
 # Day 80 - 06/06/2026
 ## Transfer Learning
 - To train deep neural networks, sometimes there is not enough data, and sometimes there are not enough resources.
