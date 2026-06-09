@@ -1,7 +1,8 @@
 # Day 81 - 07/06/2026
 ## Torch vision visualization
-- For images, there are primarily 2 types of visualization, bounding boxes and segmentation mask
-- For bounding boxes, once the model predicts the object class, then 
+- For images, there are primarily 2 types of visualization: bounding boxes and segmentation masks
+- For bounding boxes, once the model predicts the object class, then using this utility, the boxes can be drawn against the target class items
+- For the segmentation mask, a similar process is followed, but here all pixel values for the entire object class are identified, and then that is used to overlay color on the images.
 
 # Day 80 - 06/06/2026
 ## Transfer Learning
