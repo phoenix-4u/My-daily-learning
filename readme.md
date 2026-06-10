@@ -1,8 +1,13 @@
 # Day 82 - 08/06/2026
 ## Tokenization
-- Tokenization can be of 3 types - Word, sub word and character
+- Tokenization can be of 3 types: Word, subword, and character
 - Character splitting makes keeping the context difficult if the order is not preserved
-- Word splitting is good to prserve the semantic meaning but 
+- Word splitting is good to preserve the semantic meaning, but it can explode if the vocab size is huge.
+- A subword lemma is a better approach to reduce the vocabulary size
+- To have a constant window, either padding or truncation is used.
+- To distinguish between word tokens and special tokens, an attention mask is used.
+- Bucketing is also used for smart context window management, where similar-length sequences are grouped together.
+- Smart truncation preserves important parts of a long text instead of cutting it off randomly.
 
 # Day 81 - 07/06/2026
 ## Torch vision visualization
