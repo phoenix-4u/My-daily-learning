@@ -1,3 +1,9 @@
+# Day 82 - 08/06/2026
+## Tokenization
+- Tokenization can be of 3 types - Word, sub word and character
+- Character splitting makes keeping the context difficult if the order is not preserved
+- Word splitting is good to prserve the semantic meaning but 
+
 # Day 81 - 07/06/2026
 ## Torch vision visualization
 - For images, there are primarily 2 types of visualization: bounding boxes and segmentation masks
