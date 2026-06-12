@@ -1,5 +1,9 @@
-# Day 83 - 09/06/2026
+# Day 84 - 10/06/2026
 ## Tokenization
+
+
+# Day 83 - 09/06/2026
+## Pre-trained Tokenization
 
 # Day 82 - 08/06/2026
 ## Tokenization
