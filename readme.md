@@ -1,6 +1,12 @@
-# Day 84 - 10/06/2026
-## Tokenization
+# Day 84 - 11/06/2026
+## Tensors
 
+# Day 84 - 10/06/2026
+## Tensors
+- Data sets can increase in dimensions like vectors, matrices, images(with channel dimensions), videos (with time dimension)
+- Tensors are the basic unit in PyTorch that represent these datasets as multidimensional arrays
+- It has 3 basic properties - shame, ndim, and dtype
+- Tensors provide an easy way to represent and manipulate data
 
 # Day 83 - 09/06/2026
 ## Pre-trained Tokenization
