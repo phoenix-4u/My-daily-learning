@@ -4,6 +4,12 @@
 
 # Day 83 - 09/06/2026
 ## Pre-trained Tokenization
+- Tokenizers are rarely trained from scratch
+- Tokenizers are sometimes specific to a model for which they are tokenizing
+- These generally convert the subword lemmas into indexes for the entire vocab.
+- A typical flow for a Bert tokenizer would look like this:
+- <img width="885" height="417" alt="image" src="https://github.com/user-attachments/assets/0a25192a-460b-4677-b14d-621405bc7b1a" />
+
 
 # Day 82 - 08/06/2026
 ## Tokenization
