@@ -1,8 +1,16 @@
+# Day 87 - 13/06/2026
+## Tensors
+
 # Day 86 - 12/06/2026
 ## Tensors
 
 # Day 85 - 11/06/2026
-## Tensors
+## Gradients
+- Deep networks can be viewed as a gigantic nested function - f(x) = f1(f2(x))..
+- When n-dimensional input maps to a scalar output, the partial derivative is an n-size row vector.
+- When a scalar maps to an m-dimensional output, the partial derivative is an m-sized column vector
+- When n-dimensional input maps to an m-dimensional output, then the partial derivative is an m*n Jacobian
+- Back propagation is essentially the chain rule computed in a specific way, where inner functions derivatives are first calculated, followed by outer functions derivatives
 
 # Day 84 - 10/06/2026
 ## Tensors
