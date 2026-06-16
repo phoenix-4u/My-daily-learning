@@ -5,7 +5,8 @@
 ## Tensors
 
 # Day 86 - 12/06/2026
-## Tensors
+## Linear regression
+- 
 
 # Day 85 - 11/06/2026
 ## Gradients
