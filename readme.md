@@ -6,8 +6,17 @@
 
 # Day 86 - 12/06/2026
 ## Linear regression
+- Linear regression is a linear transformation from n inputs to d outputs
+- It struggles to separate disjoint classes
+- Linear binary classification can take the same linear transformation, run through a binary sigmoid function
+- Multi-class classification can also be performed similarly by passing it through a softmax layer
+- softmax preserves the order. softmax maintains the relative ranking of the input values. If one score is larger than another before applying softmax, it will still be larger after applying softmax.
+- You can skip the softmax computation during prediction/inference and just use argmax directly on the raw scores (logits)
+- Never apply sigmoid and softmax within the neural network class definition
+- Multi-class classification has always fixed classes where the output has to be a particular class. There is no negative examples and classes are mutually exclusive
+- Multiple binary classification (i.e., running multiple classes through sigmoid rather than softmax) can result in multiple categories and might require negative examples during training.
+- It is used for multi-label tagging, such as in which locations is it going to rain tomorrow
 - 
-
 # Day 85 - 11/06/2026
 ## Gradients
 - Deep networks can be viewed as a gigantic nested function - f(x) = f1(f2(x))..
