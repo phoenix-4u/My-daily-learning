@@ -1,8 +1,25 @@
-# Day 88 - 14/06/2026
+# Day 89 - 15/06/2026
 ## Tensors
 
+# Day 88 - 14/06/2026
+## Loss Function using Tensors
+- Loss for a linear model can be calculated by mse_loss. It's defined in the functional module
+- <img width="532" height="35" alt="image" src="https://github.com/user-attachments/assets/f4bc80c2-e3a5-44f6-8193-b6e2fcaea86d" />
+- Loss for binary classification can be calculated from binary cross-entropy loss with logits. This is also defined in the functional module
+-<img width="925" height="179" alt="image" src="https://github.com/user-attachments/assets/9b3d366b-1e62-41af-b4ee-21852213253d" />
+- Loss for multi-class classifications needs to be done using cross-entropy loss. This is also defined in the functional module
+- <img width="740" height="212" alt="image" src="https://github.com/user-attachments/assets/e20f6f5b-7dde-4fea-a822-9d3ecff64fb3" />
+- For cross-entropy losses (binary or categorical), never put a sigmoid or softmax function in the loss definition. Sigmoid or softmax is already integrated with the loss function. Hence, only the linear model needs to be provided to the loss functions.
+- Doing otherwise might result in 0 on infinite within a log, which might crash the training pipeline
+
 # Day 87 - 13/06/2026
-## Tensors
+## Loss Function
+- Loss function has two parameters, theta, which are the model parameters, and the dataset on which the model is to be trained
+- Linear regression model works on L1, L2, or MSE losses
+- Binary classification works with binary cross-entropy loss and the sigmoid function
+- Multiclass classification works on categorical cross-entropy loss and softmax function
+- Expected Loss is the mean or expectation of all losses
+- The goal is to minimize the Loss function to find the optimal parameter using Gradient Descent
 
 # Day 86 - 12/06/2026
 ## Linear regression
