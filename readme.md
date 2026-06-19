@@ -6,7 +6,13 @@
 ## Tensors
 
 # Day 89 - 15/06/2026
-## Tensors
+## Optimization
+- The loss function is calculated over the entire dataset
+- The idea is to minimize loss so that we can find optimized parameters
+- Gradient Descent is an iterative method of updating the parameters with a negative gradient
+- The initialization is randomly done, generally using a Gaussian or a uniform distribution
+- Local minima are generally not a problem for deep learning algorithms, but large learning rates can create problem
+- The challenge is to compute complex negative gradients efficiently
 
 # Day 88 - 14/06/2026
 ## Loss Function using Tensors
