@@ -1,3 +1,10 @@
+
+# Day 91 - 17/06/2026
+## Tensors
+
+# Day 90 - 16/06/2026
+## Tensors
+
 # Day 89 - 15/06/2026
 ## Tensors
 
