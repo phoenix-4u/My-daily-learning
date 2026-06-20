@@ -1,9 +1,13 @@
+# Day 92 - 18/06/2026
+## Tensors
 
 # Day 91 - 17/06/2026
 ## Tensors
 
 # Day 90 - 16/06/2026
-## Tensors
+## Computational Graphs
+- Gradients for regular functions quickly get complicated as there are differentiations of many matrix operations
+- Computation graphs help to create a simpler workflow for gradient calculation
 
 # Day 89 - 15/06/2026
 ## Optimization
@@ -11,7 +15,7 @@
 - The idea is to minimize loss so that we can find optimized parameters
 - Gradient Descent is an iterative method of updating the parameters with a negative gradient
 - The initialization is randomly done, generally using a Gaussian or a uniform distribution
-- Local minima are generally not a problem for deep learning algorithms, but large learning rates can create problem
+- Local minima are generally not a problem for deep learning algorithms, but large learning rates can create a problem
 - The challenge is to compute complex negative gradients efficiently
 
 # Day 88 - 14/06/2026
@@ -43,7 +47,7 @@
 - softmax preserves the order. softmax maintains the relative ranking of the input values. If one score is larger than another before applying softmax, it will still be larger after applying softmax.
 - You can skip the softmax computation during prediction/inference and just use argmax directly on the raw scores (logits)
 - Never apply sigmoid and softmax within the neural network class definition
-- Multi-class classification has always fixed classes where the output has to be a particular class. There is no negative examples and classes are mutually exclusive
+- Multi-class classification has always fixed classes where the output has to be a particular class. There are no negative examples, and classes are mutually exclusive
 - Multiple binary classification (i.e., running multiple classes through sigmoid rather than softmax) can result in multiple categories and might require negative examples during training.
 - It is used for multi-label tagging, such as in which locations is it going to rain tomorrow
 - 
