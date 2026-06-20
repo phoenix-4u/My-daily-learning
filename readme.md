@@ -8,6 +8,14 @@
 ## Computational Graphs
 - Gradients for regular functions quickly get complicated as there are differentiations of many matrix operations
 - Computation graphs help to create a simpler workflow for gradient calculation
+- The forward pass is to create the computational graph
+- <img width="1143" height="53" alt="image" src="https://github.com/user-attachments/assets/b59bf696-b10a-42cd-8181-97577141768b" />
+- The backward pass is to calculate gradients from end to beginning
+- <img width="1216" height="607" alt="image" src="https://github.com/user-attachments/assets/3d4d4fab-542c-49e4-a421-a53d0b1ab9da" />
+- This is done so that the index function at the end, which is a vector, always makes it a vector and Jacobian (of individual functions) multiplication, thereby reducing the number of overall computational parameters
+- The backpropagation can be done only once, and one back propagation comutes gradient for all the parameters
+- In PyTorch, a `function.backward()` calculates gradient for all parameters where requires_grad is set to true.
+- The first gradient is always a vector in PyTorch
 
 # Day 89 - 15/06/2026
 ## Optimization
