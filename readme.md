@@ -1,8 +1,20 @@
+# Day 93 - 19/06/2026
+## Tensors
+
 # Day 92 - 18/06/2026
 ## Tensors
 
 # Day 91 - 17/06/2026
-## Tensors
+## Linear, Binary, and Multiclass Classification in PyTorch
+- Generally, the shape of train images is 4 dimensions - batch size, number of channels, image width, image height
+- `torch.stack` can be used to stack all the images in the dataset, and `torch.tensor` can be used to stack all the corresponding labels
+- Then we can define the model, which can be a linear model with nn.Linear(128*128*3, 1) and define the loss as MSELoss
+- We can then define the optimizer as MSE loss for linear, binary cross-entropy for binary logistic, and cross-entropy for multiclass classification. The inputs are primarily the model parameters and the learning rate
+- Then we run epochs and predict the label using the model, then define the loss function, set the optimizer to zero grad, run backwards, and then take a step for the  optimizer.
+- We might need to play around with the learning rate to ensure that the model does not explode
+- Finally, the accuracy of the model is tested on the test set.
+- For multiclass classification, the number of outputs is regressed to be the number of classifiable classes, like nn.Linear(128*128*3, 6)
+- Prediction of multiclass classification is always done using argmax over the softmax probabilities.
 
 # Day 90 - 16/06/2026
 ## Computational Graphs
@@ -13,9 +25,11 @@
 - The backward pass is to calculate gradients from end to beginning
 - <img width="1216" height="607" alt="image" src="https://github.com/user-attachments/assets/3d4d4fab-542c-49e4-a421-a53d0b1ab9da" />
 - This is done so that the index function at the end, which is a vector, always makes it a vector and Jacobian (of individual functions) multiplication, thereby reducing the number of overall computational parameters
-- The backpropagation can be done only once, and one back propagation comutes gradient for all the parameters
+- The backpropagation can be done only once, and one backpropagation computes the gradient for all the parameters. Since it collapses all parameters while calculating the final gradients, the active parameters drastically reduce during back propagation
 - In PyTorch, a `function.backward()` calculates gradient for all parameters where requires_grad is set to true.
 - The first gradient is always a vector in PyTorch
+- Setting `requires_grad` to true ensures that the computation graph is built and the gradient is calculated when backwards is called.
+- In each epoch, the `zero_grad` needs to be set so that gradients are not stacked upon each other.
 
 # Day 89 - 15/06/2026
 ## Optimization
