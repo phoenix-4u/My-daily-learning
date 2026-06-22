@@ -5,7 +5,14 @@
 ## Tensors
 
 # Day 92 - 18/06/2026
-## Tensors
+## Non Linearity
+- Linear models cannot classify an XOR function
+- If both black and white are classified as 1, then since grey is in between, it also needs to be classified as 1
+- Relu (max(x,0)) birngs the required noon linearity
+- With this ReLU in the mix, two functions classifying white and black separately can be added together with ReLU
+- Generally, these nonlinear functions do not have their own parameters and work on the linear parameter that they surround
+- Layers are generally defined as the number of sequential components ( ReLU or parallel layers are not calculated) in a neural network. By architecture, they are the largest computational unit that remains unchanged throughout different architectures.
+- The universal approximation theorem guarantees that a linear -> ReLU -> Linear model can approximate any arbitrary continuous function. In practice, it is very difficult to train this model
 
 # Day 91 - 17/06/2026
 ## Linear, Binary, and Multiclass Classification in PyTorch
