@@ -5,7 +5,16 @@
 ## Tensors
 
 # Day 93 - 19/06/2026
-## Tensors
+## Activation Functions
+- There are various Activation functions to choose from. Depending on the scenario, any of the models can be utilized
+- <img width="1298" height="620" alt="image" src="https://github.com/user-attachments/assets/a836ba49-a886-4eb9-99be-46cc925aecfe" />
+- The simplest 1 is Relu. It's max(x,0), so it has 0 gradient for negative output and 1 gradient for positive output. The only disadvantage is that if a function never produces a positive output, its gradient is always going to be 0
+- Leaky ReLU max(x, ax) can fix this by choosing a very small alpha. If alpha is learned, it's called parameterized ReLU. The disadvantage is that the negative gradient is never 0, and it takes time to find the correct alpha
+- ELU max (x, a*(e^x - 1)) uses exponential decay when the function output is negative. Here also, the alpha has to be tuned well, and it is computationally expensive
+- GeLU, as defined below, is used for SOTA deep NN models now. It has been empirically proven to work  the best on enterprise models. The downside is that it is more computationally expensive
+- <img width="644" height="326" alt="image" src="https://github.com/user-attachments/assets/ac1986a5-58cb-4eb6-aa7e-9d59623a7e79" />
+- Tanh and sigmoid functions should not be used as the gradient becomes 0 on both the negative and positive sides
+- Practical view is to start with ReLU and modify with Leaky ReLU, and only use GeLU for training SOTA models
 
 # Day 92 - 18/06/2026
 ## Non Linearity
