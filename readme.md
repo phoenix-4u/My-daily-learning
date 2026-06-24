@@ -1,8 +1,17 @@
+# Day 96 - 22/06/2026
+## Tensors
+
 # Day 95 - 21/06/2026
 ## Tensors
 
 # Day 94 - 20/06/2026
-## Tensors
+## Vanishing and Exploding gradient
+- For a deep Neural network, the weights are generally multiplied as we proceed down the network. So as the network grows, the weights overshadow the actual input x
+- <img width="1349" height="657" alt="image" src="https://github.com/user-attachments/assets/feaae1b4-5dc7-4a46-8eea-89fe314949e5" />
+- If the weights are initialized to be large, then they become larger and larger and tend to infinity when the network becomes large. This creates the problem of exploding activation and gradients
+- This can be addressed by reducing the learning rate and changing the initialization
+- If the weights are initialized to be small, then they become smaller and smaller and tend to 0 when the network becomes large. This creates the problem of vanishing activation and gradients
+- There is no real remedy for a normal NN, rather than tuning the learning rate, since it happens to all but the shallowest networks because of the random small weight initialization. The only remedy is to change the network architecture.
 
 # Day 93 - 19/06/2026
 ## Activation Functions
@@ -14,7 +23,7 @@
 - GeLU, as defined below, is used for SOTA deep NN models now. It has been empirically proven to work  the best on enterprise models. The downside is that it is more computationally expensive
 - <img width="644" height="326" alt="image" src="https://github.com/user-attachments/assets/ac1986a5-58cb-4eb6-aa7e-9d59623a7e79" />
 - Tanh and sigmoid functions should not be used as the gradient becomes 0 on both the negative and positive sides
-- Practical view is to start with ReLU and modify with Leaky ReLU, and only use GeLU for training SOTA models
+- The practical view is to start with ReLU and modify with Leaky ReLU, and only use GeLU for training SOTA models
 
 # Day 92 - 18/06/2026
 ## Non Linearity
