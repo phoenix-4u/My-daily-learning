@@ -5,7 +5,21 @@
 ## Tensors
 
 # Day 95 - 21/06/2026
-## Tensors
+## Normalization
+- Deep networks suffer from the problem of vanishing gradients
+- Normalization prevents this by normalizing activations and gradients, and normalize it with the mean and standard deviation
+- <img width="252" height="106" alt="image" src="https://github.com/user-attachments/assets/e7026ba1-fc05-47be-a029-5130826223ea" />
+- At test time, normalization uses the same mu and sigma that they used in training
+- Batch normalization normalizes all the input dimensions across all examples, keeping the channels constant
+- <img width="921" height="261" alt="image" src="https://github.com/user-attachments/assets/78bb890a-f3f9-42f7-804b-1340f9facabc" />
+- For Layer normalization, the normalization occurs for individual examples across all channels and is then averaged.
+- <img width="676" height="184" alt="image" src="https://github.com/user-attachments/assets/2397d2a4-cf5c-4e83-b8f6-871ebe0ea628" />
+- Group normalization, which is a special case of Layer norm, is even more selective, where it splits the channels within groups and then normalizes
+- <img width="689" height="179" alt="image" src="https://github.com/user-attachments/assets/4ee512aa-e96f-4a9c-b9ce-8401f2ce1681" />
+- We can add the normalization either right after a linear layer or right after an activation
+- We need to add scale and bias parameters when normalizing right after a linear layer and before an activation, because the activation will set half of the activations to zero, as the mean centered around 1 means equal positive and negative activations. Post activation does not have this problem, hence it is easy. But the first approach is empirically found to be better than the second approach
+- Normalization handles badly scaled weights and activations, and gradients cannot vanish as eigenvalues are close to 1
+- Even with just normalization, a Neural network can be trained to be around 20 layers deep.
 
 # Day 94 - 20/06/2026
 ## Vanishing and Exploding gradient
