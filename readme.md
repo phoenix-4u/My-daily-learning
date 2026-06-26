@@ -6,7 +6,16 @@
 
 # Day 96 - 22/06/2026
 ## Residual connections
-- With Normalization, networks can only be trained 20 layers deep. Above this, th
+- With Normalization, networks can only be trained 20 layers deep. Above this, the network stops to training and subsequently performs worse on validations as well
+- This is primarily because of the Random Gaussian initialization which has the effect of producing random values for weights after 20 -30 layers, so the network stops learning
+- Residual network short circuits this by adding the input to the output from multiple layers
+- <img width="1245" height="596" alt="image" src="https://github.com/user-attachments/assets/0c3faa1c-4111-4f38-8dd6-984f93fe216a" />
+- For this to work, the input and output should be of same size, so we cannot have tappered shape network. Output layer can be added separately
+- Gradients travel further and the randomness of gradients is not that much because the input always normalizes the output. So if some layers are dropped in between, the network still works
+- Theoritically the network becomes invertible and sometimes, the network can have 1 global minima
+- Cleanest way to integrate residual connection is as below
+- <img width="794" height="491" alt="image" src="https://github.com/user-attachments/assets/02b31547-ebea-48e3-bbc2-a9bb2925013f" />
+- <img width="663" height="412" alt="image" src="https://github.com/user-attachments/assets/d55bd2c8-c45a-4b3a-bcaa-fe023428416a" />
 
 # Day 95 - 21/06/2026
 ## Normalization
