@@ -1,8 +1,12 @@
+# Day 98 - 24/06/2026
+## Tensors
+
 # Day 97 - 23/06/2026
 ## Tensors
 
 # Day 96 - 22/06/2026
-## Tensors
+## Residual connections
+- With Normalization, networks can only be trained 20 layers deep. Above this, th
 
 # Day 95 - 21/06/2026
 ## Normalization
