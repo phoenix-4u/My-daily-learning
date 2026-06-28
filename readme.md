@@ -1,28 +1,34 @@
+# Day 100 - 26/06/2026
+## Convolutions
+
+# Day 99 - 25/06/2026
+## Convolutions
+
 # Day 98 - 24/06/2026
-## Tensors
+## Structure of convolutions
 
 # Day 97 - 23/06/2026
-## Tensors
+## Convolutions
 
 # Day 96 - 22/06/2026
 ## Residual connections
 - With Normalization, networks can only be trained 20 layers deep. Above this, the network stops to training and subsequently performs worse on validations as well
-- This is primarily because of the Random Gaussian initialization which has the effect of producing random values for weights after 20 -30 layers, so the network stops learning
+- This is primarily because of the Random Gaussian initialization, which has the effect of producing random values for weights after 20 -30 layers, so the network stops learning
 - Residual network short circuits this by adding the input to the output from multiple layers
 - <img width="1245" height="596" alt="image" src="https://github.com/user-attachments/assets/0c3faa1c-4111-4f38-8dd6-984f93fe216a" />
-- For this to work, the input and output should be of same size, so we cannot have tappered shape network. Output layer can be added separately
-- Gradients travel further and the randomness of gradients is not that much because the input always normalizes the output. So if some layers are dropped in between, the network still works
-- Theoritically the network becomes invertible and sometimes, the network can have 1 global minima
-- Cleanest way to integrate residual connection is as below
+- For this to work, the input and output should be of the same size, so we cannot have a tapered-shape network. The output layer can be added separately
+- Gradients travel further, and the randomness of gradients is not that much because the input always normalizes the output. So if some layers are dropped in between, the network still works
+- Theoretically, the network becomes invertible, and sometimes, the network can have 1 global minima
+- The cleanest way to integrate the residual connection is as follows
 - <img width="794" height="491" alt="image" src="https://github.com/user-attachments/assets/02b31547-ebea-48e3-bbc2-a9bb2925013f" />
 - <img width="663" height="412" alt="image" src="https://github.com/user-attachments/assets/d55bd2c8-c45a-4b3a-bcaa-fe023428416a" />
 
 # Day 95 - 21/06/2026
 ## Normalization
 - Deep networks suffer from the problem of vanishing gradients
-- Normalization prevents this by normalizing activations and gradients, and normalize it with the mean and standard deviation
+- Normalization prevents this by normalizing activations and gradients, and normalizing them with the mean and standard deviation
 - <img width="252" height="106" alt="image" src="https://github.com/user-attachments/assets/e7026ba1-fc05-47be-a029-5130826223ea" />
-- At test time, normalization uses the same mu and sigma that they used in training
+- At test time, normalization uses the same mu and sigma that were used in training
 - Batch normalization normalizes all the input dimensions across all examples, keeping the channels constant
 - <img width="921" height="261" alt="image" src="https://github.com/user-attachments/assets/78bb890a-f3f9-42f7-804b-1340f9facabc" />
 - For Layer normalization, the normalization occurs for individual examples across all channels and is then averaged.
@@ -30,33 +36,33 @@
 - Group normalization, which is a special case of Layer norm, is even more selective, where it splits the channels within groups and then normalizes
 - <img width="689" height="179" alt="image" src="https://github.com/user-attachments/assets/4ee512aa-e96f-4a9c-b9ce-8401f2ce1681" />
 - We can add the normalization either right after a linear layer or right after an activation
-- We need to add scale and bias parameters when normalizing right after a linear layer and before an activation, because the activation will set half of the activations to zero, as the mean centered around 1 means equal positive and negative activations. Post activation does not have this problem, hence it is easy. But the first approach is empirically found to be better than the second approach
+- We need to add scale and bias parameters when normalizing right after a linear layer and before an activation, because the activation will set half of the activations to zero, as the mean centered around 1 means equal positive and negative activations. Post-activation does not have this problem; hence, it is easy. But the first approach is empirically found to be better than the second approach
 - Normalization handles badly scaled weights and activations, and gradients cannot vanish as eigenvalues are close to 1
 - Even with just normalization, a Neural network can be trained to be around 20 layers deep.
 
 # Day 94 - 20/06/2026
-## Vanishing and Exploding gradient
+## Vanishing and Exploding gradients
 - For a deep Neural network, the weights are generally multiplied as we proceed down the network. So as the network grows, the weights overshadow the actual input x
 - <img width="1349" height="657" alt="image" src="https://github.com/user-attachments/assets/feaae1b4-5dc7-4a46-8eea-89fe314949e5" />
 - If the weights are initialized to be large, then they become larger and larger and tend to infinity when the network becomes large. This creates the problem of exploding activation and gradients
 - This can be addressed by reducing the learning rate and changing the initialization
 - If the weights are initialized to be small, then they become smaller and smaller and tend to 0 when the network becomes large. This creates the problem of vanishing activation and gradients
-- There is no real remedy for a normal NN, rather than tuning the learning rate, since it happens to all but the shallowest networks because of the random small weight initialization. The only remedy is to change the network architecture.
+- There is no real remedy for a normal NN, other than tuning the learning rate, since it happens to all but the shallowest networks because of the random small weight initialization. The only remedy is to change the network architecture.
 
 # Day 93 - 19/06/2026
 ## Activation Functions
 - There are various Activation functions to choose from. Depending on the scenario, any of the models can be utilized
 - <img width="1298" height="620" alt="image" src="https://github.com/user-attachments/assets/a836ba49-a886-4eb9-99be-46cc925aecfe" />
-- The simplest 1 is Relu. It's max(x,0), so it has 0 gradient for negative output and 1 gradient for positive output. The only disadvantage is that if a function never produces a positive output, its gradient is always going to be 0
-- Leaky ReLU max(x, ax) can fix this by choosing a very small alpha. If alpha is learned, it's called parameterized ReLU. The disadvantage is that the negative gradient is never 0, and it takes time to find the correct alpha
+- The simplest 1 is ReLU. It's max(x,0), so it has a 0 gradient for negative output and a 1 gradient for positive output. The only disadvantage is that if a function never produces a positive output, its gradient is always going to be 0
+- Leaky ReLU max(x, ax) can fix this by choosing a very small alpha. If alpha is learned, it's called a parameterized ReLU. The disadvantage is that the negative gradient is never 0, and it takes time to find the correct alpha
 - ELU max (x, a*(e^x - 1)) uses exponential decay when the function output is negative. Here also, the alpha has to be tuned well, and it is computationally expensive
-- GeLU, as defined below, is used for SOTA deep NN models now. It has been empirically proven to work  the best on enterprise models. The downside is that it is more computationally expensive
+- GeLU, as defined below, is used for SOTA deep NN models now. It has been empirically proven to work  best on enterprise models. The downside is that it is more computationally expensive
 - <img width="644" height="326" alt="image" src="https://github.com/user-attachments/assets/ac1986a5-58cb-4eb6-aa7e-9d59623a7e79" />
 - Tanh and sigmoid functions should not be used as the gradient becomes 0 on both the negative and positive sides
 - The practical view is to start with ReLU and modify with Leaky ReLU, and only use GeLU for training SOTA models
 
 # Day 92 - 18/06/2026
-## Non Linearity
+## Non-linearity
 - Linear models cannot classify an XOR function
 - If both black and white are classified as 1, then since grey is in between, it also needs to be classified as 1
 - Relu (max(x,0)) birngs the required noon linearity
@@ -117,7 +123,7 @@
 - Loss function has two parameters, theta, which are the model parameters, and the dataset on which the model is to be trained
 - Linear regression model works on L1, L2, or MSE losses
 - Binary classification works with binary cross-entropy loss and the sigmoid function
-- Multiclass classification works on categorical cross-entropy loss and softmax function
+- Multiclass classification works on categorical cross-entropy loss and the softmax function
 - Expected Loss is the mean or expectation of all losses
 - The goal is to minimize the Loss function to find the optimal parameter using Gradient Descent
 
@@ -127,7 +133,7 @@
 - It struggles to separate disjoint classes
 - Linear binary classification can take the same linear transformation, run through a binary sigmoid function
 - Multi-class classification can also be performed similarly by passing it through a softmax layer
-- softmax preserves the order. softmax maintains the relative ranking of the input values. If one score is larger than another before applying softmax, it will still be larger after applying softmax.
+- softmax preserves the order. Softmax maintains the relative ranking of the input values. If one score is larger than another before applying softmax, it will still be larger after applying softmax.
 - You can skip the softmax computation during prediction/inference and just use argmax directly on the raw scores (logits)
 - Never apply sigmoid and softmax within the neural network class definition
 - Multi-class classification has always fixed classes where the output has to be a particular class. There are no negative examples, and classes are mutually exclusive
@@ -137,10 +143,10 @@
 # Day 85 - 11/06/2026
 ## Gradients
 - Deep networks can be viewed as a gigantic nested function - f(x) = f1(f2(x))..
-- When n-dimensional input maps to a scalar output, the partial derivative is an n-size row vector.
+- When n-dimensional input maps to a scalar output, the partial derivative is an n-sized row vector.
 - When a scalar maps to an m-dimensional output, the partial derivative is an m-sized column vector
 - When n-dimensional input maps to an m-dimensional output, then the partial derivative is an m*n Jacobian
-- Back propagation is essentially the chain rule computed in a specific way, where inner functions derivatives are first calculated, followed by outer functions derivatives
+- Back propagation is essentially the chain rule computed in a specific way, where inner function derivatives are first calculated, followed by outer function derivatives
 
 # Day 84 - 10/06/2026
 ## Tensors
