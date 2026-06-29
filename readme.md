@@ -2,7 +2,18 @@
 ## Convolutions
 
 # Day 102 - 28/06/2026
-## Convolutions
+## Design principles of a convolution network
+- Striding with a small kernel size is not recommended, as that will shrink the image and reduce the activation functions
+- To counter this, the first layer is generally blown up from an input channel of 3 to around 64 filters, to identify various patterns initially.
+- To counter the growing parameters, usually the Kernel size is kept quite large (7 to 16), and so is the stride size(2-16)
+- For all other layers, the kernel needs to be kept small <=3
+- For example, an 11*11 conv effect can be achieved by 3 simultaneous 3*3 kernels with much fewer parameters
+- Apart from the first block, create a block of convolution that works, and repeat it over and over again
+- <img width="1147" height="579" alt="Screenshot 2026-06-29 at 3 30 17 PM" src="https://github.com/user-attachments/assets/68167225-6463-4780-8181-69c9b31fe98d" />
+- Ensure that it is all convolutional and only add the global average after the last layer after the classification is done.
+- The ideal convolutional design is as follows
+- <img width="955" height="477" alt="Screenshot 2026-06-29 at 3 34 23 PM" src="https://github.com/user-attachments/assets/af9bc544-5c05-4ef4-9475-cfd5b4a82c2c" />
+
 
 # Day 101 - 27/06/2026
 ## Pooling
@@ -65,7 +76,7 @@ Below are the scenarios
 - It is memory efficient, as with a 3*3 kernel, the 13B parameter becomes less than 500 parameters
 - Receptive fields are based on the Kernel and define how deep networks can see
 - <img width="452" height="341" alt="image" src="https://github.com/user-attachments/assets/38cfb5ff-58ce-4a66-b75e-f34ef08ea604" />
-- Convolutions preserve spatial informations ie., shifting or cropping the image has a similar effect on the output
+- Convolutions preserve spatial information, i.e., shifting or cropping the image has a similar effect on the output
 - It is also rotation scale and shift invariant
 - Essentially, the output channels can be thought of as filters where each filter identifies some specific characteristic in a conv layer
 
@@ -95,12 +106,12 @@ Below are the scenarios
 - Group normalisation, which is a special case of Layer norm, is even more selective, where it splits the channels within groups and then normalises
 - <img width="689" height="179" alt="image" src="https://github.com/user-attachments/assets/4ee512aa-e96f-4a9c-b9ce-8401f2ce1681" />
 - We can add the normalisation either right after a linear layer or right after an activation
-- We need to add scale and bias parameters when normalising right after a linear layer and before an activation, because the activation will set half of the activations to zero, as the mean centred around 1 means equal positive and negative activations. Post-activation does not have this problem; hence, it is easy. But the first approach is empirically found to be better than the second approach
+- We need to add scale and bias parameters when normalising right after a linear layer and before an activation, because the activation will set half of the activations to zero, as the mean is centred around 1, which means equal positive and negative activations. Post-activation does not have this problem; hence, it is easy. But the first approach is empirically found to be better than the second approach
 - Normalisation handles badly scaled weights and activations, and gradients cannot vanish as eigenvalues are close to 1
 - Even with just normalisation, a Neural network can be trained to be around 20 layers deep.
 
 # Day 94 - 20/06/2026
-## Vanishing and Exploding gradients
+## Vanishing and Exploding Gradients
 - For a deep Neural network, the weights are generally multiplied as we proceed down the network. So as the network grows, the weights overshadow the actual input x
 - <img width="1349" height="657" alt="image" src="https://github.com/user-attachments/assets/feaae1b4-5dc7-4a46-8eea-89fe314949e5" />
 - If the weights are initialised to be large, then they become larger and larger and tend to infinity when the network becomes large. This creates the problem of exploding activation and gradients
