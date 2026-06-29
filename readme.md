@@ -13,6 +13,7 @@
 - <img width="1143" height="529" alt="Screenshot 2026-06-29 at 2 37 05 PM" src="https://github.com/user-attachments/assets/ab0b01e1-dfaa-4f42-8ada-b13b60d43a43" />
 - Average pooling works just like MaxPooling, but instead of max, it takes channel-wise average
 - Global pooling is done on the entire image and condenses the value to just 1 channel. As listed below, Global Pooling can also be used at the very end of a convolutional network till today
+- <img width="501" height="492" alt="Screenshot 2026-06-29 at 2 39 59 PM" src="https://github.com/user-attachments/assets/d46b22f7-d2dd-4724-ab4f-5a7f0ec20a81" />
 - Pooling used to be quite popular, but is no longer used as CNN structures have changed.
 
 # Day 100 - 26/06/2026
