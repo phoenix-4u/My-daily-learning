@@ -5,17 +5,25 @@
 ## Convolutions
 
 # Day 101 - 27/06/2026
-## Convolutions
+## Pooling
+- It is not always necessary to apply only a linear operator to the Kernel patches. Pooling is one technique that can be used.
+- Pooling is the technique to apply any arbitrary function to patches apart from Linear transformations
+- For max and average pooling, we will have stride and kernel size, but output channels and grouping, as they were specific to linear transformation
+- Max pooling is taking the channel-wise max over the input patches
+- <img width="1143" height="529" alt="Screenshot 2026-06-29 at 2 37 05 PM" src="https://github.com/user-attachments/assets/ab0b01e1-dfaa-4f42-8ada-b13b60d43a43" />
+- Average pooling works just like MaxPooling, but instead of max, it takes channel-wise average
+- Global pooling is done on the entire image and condenses the value to just 1 channel. As listed below, Global Pooling can also be used at the very end of a convolutional network till today
+- Pooling used to be quite popular, but is no longer used as CNN structures have changed.
 
 # Day 100 - 26/06/2026
 ## Convolutions in PyTorch
-- Conv1D is used for time series forecasting, Conv2D is used for image classification and Conv3D is used for videos
+- Conv1D is used for time series forecasting, Conv2D is used for image classification, and Conv3D is used for videos
 - For Conv2D, we provide 5 inputs, i.e., input channels, output channels, Kernel size, striding size, and padding size
-- A simple convolution network can be designed as below
+- A simple convolution network can be designed as follows:
 - <img width="993" height="432" alt="Screenshot 2026-06-29 at 1 45 55 PM" src="https://github.com/user-attachments/assets/2bef3f95-502c-455d-8a43-67386e2c1ee4" />
 - Global Average can be done with an adaptive average pool 2D. Global Average Pooling. When you set the output to 1×1—nn.AdaptiveAvgPool2d(1)—each channel's entire feature map collapses to a single averaged value, giving you a C×1×1 tensor where C is the channel count.
 - The receptive field of the output and the receptive field of the gradients have the same effects.
-- An easy hack to create a similar tensor to an already existing tensor is to use that tensor and call new methods on it (like new_zeros). This ensures that the GPU/CPU transfer etc. are not necessary.
+- An easy hack to create a similar tensor to an already existing tensor is to use that tensor and call new methods on it (like new_zeros). This ensures that the GPU/CPU transfer, etc., is not necessary.
 
 # Day 99 - 25/06/2026
 ## Output Representation
@@ -64,7 +72,7 @@ Below are the scenarios
 ## Residual connections
 - With Normalisation, networks can only be trained 20 layers deep. Above this, the network stops training and subsequently performs worse on validations as well
 - This is primarily because of the Random Gaussian initialisation, which has the effect of producing random values for weights after 20 -30 layers, so the network stops learning
-- Residual network short circuits this by adding the input to the output from multiple layers
+- Residual network short-circuits this by adding the input to the output from multiple layers
 - <img width="1245" height="596" alt="image" src="https://github.com/user-attachments/assets/0c3faa1c-4111-4f38-8dd6-984f93fe216a" />
 - For this to work, the input and output should be of the same size, so we cannot have a tapered-shape network. The output layer can be added separately
 - Gradients travel further, and the randomness of gradients is not that much because the input always normalises the output. So if some layers are dropped in between, the network still works
