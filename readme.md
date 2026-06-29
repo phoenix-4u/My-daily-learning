@@ -1,23 +1,48 @@
+# Day 101 - 28/06/2026
+## Convolutions
+
 # Day 100 - 26/06/2026
 ## Convolutions
 
 # Day 99 - 25/06/2026
-## Convolutions
+## Output Representation
+- Any 2 layer deep network can represent a continuous function
+- For binary classification, the last linear layer output (1 node) needs to be passed through a thresholding or sigmoid (sigmoid preferred as it is differentiable)
+- <img width="1169" height="702" alt="image" src="https://github.com/user-attachments/assets/6480eb29-183c-49b5-b6e4-e382b24eff91" />
+- For multi-class classification, the linear layer output (c nodes) needs to be passed through an argmax, one-hot, or softmax layer (softmax preferred as it is differentiable)
+- <img width="459" height="259" alt="image" src="https://github.com/user-attachments/assets/a7230909-5c17-4972-be65-791f11e5b9c2" />
+- To ensure differentiability and stability, we should output raw values from a neural network during training
+- Output transformation is applied at inference time and not during training
+- The main purpose of output transformations in a neural network is to convert raw values into whatever is necessary
 
 # Day 98 - 24/06/2026
 ## Structure of convolutions
+- Vanilla convolution networks shrink the output if the kernel size is more than 1. With padding, this issue can be mitigated.
+- Padding should be done on all sides, and the padding value should be (Kernel size -1)/2. So, for a kernel size of 3, the padding should be 1
+- If we want to increase the number of filters without 
 
 # Day 97 - 23/06/2026
 ## Convolutions
+- Considering that there are 4096 different output classes, a 3*1024*1024 image to a fully connected output creates a 13B parameter model for only 1 layer.
+- If we break the image into multiple sections and process them separately, since there will be no overlap between pieces, the context of the entire image will be lost
+- So the solution is overlapping on patches, which is called convolution
+- <img width="916" height="445" alt="image" src="https://github.com/user-attachments/assets/b253caa4-c29a-4894-a8a0-fc63d87df99b" />
+- It is very fast, as the number of parameters is independent of the image resolution
+- It is memory efficient, as with a 3*3 kernel, the 13B parameter becomes less than 500 parameters
+- Receptive fields are based on the Kernel and define how deep networks can see
+- <img width="452" height="341" alt="image" src="https://github.com/user-attachments/assets/38cfb5ff-58ce-4a66-b75e-f34ef08ea604" />
+- Convolutions preserve spatial informations ie., shifting or cropping the image has a similar effect on the output
+- It is also rotation scale and shift invariant
+- Essentially, the output channels can be thought of as filters where each filter identifies some specific characteristic in a conv layer
 
 # Day 96 - 22/06/2026
 ## Residual connections
-- With Normalization, networks can only be trained 20 layers deep. Above this, the network stops to training and subsequently performs worse on validations as well
-- This is primarily because of the Random Gaussian initialization, which has the effect of producing random values for weights after 20 -30 layers, so the network stops learning
+- With Normalisation, networks can only be trained 20 layers deep. Above this, the network stops training and subsequently performs worse on validations as well
+- This is primarily because of the Random Gaussian initialisation, which has the effect of producing random values for weights after 20 -30 layers, so the network stops learning
 - Residual network short circuits this by adding the input to the output from multiple layers
 - <img width="1245" height="596" alt="image" src="https://github.com/user-attachments/assets/0c3faa1c-4111-4f38-8dd6-984f93fe216a" />
 - For this to work, the input and output should be of the same size, so we cannot have a tapered-shape network. The output layer can be added separately
-- Gradients travel further, and the randomness of gradients is not that much because the input always normalizes the output. So if some layers are dropped in between, the network still works
+- Gradients travel further, and the randomness of gradients is not that much because the input always normalises the output. So if some layers are dropped in between, the network still works
 - Theoretically, the network becomes invertible, and sometimes, the network can have 1 global minima
 - The cleanest way to integrate the residual connection is as follows
 - <img width="794" height="491" alt="image" src="https://github.com/user-attachments/assets/02b31547-ebea-48e3-bbc2-a9bb2925013f" />
@@ -26,35 +51,35 @@
 # Day 95 - 21/06/2026
 ## Normalization
 - Deep networks suffer from the problem of vanishing gradients
-- Normalization prevents this by normalizing activations and gradients, and normalizing them with the mean and standard deviation
+- Normalisation prevents this by normalising activations and gradients, and normalising them with the mean and standard deviation
 - <img width="252" height="106" alt="image" src="https://github.com/user-attachments/assets/e7026ba1-fc05-47be-a029-5130826223ea" />
-- At test time, normalization uses the same mu and sigma that were used in training
+- At test time, normalisation uses the same mu and sigma that were used in training
 - Batch normalization normalizes all the input dimensions across all examples, keeping the channels constant
 - <img width="921" height="261" alt="image" src="https://github.com/user-attachments/assets/78bb890a-f3f9-42f7-804b-1340f9facabc" />
 - For Layer normalization, the normalization occurs for individual examples across all channels and is then averaged.
 - <img width="676" height="184" alt="image" src="https://github.com/user-attachments/assets/2397d2a4-cf5c-4e83-b8f6-871ebe0ea628" />
-- Group normalization, which is a special case of Layer norm, is even more selective, where it splits the channels within groups and then normalizes
+- Group normalisation, which is a special case of Layer norm, is even more selective, where it splits the channels within groups and then normalises
 - <img width="689" height="179" alt="image" src="https://github.com/user-attachments/assets/4ee512aa-e96f-4a9c-b9ce-8401f2ce1681" />
-- We can add the normalization either right after a linear layer or right after an activation
-- We need to add scale and bias parameters when normalizing right after a linear layer and before an activation, because the activation will set half of the activations to zero, as the mean centered around 1 means equal positive and negative activations. Post-activation does not have this problem; hence, it is easy. But the first approach is empirically found to be better than the second approach
-- Normalization handles badly scaled weights and activations, and gradients cannot vanish as eigenvalues are close to 1
-- Even with just normalization, a Neural network can be trained to be around 20 layers deep.
+- We can add the normalisation either right after a linear layer or right after an activation
+- We need to add scale and bias parameters when normalising right after a linear layer and before an activation, because the activation will set half of the activations to zero, as the mean centred around 1 means equal positive and negative activations. Post-activation does not have this problem; hence, it is easy. But the first approach is empirically found to be better than the second approach
+- Normalisation handles badly scaled weights and activations, and gradients cannot vanish as eigenvalues are close to 1
+- Even with just normalisation, a Neural network can be trained to be around 20 layers deep.
 
 # Day 94 - 20/06/2026
 ## Vanishing and Exploding gradients
 - For a deep Neural network, the weights are generally multiplied as we proceed down the network. So as the network grows, the weights overshadow the actual input x
 - <img width="1349" height="657" alt="image" src="https://github.com/user-attachments/assets/feaae1b4-5dc7-4a46-8eea-89fe314949e5" />
-- If the weights are initialized to be large, then they become larger and larger and tend to infinity when the network becomes large. This creates the problem of exploding activation and gradients
-- This can be addressed by reducing the learning rate and changing the initialization
-- If the weights are initialized to be small, then they become smaller and smaller and tend to 0 when the network becomes large. This creates the problem of vanishing activation and gradients
-- There is no real remedy for a normal NN, other than tuning the learning rate, since it happens to all but the shallowest networks because of the random small weight initialization. The only remedy is to change the network architecture.
+- If the weights are initialised to be large, then they become larger and larger and tend to infinity when the network becomes large. This creates the problem of exploding activation and gradients
+- This can be addressed by reducing the learning rate and changing the initialisation
+- If the weights are initialised to be small, then they become smaller and smaller and tend to 0 when the network becomes large. This creates the problem of vanishing activation and gradients
+- There is no real remedy for a normal NN, other than tuning the learning rate, since it happens to all but the shallowest networks because of the random small weight initialisation. The only remedy is to change the network architecture.
 
 # Day 93 - 19/06/2026
 ## Activation Functions
-- There are various Activation functions to choose from. Depending on the scenario, any of the models can be utilized
+- There are various Activation functions to choose from. Depending on the scenario, any of the models can be utilised
 - <img width="1298" height="620" alt="image" src="https://github.com/user-attachments/assets/a836ba49-a886-4eb9-99be-46cc925aecfe" />
 - The simplest 1 is ReLU. It's max(x,0), so it has a 0 gradient for negative output and a 1 gradient for positive output. The only disadvantage is that if a function never produces a positive output, its gradient is always going to be 0
-- Leaky ReLU max(x, ax) can fix this by choosing a very small alpha. If alpha is learned, it's called a parameterized ReLU. The disadvantage is that the negative gradient is never 0, and it takes time to find the correct alpha
+- Leaky ReLU max(x, ax) can fix this by choosing a very small alpha. If alpha is learned, it's called a parameterised ReLU. The disadvantage is that the negative gradient is never 0, and it takes time to find the correct alpha
 - ELU max (x, a*(e^x - 1)) uses exponential decay when the function output is negative. Here also, the alpha has to be tuned well, and it is computationally expensive
 - GeLU, as defined below, is used for SOTA deep NN models now. It has been empirically proven to work  best on enterprise models. The downside is that it is more computationally expensive
 - <img width="644" height="326" alt="image" src="https://github.com/user-attachments/assets/ac1986a5-58cb-4eb6-aa7e-9d59623a7e79" />
@@ -76,7 +101,7 @@
 - Generally, the shape of train images is 4 dimensions - batch size, number of channels, image width, image height
 - `torch.stack` can be used to stack all the images in the dataset, and `torch.tensor` can be used to stack all the corresponding labels
 - Then we can define the model, which can be a linear model with nn.Linear(128*128*3, 1) and define the loss as MSELoss
-- We can then define the optimizer as MSE loss for linear, binary cross-entropy for binary logistic, and cross-entropy for multiclass classification. The inputs are primarily the model parameters and the learning rate
+- We can then define the optimiser as MSE loss for linear, binary cross-entropy for binary logistic, and cross-entropy for multiclass classification. The inputs are primarily the model parameters and the learning rate
 - Then we run epochs and predict the label using the model, then define the loss function, set the optimizer to zero grad, run backwards, and then take a step for the  optimizer.
 - We might need to play around with the learning rate to ensure that the model does not explode
 - Finally, the accuracy of the model is tested on the test set.
