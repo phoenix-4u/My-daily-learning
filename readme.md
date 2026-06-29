@@ -1,12 +1,24 @@
+# Day 103 - 29/06/2026
+## Convolutions
+
+# Day 102 - 28/06/2026
+## Convolutions
+
 # Day 101 - 27/06/2026
 ## Convolutions
 
 # Day 100 - 26/06/2026
-## Convolutions
+## Convolutions in PyTorch
+- Conv1D is used for time series forecasting, Conv2D is used for image classification and Conv3D is used for videos
+- For Conv2D, we provide 5 inputs, i.e., input channels, output channels, Kernel size, striding size, and padding size
+- A simple convolution network can be designed as below
+- <img width="993" height="432" alt="Screenshot 2026-06-29 at 1 45 55 PM" src="https://github.com/user-attachments/assets/2bef3f95-502c-455d-8a43-67386e2c1ee4" />
+- Global Average can be done with an adaptive average pool 2D. Global Average Pooling. When you set the output to 1×1—nn.AdaptiveAvgPool2d(1)—each channel's entire feature map collapses to a single averaged value, giving you a C×1×1 tensor where C is the channel count.
+- The receptive field of the output and the receptive field of the gradients have the same effects.
 
 # Day 99 - 25/06/2026
 ## Output Representation
-- Any 2 layer deep network can represent a continuous function
+- Any 2-layer deep network can represent a continuous function
 - For binary classification, the last linear layer output (1 node) needs to be passed through a thresholding or sigmoid (sigmoid preferred as it is differentiable)
 - <img width="1169" height="702" alt="image" src="https://github.com/user-attachments/assets/6480eb29-183c-49b5-b6e4-e382b24eff91" />
 - For multi-class classification, the linear layer output (c nodes) needs to be passed through an argmax, one-hot, or softmax layer (softmax preferred as it is differentiable)
@@ -19,7 +31,19 @@
 ## Structure of convolutions
 - Vanilla convolution networks shrink the output if the kernel size is more than 1. With padding, this issue can be mitigated.
 - Padding should be done on all sides, and the padding value should be (Kernel size -1)/2. So, for a kernel size of 3, the padding should be 1
-- If we want to increase the number of filters without 
+- If we want to increase the number of filters without increasing the overall parameter count, we have to reduce the height and width dimensions. The way this can be done is with striding.
+- Stride and Kernel size are 2 different things. Striding increases the receptive field (the number of upstream neurons that a downstream neuron can see) by removing redundant connections from fully connected layers. The kernel size never changes. 
+Below are the scenarios
+  1. stride < kernel size (e.g., stride 2, kernel 3): windows overlap → every input connected, just less overlap. ← the demo and the usual case
+  2. stride = kernel size (e.g., stride 3, kernel 3): windows sit exactly edge-to-edge → every input read exactly once, no overlap, still no gaps.
+  3. stride > kernel size (e.g., stride 2, kernel 1): now windows can't reach each other → inputs 1, 3, 5… land in the gaps and connect to nothing. This is the picture you had in your head.
+- <img width="798" height="738" alt="Screenshot 2026-06-29 at 1 24 00 PM" src="https://github.com/user-attachments/assets/a3f24b58-99d2-4e3f-9db2-e9d071efec9c" />
+- <img width="793" height="753" alt="Screenshot 2026-06-29 at 1 24 31 PM" src="https://github.com/user-attachments/assets/683e8038-af4e-425d-aecc-9234606a23c8" />
+- <img width="803" height="752" alt="Screenshot 2026-06-29 at 1 24 55 PM" src="https://github.com/user-attachments/assets/d2f1b597-70cc-412b-80c0-a7fb6cd4705e" />
+- Group convolutions are similar to striding, where not all inputs contribute to all outputs. An Extreme case of groupwise convolution is depthwise convolution where the number of connections is limited to mapping within the channel, followed by 1*1 convolution between channels.
+- General values for striding are 2, and the kernel size is 3
+- Increase the output channel only if you stride and increase the output channels by the striding factor.
+- 
 
 # Day 97 - 23/06/2026
 ## Convolutions
