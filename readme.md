@@ -15,6 +15,7 @@
 - <img width="993" height="432" alt="Screenshot 2026-06-29 at 1 45 55 PM" src="https://github.com/user-attachments/assets/2bef3f95-502c-455d-8a43-67386e2c1ee4" />
 - Global Average can be done with an adaptive average pool 2D. Global Average Pooling. When you set the output to 1×1—nn.AdaptiveAvgPool2d(1)—each channel's entire feature map collapses to a single averaged value, giving you a C×1×1 tensor where C is the channel count.
 - The receptive field of the output and the receptive field of the gradients have the same effects.
+- An easy hack to create a similar tensor to an already existing tensor is to use that tensor and call new methods on it (like new_zeros). This ensures that the GPU/CPU transfer etc. are not necessary.
 
 # Day 99 - 25/06/2026
 ## Output Representation
