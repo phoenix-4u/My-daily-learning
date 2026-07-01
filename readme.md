@@ -1,5 +1,11 @@
 # Day 103 - 29/06/2026
-## Convolutions
+## Convolutional Networks in PyTorch Full
+- The first channel should be separate from the block and should have its own parameters
+- Then the block should be repeated, and the channels should be increased based on the striding factor
+- The final layer should be a 1*1 convolutional network.
+- <img width="970" height="520" alt="Screenshot 2026-06-29 at 1 17 09 PM" src="https://github.com/user-attachments/assets/f5132ddc-45ae-4a68-b3ee-27c4582b5945" />
+- Within the block, we can define multiple conv and non-linear blocks as required.
+- <img width="1016" height="459" alt="Screenshot 2026-06-29 at 4 15 09 PM" src="https://github.com/user-attachments/assets/58d83f64-7bad-4a08-9fd0-57292a5e409a" />
 
 # Day 102 - 28/06/2026
 ## Design principles of a convolution network
@@ -10,7 +16,7 @@
 - For example, an 11*11 conv effect can be achieved by 3 simultaneous 3*3 kernels with much fewer parameters
 - Apart from the first block, create a block of convolution that works, and repeat it over and over again
 - <img width="1147" height="579" alt="Screenshot 2026-06-29 at 3 30 17 PM" src="https://github.com/user-attachments/assets/68167225-6463-4780-8181-69c9b31fe98d" />
-- Ensure that it is all convolutional and only add the global average after the last layer after the classification is done.
+- Ensure that it is all convolutional and only add the global average after the last layer, after the classification is done.
 - The ideal convolutional design is as follows
 - <img width="955" height="477" alt="Screenshot 2026-06-29 at 3 34 23 PM" src="https://github.com/user-attachments/assets/af9bc544-5c05-4ef4-9475-cfd5b4a82c2c" />
 
