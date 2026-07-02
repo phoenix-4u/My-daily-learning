@@ -1,3 +1,5 @@
+# Day 104 - 30/06/2026
+
 # Day 103 - 29/06/2026
 ## Convolutional Networks in PyTorch Full
 - The first channel should be separate from the block and should have its own parameters
