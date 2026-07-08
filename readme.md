@@ -7,10 +7,25 @@
 # Day 107 - 03/07/2026
 
 # Day 106 - 02/07/2026
+## Dilation and Upconvolution in Pytorch
+- Dialation can be added in a Con2D by setting `dialation=2` and so on
+- Up-convolution can be achieved using the `ConvTranspose2D` module
+- <img width="1114" height="344" alt="Screenshot 2026-07-08 at 12 16 08 AM" src="https://github.com/user-attachments/assets/9593e791-9848-4791-a3ff-87bfe369e92d" />
 
 # Day 105 - 01/07/2026
+## Dilation and Upconvolution
+- Striding decreases the resolution by shrinking the image
+- Dialation is the method of padding 0s in between the kernel and keeping the parameter count the same, though this is very slow
+- <img width="1038" height="569" alt="Screenshot 2026-07-07 at 11 49 52 PM" src="https://github.com/user-attachments/assets/d7475468-bb71-40f3-a9e5-923d8be535d0" />
+- Dialation does not discard any pixels; it just skips them. Hence, the resolution remains the same. 
+- Upconvolution works by introducing 0s within the input pixels before convolution
+- <img width="1040" height="589" alt="Screenshot 2026-07-07 at 11 58 10 PM" src="https://github.com/user-attachments/assets/9143b688-bd0c-4811-90cd-40f32a9e763e" />
 
 # Day 104 - 30/06/2026
+## Deep Representation
+- CAM and Grad CAM help to see what a network looks at
+- Network Dissections organizes internal activations along categories/concepts
+- At each layer, the network visualizes interesting patterns
 
 # Day 103 - 29/06/2026
 ## Convolutional Networks in PyTorch Full
