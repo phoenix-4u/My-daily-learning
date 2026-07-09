@@ -7,6 +7,13 @@
 # Day 108 - 04/07/2026
 
 # Day 107 - 03/07/2026
+## Making it work
+- A model pipeline with a linear flow will never give a correct result; it always has to be iterative.
+- There are 3 things to pay attention to when finetuning a pipeline
+  1. The pipeline should be iterative
+  2. The optimizer should train well
+  3. The model should not overfit
+- To ensure that these stays inline, rigorous metrics should be defined and calibrated, and performance should be measured against this baseline
 
 # Day 106 - 02/07/2026
 ## Dilation and Upconvolution in Pytorch
