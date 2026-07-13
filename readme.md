@@ -1,3 +1,5 @@
+# Day 115 - 11/07/2026
+
 # Day 114 - 10/07/2026
 
 # Day 113 - 09/07/2026
@@ -15,14 +17,14 @@
 # Day 107 - 03/07/2026
 ## Making it work
 - A model pipeline with a linear flow will never give a correct result; it always has to be iterative.
-- There are 3 things to pay attention to when finetuning a pipeline
+- There are 3 things to pay attention to when fine-tuning a pipeline
   1. The pipeline should be iterative
   2. The optimizer should train well
   3. The model should not overfit
 - To ensure that these stays inline, rigorous metrics should be defined and calibrated, and performance should be measured against this baseline
 
 # Day 106 - 02/07/2026
-## Dilation and Upconvolution in Pytorch
+## Dilation and Upconvolution in PyTorch
 - Dialation can be added in a Con2D by setting `dialation=2` and so on
 - Up-convolution can be achieved using the `ConvTranspose2D` module
 - <img width="1114" height="344" alt="Screenshot 2026-07-08 at 12 16 08 AM" src="https://github.com/user-attachments/assets/9593e791-9848-4791-a3ff-87bfe369e92d" />
