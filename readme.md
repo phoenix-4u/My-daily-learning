@@ -1,3 +1,5 @@
+# Day 119 - 15/07/2026
+
 # Day 118 - 14/07/2026
 
 # Day 117 - 13/07/2026
@@ -13,12 +15,43 @@
 # Day 112 - 08/07/2026
 
 # Day 111 - 07/07/2026
+## Advanced training Part 2
+- ADAM is mathematically wrong, but it works extremely well in practice
+- ADAMW adds a weight decay to keep the growth of gradients in check
+- LION can be thought of as a combination of ADAM and SGD. It is slightly more memory efficient than ADAMW but is sensitive to batch sizes
+- <img width="919" height="142" alt="image" src="https://github.com/user-attachments/assets/6445f62c-f206-42a5-a608-cd968770e910" />
+- At a minimum, the learning rates for these optimizers need to be set at least once. This empirical i.e., train for a few epochs and then measure validation accuracy
+- Learning rates can be scheduled to start with a high learning rate and then reduce it when it does not learn more
+- Step, linear, cosine, cyclical. Cosine is the industry standard. Cosine schedule with warmup works well.
+- <img width="542" height="363" alt="image" src="https://github.com/user-attachments/assets/04b5323c-a92e-4b95-9655-ae6ddb0c3f77" />
+- Bigger batch sizes converge fast. If you double your batch size, you can double your learning rate. But this requires a lot of GPU memory
 
 # Day 110 - 06/07/2026
+## Advanced training Part 1
+- For SGD, we will have to tune the learning rate manually
+- For a large step size, the gradient shoots up, and the loss shoots up as well.
+- One way to handle this is to manually check which maximum steps do not create spikes
+- But this is a lot of work if there are multiple steps
+- RMS prop averages the ratio of all gradients to their magnitude
+- Adam updates this by taking the running average of weights and the running average of momentum and dividing them
+- <img width="1305" height="345" alt="image" src="https://github.com/user-attachments/assets/fd07ee8a-2cb6-4833-ab81-a1b6fe05f220" />
+- Both the running averages are divided by some correction terms to avoid the running average growing over time. This is true, ADAM.
 
 # Day 109 - 05/07/2026
+## Advanced Network Design Part 2
+- Initialization should be done randomly
+- Xavier and Kaiming Initialization can be used for a random Gaussian distribution multiplied by the weight matrix and their standard deviation
+- The initialization for Kaiming depends on the standard deviation of the weights being 2/the number of inputs
+- Kaiming is the default Python initializer
 
 # Day 108 - 04/07/2026
+## Advanced Network Design Part 1
+- Clean the data and standardize the data
+- Normalize the network by subtracting the mean and dividing by the standard deviation
+- With random initialization, if the data is skewed towards the positive direction, the network does not learn very well. Hence, normalization is required by subtracting the mean
+- If the input is imbalanced, i.e., one is very large than the other, then it is recommended to normalize using standard deviation
+- Never initialize all weights to 0, as it will backpropagate the gradient of all 0s and become 0. Only 1 layer network or the last layer can be initialized to 0 (if used with SGD)
+- All the same non-zero values are not a good idea, as all the activations will have the same value and the same symmetrical updates
 
 # Day 107 - 03/07/2026
 ## Making it work
