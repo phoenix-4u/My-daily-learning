@@ -15,6 +15,15 @@
 # Day 114 - 10/07/2026
 
 # Day 113 - 09/07/2026
+## Stochastic Gradient Descent
+- Gradient descent can be very slow if the dataset is large
+- SGD takes a step for all data elements in an epoch without waiting to average the entire dataset
+- <img width="1197" height="512" alt="image" src="https://github.com/user-attachments/assets/6caaefb2-4794-4684-a503-26246c90f4d7" />
+- Gradient descent computes the gradient over the entire data set, while stochastic gradient descent takes a step every time it computes a gradient.
+- Sometimes gradients will take steps in the wrong direction, but overall, it will converge to the local minima
+- <img width="1315" height="646" alt="image" src="https://github.com/user-attachments/assets/d24118b1-4807-43d2-b8ac-3b87d4c774d3" />
+- If the variance of gradients for individual data elements is very large, SGD will take similar time as GD, but for other cases it will be faster.
+- <img width="1353" height="517" alt="image" src="https://github.com/user-attachments/assets/0a20c254-85dd-456c-bf68-b56a9f97a3c6" />
 
 # Day 112 - 08/07/2026
 ## Loss Functions
