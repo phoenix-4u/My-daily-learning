@@ -17,6 +17,14 @@
 # Day 113 - 09/07/2026
 
 # Day 112 - 08/07/2026
+## Loss Functions
+- Loss function seeks to minimize the gap between the output that the current model has produced and the expected output
+- In optimization, we always look at expected/average loss
+- <img width="314" height="507" alt="image" src="https://github.com/user-attachments/assets/db44b1ff-2ad2-4b44-aa37-681abdbeecf1" />
+- For regression, the loss classes considered are L1 and L2 (MSE) losses.
+- For classification, the binary cross-entropy loss is used. Log is taken on sigmoid as it helps while training with gradients
+- BCEWithLogitsLoss is better than BCE as the log of 0 is undefined, and it can lead to numeric issues when probabilities are close to 0 
+- For multi-class classification, softmax is used. To avoid the problem of log(0), PyTorch defined the binary cross-entropy loss
 
 # Day 111 - 07/07/2026
 ## Advanced training Part 2
