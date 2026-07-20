@@ -13,6 +13,13 @@
 # Day 115 - 11/07/2026
 
 # Day 114 - 10/07/2026
+## SGD in PyTorch
+- SGD should be paired with CrossEntropyLoss
+- SGD needs another loop over GD to loop through all the images individually
+- The Loss is relatively high, which can be fixed by 2 ways - reducing the learning rate and implementing batch sizes
+- We can also add momentum for faster convergence. The learning rate should be relatively smaller otherwise, the network might explode.
+- <img width="908" height="563" alt="image" src="https://github.com/user-attachments/assets/39617d6f-2551-4dd5-81cb-8880fa446122" />
+- The batch should be loaded using data loader
 
 # Day 113 - 09/07/2026
 ## Stochastic Gradient Descent
