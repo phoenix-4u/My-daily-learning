@@ -1,3 +1,5 @@
+# Day 124 - 20/07/2026
+
 # Day 123 - 19/07/2026
 
 # Day 122 - 18/07/2026
@@ -13,17 +15,38 @@
 # Day 117 - 13/07/2026
 
 # Day 116 - 12/07/2026
+# Overfitting Part 2
+- Transfer Learning is used when the dataset is small and to fine-tune the model on smaller data
+- Transfer learns because inputs can be quite similar and the patterns are the same. The initialization is also well done, so the learnings are very effective.
+- Overfitting happens layer by layer. Dropouts will break the reliance between layers by randomly switching off neurons
+- While using dropouts, `model.eval()` needs to be invoked.
+- For a CNN, dropouts can only be called before the 1*1 convolutions (fully connected layer) at the end, as receptive fields make it difficult for dropouts to work.
+- Add regularization (weight decay) to the optimizer to prevent the model from blowing up (exploding gradients)
+- Use ensembles of models by fitting multiple smaller models to the same data and then take the average of these small overfitted models.
+- Because of Jensen's inequality, the loss of ensembles will always be better than the loss of individual models
+- <img width="1351" height="528" alt="image" src="https://github.com/user-attachments/assets/9becef2f-be21-4b86-9949-ccaa27a7486a" />
 
 # Day 115 - 11/07/2026
+# Overfitting Part 1
+- To prevent overfitting, we need to split the dataset between train, test, and validation. General split is 70, 15, 15
+- Test set in purest form should only be used once
+- Random sampling should be used during train-test split
+- Sometimes training and validation can be highly correlated, like automated driving, etc where images are very near to each other
+- To check for overfitting, we can plot train and validation accuracy to check for parameters
+- Test set checks overfitting of hyperparameters (number of layers, dimensions), etc.
+- We overfit as it finds patterns in the same data repeated over multiple epochs. In extremely high dimensions, it is extremely easy to draw decision boundaries and segregate classes, leading to overfitting
+- Ways to prevent overfitting - early stopping, collect more data (data augmentation)
+- Unsupervised data Augmentation is used to train models without any labels
+- <img width="1243" height="688" alt="image" src="https://github.com/user-attachments/assets/12b570e3-ada7-4906-9b98-77f69a9b2d61" />
 
 # Day 114 - 10/07/2026
 ## SGD in PyTorch
 - SGD should be paired with CrossEntropyLoss
 - SGD needs another loop over GD to loop through all the images individually
-- The Loss is relatively high, which can be fixed by 2 ways - reducing the learning rate and implementing batch sizes
+- The Loss is relatively high, which can be fixed by 2 ways: reducing the learning rate and implementing batch sizes
 - We can also add momentum for faster convergence. The learning rate should be relatively smaller otherwise, the network might explode.
 - <img width="908" height="563" alt="image" src="https://github.com/user-attachments/assets/39617d6f-2551-4dd5-81cb-8880fa446122" />
-- The batch should be loaded using data loader
+- The batch should be loaded using a data loader
 
 # Day 113 - 09/07/2026
 ## Stochastic Gradient Descent
@@ -52,7 +75,7 @@
 - ADAMW adds a weight decay to keep the growth of gradients in check
 - LION can be thought of as a combination of ADAM and SGD. It is slightly more memory efficient than ADAMW but is sensitive to batch sizes
 - <img width="919" height="142" alt="image" src="https://github.com/user-attachments/assets/6445f62c-f206-42a5-a608-cd968770e910" />
-- At a minimum, the learning rates for these optimizers need to be set at least once. This empirical i.e., train for a few epochs and then measure validation accuracy
+- At a minimum, the learning rates for these optimizers need to be set at least once. This is empirical, i.e., train for a few epochs and then measure validation accuracy
 - Learning rates can be scheduled to start with a high learning rate and then reduce it when it does not learn more
 - Step, linear, cosine, cyclical. Cosine is the industry standard. Cosine schedule with warmup works well.
 - <img width="542" height="363" alt="image" src="https://github.com/user-attachments/assets/04b5323c-a92e-4b95-9655-ae6ddb0c3f77" />
@@ -64,7 +87,7 @@
 - For a large step size, the gradient shoots up, and the loss shoots up as well.
 - One way to handle this is to manually check which maximum steps do not create spikes
 - But this is a lot of work if there are multiple steps
-- RMS prop averages the ratio of all gradients to their magnitude
+- RMSprop averages the ratio of all gradients to their magnitude
 - Adam updates this by taking the running average of weights and the running average of momentum and dividing them
 - <img width="1305" height="345" alt="image" src="https://github.com/user-attachments/assets/fd07ee8a-2cb6-4833-ab81-a1b6fe05f220" />
 - Both the running averages are divided by some correction terms to avoid the running average growing over time. This is true, ADAM.
