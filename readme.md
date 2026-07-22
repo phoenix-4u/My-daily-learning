@@ -13,11 +13,22 @@
 # Day 118 - 14/07/2026
 
 # Day 117 - 13/07/2026
+## Training a Deep Network in PyTorch
+- `transforms.compose()` creates a pipeline that we can use to transform the data, like resizing and then transforming to tensors
+- We can then use a data loader to load the training dataset in batches, shuffle it, and change some other data loading configurations
+- Dataloader is an iterator, so this can be used in a for loop to load the images.
+- There are 2 loops: 1 for the dataloader for the number of epochs and then the outer loop for the number of epochs
+- We need the loss as CrossEntropyLoss, SGD as the optimizer with learning rate and momentum
+- Then we define a model with the number of layers as a parameter. The idea is to take the input channels and then pass them through the number of layers and finally predict the number of classes. We will need to define the forward function, which will encapsulate the call to the model
+- <img width="803" height="424" alt="image" src="https://github.com/user-attachments/assets/9c6ea776-4be3-4c73-9a70-fa44a8b6aea4" />
+- Within the dataloader loops, we need to first load the dataset and labels (on the GPU if available), then call the model on the dataset, then predict the loss with the loss function, call `zero_grad()` on the optimizer, do backpropagation, and then take a step on the optimizer
+- <img width="805" height="497" alt="image" src="https://github.com/user-attachments/assets/7e1608ab-d3ec-4a06-8c7f-8f9385407302" />
+
 
 # Day 116 - 12/07/2026
 # Overfitting Part 2
 - Transfer Learning is used when the dataset is small and to fine-tune the model on smaller data
-- Transfer learns because inputs can be quite similar and the patterns are the same. The initialization is also well done, so the learnings are very effective.
+- Transfer learning works because inputs can be quite similar and the patterns are the same. The initialization is also well done, so the learnings are very effective.
 - Overfitting happens layer by layer. Dropouts will break the reliance between layers by randomly switching off neurons
 - While using dropouts, `model.eval()` needs to be invoked.
 - For a CNN, dropouts can only be called before the 1*1 convolutions (fully connected layer) at the end, as receptive fields make it difficult for dropouts to work.
@@ -44,7 +55,7 @@
 - SGD should be paired with CrossEntropyLoss
 - SGD needs another loop over GD to loop through all the images individually
 - The Loss is relatively high, which can be fixed by 2 ways: reducing the learning rate and implementing batch sizes
-- We can also add momentum for faster convergence. The learning rate should be relatively smaller otherwise, the network might explode.
+- We can also add momentum for faster convergence. The learning rate should be relatively lower; otherwise, the network might explode.
 - <img width="908" height="563" alt="image" src="https://github.com/user-attachments/assets/39617d6f-2551-4dd5-81cb-8880fa446122" />
 - The batch should be loaded using a data loader
 
@@ -105,7 +116,7 @@
 - Normalize the network by subtracting the mean and dividing by the standard deviation
 - With random initialization, if the data is skewed towards the positive direction, the network does not learn very well. Hence, normalization is required by subtracting the mean
 - If the input is imbalanced, i.e., one is very large than the other, then it is recommended to normalize using standard deviation
-- Never initialize all weights to 0, as it will backpropagate the gradient of all 0s and become 0. Only 1 layer network or the last layer can be initialized to 0 (if used with SGD)
+- Never initialize all weights to 0, as it will backpropagate the gradient of all 0s and become 0. Only a 1-layer network or the last layer can be initialized to 0 (if used with SGD)
 - All the same non-zero values are not a good idea, as all the activations will have the same value and the same symmetrical updates
 
 # Day 107 - 03/07/2026
@@ -119,16 +130,16 @@
 
 # Day 106 - 02/07/2026
 ## Dilation and Upconvolution in PyTorch
-- Dialation can be added in a Con2D by setting `dialation=2` and so on
+- Dilation can be added in a Con2D by setting `dilation=2` and so on
 - Up-convolution can be achieved using the `ConvTranspose2D` module
 - <img width="1114" height="344" alt="Screenshot 2026-07-08 at 12 16 08 AM" src="https://github.com/user-attachments/assets/9593e791-9848-4791-a3ff-87bfe369e92d" />
 
 # Day 105 - 01/07/2026
 ## Dilation and Upconvolution
 - Striding decreases the resolution by shrinking the image
-- Dialation is the method of padding 0s in between the kernel and keeping the parameter count the same, though this is very slow
+- Dilation is the method of padding 0s in between the kernel and keeping the parameter count the same, though this is very slow
 - <img width="1038" height="569" alt="Screenshot 2026-07-07 at 11 49 52 PM" src="https://github.com/user-attachments/assets/d7475468-bb71-40f3-a9e5-923d8be535d0" />
-- Dialation does not discard any pixels; it just skips them. Hence, the resolution remains the same. 
+- Dilatation does not discard any pixels; it just skips them. Hence, the resolution remains the same. 
 - Upconvolution works by introducing 0s within the input pixels before convolution
 - <img width="1040" height="589" alt="Screenshot 2026-07-07 at 11 58 10 PM" src="https://github.com/user-attachments/assets/9143b688-bd0c-4811-90cd-40f32a9e763e" />
 
@@ -165,7 +176,7 @@
 ## Pooling
 - It is not always necessary to apply only a linear operator to the Kernel patches. Pooling is one technique that can be used.
 - Pooling is the technique to apply any arbitrary function to patches apart from Linear transformations
-- For max and average pooling, we will have stride and kernel size, but output channels and grouping, as they were specific to linear transformation
+- For max and average pooling, we will have stride and kernel size, but output channels and grouping, as they were specific to linear transformations
 - Max pooling is taking the channel-wise max over the input patches
 - <img width="1143" height="529" alt="Screenshot 2026-06-29 at 2 37 05 PM" src="https://github.com/user-attachments/assets/ab0b01e1-dfaa-4f42-8ada-b13b60d43a43" />
 - Average pooling works just like MaxPooling, but instead of max, it takes channel-wise average
@@ -176,7 +187,7 @@
 # Day 100 - 26/06/2026
 ## Convolutions in PyTorch
 - Conv1D is used for time series forecasting, Conv2D is used for image classification, and Conv3D is used for videos
-- For Conv2D, we provide 5 inputs, i.e., input channels, output channels, Kernel size, striding size, and padding size
+- For Conv2D, we provide 5 inputs, i.e., input channels, output channels, Kernel size, stride size, and padding size
 - A simple convolution network can be designed as follows:
 - <img width="993" height="432" alt="Screenshot 2026-06-29 at 1 45 55 PM" src="https://github.com/user-attachments/assets/2bef3f95-502c-455d-8a43-67386e2c1ee4" />
 - Global Average can be done with an adaptive average pool 2D. Global Average Pooling. When you set the output to 1×1—nn.AdaptiveAvgPool2d(1)—each channel's entire feature map collapses to a single averaged value, giving you a C×1×1 tensor where C is the channel count.
@@ -207,7 +218,7 @@ Below are the scenarios
 - <img width="798" height="738" alt="Screenshot 2026-06-29 at 1 24 00 PM" src="https://github.com/user-attachments/assets/a3f24b58-99d2-4e3f-9db2-e9d071efec9c" />
 - <img width="793" height="753" alt="Screenshot 2026-06-29 at 1 24 31 PM" src="https://github.com/user-attachments/assets/683e8038-af4e-425d-aecc-9234606a23c8" />
 - <img width="803" height="752" alt="Screenshot 2026-06-29 at 1 24 55 PM" src="https://github.com/user-attachments/assets/d2f1b597-70cc-412b-80c0-a7fb6cd4705e" />
-- Group convolutions are similar to striding, where not all inputs contribute to all outputs. An Extreme case of groupwise convolution is depthwise convolution where the number of connections is limited to mapping within the channel, followed by 1*1 convolution between channels.
+- Group convolutions are similar to striding, where not all inputs contribute to all outputs. An Extreme case of groupwise convolution is depthwise convolution, where the number of connections is limited to mapping within the channel, followed by 1*1 convolution between channels.
 - General values for striding are 2, and the kernel size is 3
 - Increase the output channel only if you stride and increase the output channels by the striding factor.
 - 
@@ -223,7 +234,7 @@ Below are the scenarios
 - Receptive fields are based on the Kernel and define how deep networks can see
 - <img width="452" height="341" alt="image" src="https://github.com/user-attachments/assets/38cfb5ff-58ce-4a66-b75e-f34ef08ea604" />
 - Convolutions preserve spatial information, i.e., shifting or cropping the image has a similar effect on the output
-- It is also rotation scale and shift invariant
+- It is also rotation, scale, and shift invariant
 - Essentially, the output channels can be thought of as filters where each filter identifies some specific characteristic in a conv layer
 
 # Day 96 - 22/06/2026
@@ -260,7 +271,7 @@ Below are the scenarios
 ## Vanishing and Exploding Gradients
 - For a deep Neural network, the weights are generally multiplied as we proceed down the network. So as the network grows, the weights overshadow the actual input x
 - <img width="1349" height="657" alt="image" src="https://github.com/user-attachments/assets/feaae1b4-5dc7-4a46-8eea-89fe314949e5" />
-- If the weights are initialised to be large, then they become larger and larger and tend to infinity when the network becomes large. This creates the problem of exploding activation and gradients
+- If the weights are initialised to be large, then they become larger and larger and tend to infinity when the network becomes large. This creates the problem of exploding activations and gradients
 - This can be addressed by reducing the learning rate and changing the initialisation
 - If the weights are initialised to be small, then they become smaller and smaller and tend to 0 when the network becomes large. This creates the problem of vanishing activation and gradients
 - There is no real remedy for a normal NN, other than tuning the learning rate, since it happens to all but the shallowest networks because of the random small weight initialisation. The only remedy is to change the network architecture.
@@ -274,7 +285,7 @@ Below are the scenarios
 - ELU max (x, a*(e^x - 1)) uses exponential decay when the function output is negative. Here also, the alpha has to be tuned well, and it is computationally expensive
 - GeLU, as defined below, is used for SOTA deep NN models now. It has been empirically proven to work  best on enterprise models. The downside is that it is more computationally expensive
 - <img width="644" height="326" alt="image" src="https://github.com/user-attachments/assets/ac1986a5-58cb-4eb6-aa7e-9d59623a7e79" />
-- Tanh and sigmoid functions should not be used as the gradient becomes 0 on both the negative and positive sides
+- Tanh and sigmoid functions should not be used, as the gradient becomes 0 on both the negative and positive sides
 - The practical view is to start with ReLU and modify with Leaky ReLU, and only use GeLU for training SOTA models
 
 # Day 92 - 18/06/2026
@@ -283,7 +294,7 @@ Below are the scenarios
 - If both black and white are classified as 1, then since grey is in between, it also needs to be classified as 1
 - Relu (max(x,0)) birngs the required noon linearity
 - With this ReLU in the mix, two functions classifying white and black separately can be added together with ReLU
-- Generally, these nonlinear functions do not have their own parameters and work on the linear parameter that they surround
+- Generally, these nonlinear functions do not have their own parameters and work on the linear parameters that they surround
 - Layers are generally defined as the number of sequential components ( ReLU or parallel layers are not calculated) in a neural network. By architecture, they are the largest computational unit that remains unchanged throughout different architectures.
 - The universal approximation theorem guarantees that a linear -> ReLU -> Linear model can approximate any arbitrary continuous function. In practice, it is very difficult to train this model
 
@@ -296,19 +307,19 @@ Below are the scenarios
 - Then we run epochs and predict the label using the model, then define the loss function, set the optimizer to zero grad, run backwards, and then take a step for the  optimizer.
 - We might need to play around with the learning rate to ensure that the model does not explode
 - Finally, the accuracy of the model is tested on the test set.
-- For multiclass classification, the number of outputs is regressed to be the number of classifiable classes, like nn.Linear(128*128*3, 6)
+- For multiclass classification, the number of outputs is set to be the number of classifiable classes, like nn.Linear(128*128*3, 6)
 - Prediction of multiclass classification is always done using argmax over the softmax probabilities.
 
 # Day 90 - 16/06/2026
 ## Computational Graphs
 - Gradients for regular functions quickly get complicated as there are differentiations of many matrix operations
-- Computation graphs help to create a simpler workflow for gradient calculation
+- Computational graphs help to create a simpler workflow for gradient calculation
 - The forward pass is to create the computational graph
 - <img width="1143" height="53" alt="image" src="https://github.com/user-attachments/assets/b59bf696-b10a-42cd-8181-97577141768b" />
 - The backward pass is to calculate gradients from end to beginning
 - <img width="1216" height="607" alt="image" src="https://github.com/user-attachments/assets/3d4d4fab-542c-49e4-a421-a53d0b1ab9da" />
 - This is done so that the index function at the end, which is a vector, always makes it a vector and Jacobian (of individual functions) multiplication, thereby reducing the number of overall computational parameters
-- The backpropagation can be done only once, and one backpropagation computes the gradient for all the parameters. Since it collapses all parameters while calculating the final gradients, the active parameters drastically reduce during back propagation
+- The backpropagation can be done only once, and one backpropagation computes the gradient for all the parameters. Since it collapses all parameters while calculating the final gradients, the active parameters drastically reduce during backpropagation
 - In PyTorch, a `function.backward()` calculates gradient for all parameters where requires_grad is set to true.
 - The first gradient is always a vector in PyTorch
 - Setting `requires_grad` to true ensures that the computation graph is built and the gradient is calculated when backwards is called.
@@ -359,16 +370,16 @@ Below are the scenarios
 # Day 85 - 11/06/2026
 ## Gradients
 - Deep networks can be viewed as a gigantic nested function - f(x) = f1(f2(x))..
-- When n-dimensional input maps to a scalar output, the partial derivative is an n-sized row vector.
+- When an n-dimensional input maps to a scalar output, the partial derivative is an n-sized row vector.
 - When a scalar maps to an m-dimensional output, the partial derivative is an m-sized column vector
-- When n-dimensional input maps to an m-dimensional output, then the partial derivative is an m*n Jacobian
+- When an n-dimensional input maps to an m-dimensional output, then the partial derivative is an m*n Jacobian
 - Back propagation is essentially the chain rule computed in a specific way, where inner function derivatives are first calculated, followed by outer function derivatives
 
 # Day 84 - 10/06/2026
 ## Tensors
 - Data sets can increase in dimensions like vectors, matrices, images(with channel dimensions), videos (with time dimension)
 - Tensors are the basic unit in PyTorch that represent these datasets as multidimensional arrays
-- It has 3 basic properties - shame, ndim, and dtype
+- It has 3 basic properties - shape, ndim, and dtype
 - Tensors provide an easy way to represent and manipulate data
 
 # Day 83 - 09/06/2026
@@ -376,7 +387,7 @@ Below are the scenarios
 - Tokenizers are rarely trained from scratch
 - Tokenizers are sometimes specific to a model for which they are tokenizing
 - These generally convert the subword lemmas into indexes for the entire vocab.
-- A typical flow for a Bert tokenizer would look like this:
+- A typical flow for a BERT tokenizer would look like this:
 - <img width="885" height="417" alt="image" src="https://github.com/user-attachments/assets/0a25192a-460b-4677-b14d-621405bc7b1a" />
 
 
@@ -394,7 +405,7 @@ Below are the scenarios
 # Day 81 - 07/06/2026
 ## Torch vision visualization
 - For images, there are primarily 2 types of visualization: bounding boxes and segmentation masks
-- For bounding boxes, once the model predicts the object class, then using this utility, the boxes can be drawn against the target class items
+- For bounding boxes, once the model predicts the object class, using this utility, the boxes can be drawn against the target class items
 - For the segmentation mask, a similar process is followed, but here all pixel values for the entire object class are identified, and then that is used to overlay color on the images.
 
 # Day 80 - 06/06/2026
