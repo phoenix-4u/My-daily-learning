@@ -15,13 +15,16 @@
 # Day 120 - 16/07/2026
 
 # Day 119 - 15/07/2026
+## Variance Reduction in SGD
+- 
+
 
 # Day 118 - 14/07/2026
 ## Hyperparameters
 - Optimizers can optimize any parameters whose gradient can be calculated
 - Any parameters that are not learned by optimizers are hyperparameters
 - Examples include epochs, learning rates, model architecture, loss function
-- Hyperparameters should be set manually by hand based on model performance. This is referred to as Graduate-Student Descent as graduate students become adept at training these networks
+- Hyperparameters should be set manually by hand based on model performance. This is referred to as Graduate-Student Descent, as graduate students become adept at training these networks
 
 # Day 117 - 13/07/2026
 ## Training a Deep Network in PyTorch
