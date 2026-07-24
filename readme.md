@@ -1,3 +1,5 @@
+# Day 127 - 23/07/2026
+
 # Day 126 - 22/07/2026
 
 # Day 125 - 21/07/2026
@@ -15,6 +17,11 @@
 # Day 119 - 15/07/2026
 
 # Day 118 - 14/07/2026
+## Hyperparameters
+- Optimizers can optimize any parameters whose gradient can be calculated
+- Any parameters that are not learned by optimizers are hyperparameters
+- Examples include epochs, learning rates, model architecture, loss function
+- Hyperparameters should be set manually by hand based on model performance. This is referred to as Graduate-Student Descent as graduate students become adept at training these networks
 
 # Day 117 - 13/07/2026
 ## Training a Deep Network in PyTorch
@@ -25,7 +32,7 @@
 - We need the loss as CrossEntropyLoss, SGD as the optimizer with learning rate and momentum
 - Then we define a model with the number of layers as a parameter. The idea is to take the input channels and then pass them through the number of layers and finally predict the number of classes. We will need to define the forward function, which will encapsulate the call to the model
 - <img width="803" height="424" alt="image" src="https://github.com/user-attachments/assets/9c6ea776-4be3-4c73-9a70-fa44a8b6aea4" />
-- Within the dataloader loops, we need to first load the dataset and labels (on the GPU if available), then call the model on the dataset, then predict the loss with the loss function, call `zero_grad()` on the optimizer, do backpropagation, and then take a step on the optimizer
+- Within the dataloader loops, we need first to load the dataset and labels (on the GPU if available), then call the model on the dataset, then predict the loss with the loss function, call `zero_grad()` on the optimizer, do backpropagation, and then take a step on the optimizer
 - <img width="805" height="497" alt="image" src="https://github.com/user-attachments/assets/7e1608ab-d3ec-4a06-8c7f-8f9385407302" />
 
 
