@@ -15,6 +15,12 @@
 # Day 121 - 17/07/2026
 
 # Day 120 - 16/07/2026
+## Deep Networks in PyTorch
+- Every model class should start with nn.Module
+- The constructor should call `super().__init__()` always in the beginning
+- All network parameters should be defined in the constructor
+- After the `__init__()` forward method should be used to call the network
+- <img width="831" height="508" alt="image" src="https://github.com/user-attachments/assets/33485a27-0a36-4a67-8fda-4669816a6978" />
 
 # Day 119 - 15/07/2026
 ## Variance Reduction in SGD
