@@ -13,6 +13,12 @@
 # Day 122 - 18/07/2026
 
 # Day 121 - 17/07/2026
+## A Practical Guide to Deep Network Design
+- Based on continuous or discrete prediction, the loss function is chosen accordingly
+- <img width="627" height="282" alt="image" src="https://github.com/user-attachments/assets/2512960b-a500-4f12-8315-e8937720f9b7" />
+- `CrossEntropyLoss` can also be used for binary classification
+- Activation function should be ReLU. Leaky Relu/Gelu should only be used if ReLU does not work
+- For optimizer, Momentum should always be 0.9, batch size should be as large as possible, and Learning rate should be chosen by hand
 
 # Day 120 - 16/07/2026
 ## Deep Networks in PyTorch
@@ -24,8 +30,13 @@
 
 # Day 119 - 15/07/2026
 ## Variance Reduction in SGD
-- 
-
+- Convergence rate generally depends on the variance of gradients in optimizers
+- Introduce batch size to average various gradients for the overall gradient updates of the batch
+- <img width="1312" height="540" alt="image" src="https://github.com/user-attachments/assets/d3f803fd-283f-4cfe-833f-7577985354c6" />
+- Mini-batch should be as large as it can fit on a GPU
+- Momentum calculates the average gradients based on the running average of all previous gradients
+- <img width="1343" height="498" alt="image" src="https://github.com/user-attachments/assets/d18f7461-daa0-4794-b7b6-ce1811d54257" />
+- Momentum (0.9) will lead to convergence as fast as normal Gradient Descent but will not be very computationally expensive
 
 # Day 118 - 14/07/2026
 ## Hyperparameters
