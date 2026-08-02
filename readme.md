@@ -27,6 +27,9 @@
 # Day 123 - 19/07/2026
 
 # Day 122 - 18/07/2026
+## Transformer
+- Convolutions are good at parsing repetative pattern in a sequence but are not good at variable sequence lengths
+- Transformer helps to parse variable sequences of input 
 
 # Day 121 - 17/07/2026
 ## A Practical Guide to Deep Network Design
