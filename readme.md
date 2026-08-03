@@ -1,3 +1,5 @@
+# Day 137 - 02/08/2026
+
 # Day 136 - 01/08/2026
 
 # Day 135 - 31/07/2026
@@ -25,10 +27,13 @@
 # Day 124 - 20/07/2026
 
 # Day 123 - 19/07/2026
+# Attention
+- Attention is convolution but works on a variable input sequence
+- 
 
 # Day 122 - 18/07/2026
 ## Transformer
-- Convolutions are good at parsing repetative pattern in a sequence but are not good at variable sequence lengths
+- Convolutions are good at parsing repetitive patterns in a sequence but are not good at variable sequence lengths
 - Transformer helps to parse variable sequences of input 
 
 # Day 121 - 17/07/2026
