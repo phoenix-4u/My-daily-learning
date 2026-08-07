@@ -25,6 +25,14 @@
 # Day 129 - 25/07/2026
 
 # Day 128 - 24/07/2026
+## Transformer Architecture
+- A transformer block essentially comprises 1 layer of multi-head attention followed by 1 layer of a multi-layer perceptron
+- To avoid vanishing gradients and activations, residual connections and normalizations are added
+- <img width="1235" height="586" alt="image" src="https://github.com/user-attachments/assets/f1eb6ed0-b303-479a-81cd-cbec3d6f1260" />
+- These layers are repeated over and over again after feeding in the embedded sequence
+- We can add a linear layer by adding a token and using it to predict sentiment
+- <img width="1333" height="650" alt="image" src="https://github.com/user-attachments/assets/d709f1f6-0a37-4f03-b227-9fb02b939106" />
+
 
 # Day 127 - 23/07/2026
 
@@ -36,8 +44,16 @@
 
 # Day 123 - 19/07/2026
 # Attention
-- Attention is convolution but works on a variable input sequence
-- 
+- Attention is like convolution but works on a variable input sequence
+- It works well when we apply it in sequence
+- It takes a set of feature vectors, identifies the relationship between them, and outputs a stronger representation
+- There are 3 inputs to attention: query, key, and value. This can be equated to a DB query with a key to retrieve a value.
+- The query will look at all the keys in the sequence and calculate the weighted average of the values with all of them. So close keys will have more weight than those that are far away
+- <img width="1348" height="716" alt="image" src="https://github.com/user-attachments/assets/a67f88ca-4956-472a-a3e1-c0e95818764f" />
+- For the language task, we can break the words into tokens and then embedd it. Then we take this embedding and pass it through attention where all keys, values, and queries are the same embeddings
+- Self-attention has the Q, K, and V from the same input, whereas Cross Attention has separate inputs for Q and separate inputs for K and V
+- <img width="1331" height="705" alt="image" src="https://github.com/user-attachments/assets/cd6afaef-ace7-4161-8a4d-dde426b86873" />
+- Self-attention is used in NLP tasks, whereas cross-attention is used in computer vision, where a language model can represent a visual element
 
 # Day 122 - 18/07/2026
 ## Transformer
