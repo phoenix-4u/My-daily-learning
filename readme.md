@@ -41,8 +41,23 @@
 # Day 126 - 22/07/2026
 
 # Day 125 - 21/07/2026
+## Multi-head attention in Pytorch
+- In a custom implementation, first we need to provide the layer configs for the linear layers associated with KQV
+- <img width="758" height="268" alt="image" src="https://github.com/user-attachments/assets/010de187-16c1-42e1-ba92-54661a0dc464" />
+- After that, the projections can be divided into the number of attention heads. It's done here using rearrange
+- Then raw attention scores are calculated using the dot product on Q and K
+- Finally, attention is calculated using softmax and then multiplied by the value to get the result
+- <img width="970" height="372" alt="image" src="https://github.com/user-attachments/assets/280afb2c-f656-4cc1-9e81-568728cf6dcc" />
+
 
 # Day 124 - 20/07/2026
+## Multi-head attention
+- In its basic form, each element in self-attention is going to attend to only itself, as it is closest to itself
+- The solution is to multiply an arbitrary weight matrix to Q, K, V so that weights are now different and they can attend to different elements
+- <img width="1179" height="590" alt="image" src="https://github.com/user-attachments/assets/c4e6b1fc-0949-4c47-84dd-a3a3cebb0da9" />
+- Multi-head attention is just having multiple such weight matrices, each with the same KQV and learning something different. In the end, all of them are concatenated and run through another linear layer.
+- <img width="1277" height="651" alt="image" src="https://github.com/user-attachments/assets/4d7e65d2-fd43-4280-8eca-bf835f0749f1" />
+- Each weight matrix is known as an attention head.
 
 # Day 123 - 19/07/2026
 # Attention
