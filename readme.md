@@ -30,7 +30,7 @@
 - At last, we add the linear layer at the end to take the transformer output and get the predictions out.
 - While training, it is necessary to add a special start and end token to identify where to start and stop.
 - After setting up the loss and optimizer function, we give the previously generated tokens and get the next character prediction.
-- For sampling, we just need to predict one token at a time until the model predicts 0
+- For sampling, we just need to predict one token at a time until the model predicts 0 (that is the start token)
 
 # Day 131 - 27/07/2026
 ## Application of Transformers
