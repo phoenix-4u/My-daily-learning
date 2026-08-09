@@ -23,8 +23,27 @@
 # Day 132 - 28/07/2026
 
 # Day 131 - 27/07/2026
+## Application of Transformers
+- Classification using a single classification token by providing attention to all other tokens
+- Translation is another application of transformers
+- Translation or Sentence generation in general is done using autoregressive predictions, where to predict the next word, the input query and previously generated words are all taken into context to generate the current word
+- Masked attention is necessary to prevent the model from cheating during training so that it predicts what the next word is and repeats it over and over. This is stopped by applying a mask so that it can only see words that were already predicted
+- One-word prediction training is a very slow process. To get around this, teacher forcing is used where both the input tokens and output tokens are fed altogether during training. So the model never learns 1-word prediction during training. Practically, this has not been observed to cause any issue during inference time.
+- <img width="920" height="530" alt="image" src="https://github.com/user-attachments/assets/dbef2227-a760-4354-be07-1fd72ac12e9e" />
+- There are 3 types of transformer architecture, i.e., encoder-only, decoder-only, and encoder-decoder.
+- <img width="1349" height="659" alt="image" src="https://github.com/user-attachments/assets/65b14f5b-96eb-41da-a814-e60fec409766" />
+- Transformers can now process words (language) and image patches (Vision Transformers), and can be continuous or discrete
 
 # Day 130 - 26/07/2026
+## Transformer Architecture in PyTorch
+- This comprises a multi-head attention layer to start with as the first self-attention layer
+- A multi-layer perceptron follows this
+- We should add normalization layers to both input and output layers
+- The [0] index in the self-attention layer is to get the result of the attention operator, rather than the attention weight [1].
+- Residual connections are used by adding the layers to x
+- <img width="1094" height="506" alt="image" src="https://github.com/user-attachments/assets/07739096-751e-4bdf-b523-cad59135007e" />
+- This can be invoked by a construct as below
+- <img width="973" height="407" alt="image" src="https://github.com/user-attachments/assets/c8a9287c-57ff-4f7f-a507-fd2fa6a218a8" />
 
 # Day 129 - 25/07/2026
 ## Transformer Architecture
