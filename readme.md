@@ -1,3 +1,5 @@
+# Day 143 - 08/08/2026
+
 # Day 142 - 07/08/2026
 
 # Day 141 - 06/08/2026
@@ -25,8 +27,6 @@
 # Day 130 - 26/07/2026
 
 # Day 129 - 25/07/2026
-
-# Day 128 - 24/07/2026
 ## Transformer Architecture
 - A transformer block essentially comprises 1 layer of multi-head attention followed by 1 layer of a multi-layer perceptron
 - To avoid vanishing gradients and activations, residual connections and normalizations are added
@@ -35,13 +35,50 @@
 - We can add a linear layer by adding a token and using it to predict sentiment
 - <img width="1333" height="650" alt="image" src="https://github.com/user-attachments/assets/d709f1f6-0a37-4f03-b227-9fb02b939106" />
 
+# Day 128 - 24/07/2026
+## Positional Embedding in PyTorch
+- If we use the identity function as positional encoding, which are the raw coordinates, then the network does not learn well
+- We can define a positional embedding class where we first define frequencies in a gap of 2
+- torch.arange(0, embed_dim, 2) creates a list of even numbers: [0, 2, 4, 6, ...] up to embed_dim. This gives one number per pair of dimensions in the embedding.
+- Dividing by 2 and passing through exp(...) converts those numbers into a set of different frequencies — some very fast-oscillating, some very slow.
+- The intuition: just like a clock has a second hand (fast), minute hand (medium), and hour hand (slow), this creates many "hands" spinning at different speeds. Combining all of them lets the model uniquely encode any position, similar to how a clock's three hands together can represent any time of day.
+- self.freq stores this whole bank of frequencies, one per dimension-pair
+- In forward, x is the input — the comment says shape is B x 2, meaning a batch of position values (like position indices 0, 1, 2, 3...).
+- x[..., None, :] * self.freq[..., None] — this multiplies each position value by every frequency in the bank. It's the "how far around the clock has this hand turned" calculation: position × speed = angle.
+- torch.sin(x) and torch.cos(x) — for every one of those angles, compute both the sine and cosine. This is exactly the same math as the rotation matrix in the RoPE slide you looked at earlier — sine and cosine pairs describe a point going around a circle.
+- torch.cat([...], dim=-1) — glue all the sine values and all the cosine values together into one long vector.
+- .view(...) — reshape everything back into a clean, flat embedding vector per position.
+- <img width="1028" height="299" alt="image" src="https://github.com/user-attachments/assets/3e12b5b1-8638-4866-a96f-cacf066b13fa" />
+- Finally, this encoding just needs to be applied in front of the network
+- <img width="553" height="448" alt="image" src="https://github.com/user-attachments/assets/e069a806-0af4-4069-97e8-af3675330804" />
 
 # Day 127 - 23/07/2026
+## Positional Embedding Part 2
+- Another option for learning positional embedding is to just use Random weights
+- This will not work well when the train and test sequences vary
+- Patch embeddings in Vision Transformers are an example of this
+- <img width="1359" height="576" alt="image" src="https://github.com/user-attachments/assets/15b3e5c7-bb62-4d20-8be3-672130e0a127" />
+- Rotary Positional Embeddings have started to emerge as the one positional embedding to rule all positional embeddings
+- They are built on absolute positional embedding, but once we compute the attention operation on it, it will result in relative positional embedding
+- It's just a mathematical way of saying "rotate this vector by an angle tied to position m"
+- <img width="1390" height="723" alt="image" src="https://github.com/user-attachments/assets/9b9c505b-5a28-4585-927d-6baf29897f16" />
+ - Why "Both Absolute and Relative"
+  1. Absolute position: each word knows its own exact spot (word 1, word 2, word 3...) because each gets its own unique rotation angle.
+  2. Relative position: here's the elegant part — when the model later compares two words (say, word 5 and word 8, a query and a key) to see how related they are, the math works out so that only the difference between their positions (5 minus 8 = 3) actually matters, not their absolute positions. So the model automatically learns "these two words are 3 apart" without being explicitly told — it's baked into the geometry of the rotation.
+- Positional Embeddings are used in LLMs as well as implicit functions
 
-# Day 126 - 22/07/2026
+# Day 126 - 22/07/2026 Part 1
+## Positional Embedding
+- Attention is permutation-invariant, so sequences like my kids like movies and movies like my kid represent similar values.
+- Positional Embedding does exactly that. It takes into account the input value of X and adds position information in that
+- <img width="1232" height="743" alt="image" src="https://github.com/user-attachments/assets/e26eaeb2-3aa2-42d4-9327-f653b4b2282c" />
+- Normal number-based positional embeddings do not scale well, as it is difficult to learn the positions.
+- A better approach is to use frequency-based encoding (Sinusoidal positions) to represent the ordering.
+- The closer tokens have larger values, whereas tokens far away have smaller values.
+- <img width="1337" height="710" alt="image" src="https://github.com/user-attachments/assets/370770a9-def4-4939-9443-121d36334e10" />
 
 # Day 125 - 21/07/2026
-## Multi-head attention in Pytorch
+## Multi-head attention in PyTorch
 - In a custom implementation, first we need to provide the layer configs for the linear layers associated with KQV
 - <img width="758" height="268" alt="image" src="https://github.com/user-attachments/assets/010de187-16c1-42e1-ba92-54661a0dc464" />
 - After that, the projections can be divided into the number of attention heads. It's done here using rearrange
@@ -67,7 +104,7 @@
 - There are 3 inputs to attention: query, key, and value. This can be equated to a DB query with a key to retrieve a value.
 - The query will look at all the keys in the sequence and calculate the weighted average of the values with all of them. So close keys will have more weight than those that are far away
 - <img width="1348" height="716" alt="image" src="https://github.com/user-attachments/assets/a67f88ca-4956-472a-a3e1-c0e95818764f" />
-- For the language task, we can break the words into tokens and then embedd it. Then we take this embedding and pass it through attention where all keys, values, and queries are the same embeddings
+- For the language task, we can break the words into tokens and then embedd it. Then we take this embedding and pass it through attention, where all keys, values, and queries are the same embeddings
 - Self-attention has the Q, K, and V from the same input, whereas Cross Attention has separate inputs for Q and separate inputs for K and V
 - <img width="1331" height="705" alt="image" src="https://github.com/user-attachments/assets/cd6afaef-ace7-4161-8a4d-dde426b86873" />
 - Self-attention is used in NLP tasks, whereas cross-attention is used in computer vision, where a language model can represent a visual element
