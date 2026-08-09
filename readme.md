@@ -19,6 +19,11 @@
 # Day 134 - 30/07/2026
 
 # Day 133 - 29/07/2026
+## Making it all work Part 1
+- Use TensorBoard to visualize the data and add observability
+- We can use the summary writer from TensorBoard to add graphs, and then it can be run as a separate server
+- This can then be used to view the structure of the network and then the progress of the loss and accuracy
+- We can use add_scalar with global step to view time series loss and accuracy after putting the model in eval mode
 
 # Day 132 - 28/07/2026
 ## Training a transformer in PyTorch
