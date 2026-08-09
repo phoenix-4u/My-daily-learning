@@ -21,6 +21,16 @@
 # Day 133 - 29/07/2026
 
 # Day 132 - 28/07/2026
+## Training a transformer in PyTorch
+- With the base transformer in place, the next thing to do is add relative positional embeddings, which we got from the attention mask.
+- At the same time, we would do Causal masking to mask out any attention that would look into the future by adding a parameter that is the number of heads times the length of the relative positional embedding
+- Then we added a self-attention operation (by calling the `MultiHeadedAttention` class and supplying it the previously defined attention mask
+- For the transformer layer, we take the raw ASCII code and embed it into a higher dimension
+- Then we have the transformer layer in between with the desired number of such layers
+- At last, we add the linear layer at the end to take the transformer output and get the predictions out.
+- While training, it is necessary to add a special start and end token to identify where to start and stop.
+- After setting up the loss and optimizer function, we give the previously generated tokens and get the next character prediction.
+- For sampling, we just need to predict one token at a time until the model predicts 0
 
 # Day 131 - 27/07/2026
 ## Application of Transformers
