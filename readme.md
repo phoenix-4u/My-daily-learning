@@ -1,7 +1,7 @@
 
-# Day 145 - 09/08/2026
+# Day 145 - 10/08/2026
 
-# Day 144 - 08/08/2026
+# Day 144 - 09/08/2026
 
 # Day 143 - 08/08/2026
 
@@ -553,7 +553,7 @@ Below are the scenarios
 - Multi-class classification has always fixed classes where the output has to be a particular class. There are no negative examples, and classes are mutually exclusive
 - Multiple binary classification (i.e., running multiple classes through sigmoid rather than softmax) can result in multiple categories and might require negative examples during training.
 - It is used for multi-label tagging, such as in which locations is it going to rain tomorrow
-- 
+  
 # Day 85 - 11/06/2026
 ## Gradients
 - Deep networks can be viewed as a gigantic nested function - f(x) = f1(f2(x))..
