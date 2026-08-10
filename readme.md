@@ -1,3 +1,5 @@
+# Day 144 - 08/08/2026
+
 # Day 143 - 08/08/2026
 
 # Day 142 - 07/08/2026
@@ -17,6 +19,13 @@
 # Day 135 - 31/07/2026
 
 # Day 134 - 30/07/2026
+## Making it all work Part 2
+- To stop overfitting, we can save the model at the point it performs the best or every few epochs
+- Even after achieving 100% training accuracy, validation accuracy can still go up
+- If Validation accuracy does not increase, the first thing that can be tried is to add more data. This can be done by synthetically creating more data from the already existing dataset.
+- This includes random resize crop, random horizontal flipping, and many more. Random crop ensures that the model is never trained on the ssame image again as it will always train on a croped version of the image
+- We can add normalization to both the train and validation datasets
+- We can also add weight decay to the optimizer
 
 # Day 133 - 29/07/2026
 ## Making it all work Part 1
