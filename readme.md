@@ -18,6 +18,17 @@
 # Day 137 - 02/08/2026
 
 # Day 136 - 01/08/2026
+## Structure of deep networks
+- At its core, Deep networks are a big differentiable function, which is a combination of simple functions stacked on top of one another
+- Its parameters are going to be learned using gradient descent.
+- Elements of a deep network include
+  1. Linear Parameters - convolution and linear layers
+  2. Non-linear Parameters - activations, attentions, pooling, normalization
+- Linear layers are easy to compute and have trainable weights, whereas non-linear layers have very few trainable parameters but are difficult to train
+- These elements can be stacked on top of one another in blocks. These blocks include
+  1. Multi-layer perceptron - These are Linear - Activation - Linear block. These are extremely flexible, as any function representation can be learnt using these blocks; however, these can then have huge parameter size and can lead to massive overfitting of data, and hence these are used in small blocks
+  2. Multi-Head Attention Blocks - These are linear - a group of single-head attention - linear layers that are primarily used in transformers
+  3. Transformer blocks - These are at
 
 # Day 135 - 31/07/2026
 ## Deep Learning - Summary
@@ -25,7 +36,7 @@
 - Residuals and normalizations make networks even deeper
 - Finally applied the concepts to CNNs and Transformers in a real-world problem.
 - This foundation is from 2012 to 2022. Now these concepts are applied to real-world problems, as all the basics have been covered with these foundations
-- Broader Application area of Geology, Medicine, biotech, agriculture etc.
+- Broader Application area of Geology, Medicine, biotech, agriculture, etc.
 
 # Day 134 - 30/07/2026
 ## Making it all work Part 2
