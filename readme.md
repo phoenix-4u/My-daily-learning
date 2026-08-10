@@ -1,3 +1,6 @@
+
+# Day 145 - 09/08/2026
+
 # Day 144 - 08/08/2026
 
 # Day 143 - 08/08/2026
@@ -17,13 +20,19 @@
 # Day 136 - 01/08/2026
 
 # Day 135 - 31/07/2026
+## Deep Learning - Summary
+- Made deep networks
+- Residuals and normalizations make networks even deeper
+- Finally applied the concepts to CNNs and Transformers in a real-world problem.
+- This foundation is from 2012 to 2022. Now these concepts are applied to real-world problems, as all the basics have been covered with these foundations
+- Broader Application area of Geology, Medicine, biotech, agriculture etc.
 
 # Day 134 - 30/07/2026
 ## Making it all work Part 2
 - To stop overfitting, we can save the model at the point it performs the best or every few epochs
 - Even after achieving 100% training accuracy, validation accuracy can still go up
 - If Validation accuracy does not increase, the first thing that can be tried is to add more data. This can be done by synthetically creating more data from the already existing dataset.
-- This includes random resize crop, random horizontal flipping, and many more. Random crop ensures that the model is never trained on the ssame image again as it will always train on a croped version of the image
+- This includes random resize crop, random horizontal flipping, and many more. Random crop ensures that the model is never trained on the ssame image again as it will always train on a cropped version of the image
 - We can add normalization to both the train and validation datasets
 - We can also add weight decay to the optimizer
 
