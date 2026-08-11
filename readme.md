@@ -16,6 +16,7 @@
 # Day 138 - 03/08/2026
 
 # Day 137 - 02/08/2026
+## 
 
 # Day 136 - 01/08/2026
 ## Structure of deep networks
@@ -26,9 +27,15 @@
   2. Non-linear Parameters - activations, attentions, pooling, normalization
 - Linear layers are easy to compute and have trainable weights, whereas non-linear layers have very few trainable parameters but are difficult to train
 - These elements can be stacked on top of one another in blocks. These blocks include
-  1. Multi-layer perceptron - These are Linear - Activation - Linear block. These are extremely flexible, as any function representation can be learnt using these blocks; however, these can then have huge parameter size and can lead to massive overfitting of data, and hence these are used in small blocks
+  1. Multi-layer perceptron - These are Linear - Activation - Linear blocks. These are extremely flexible, as any function representation can be learnt using these blocks; however, these can then have huge parameter size and can lead to massive overfitting of data, and hence these are used in small blocks
   2. Multi-Head Attention Blocks - These are linear - a group of single-head attention - linear layers that are primarily used in transformers
-  3. Transformer blocks - These are at
+  3. Transformer blocks - These are multi-head attention tagged to MLP
+  4. Convolution block - Convolution - activation - convolution, primarily used in CNN networks.
+- <img width="1175" height="687" alt="Screenshot 2026-08-10 at 12 47 00 PM" src="https://github.com/user-attachments/assets/d2883b8a-f0bf-4944-8448-9f015f1896ac" />
+- CNNs are used to process image data and are used with attributes like striding, receptive fields, up-convolution, and so on.
+- Transformers work on a varied set of tokens and use positional embeddings to order the relative positions.
+- For input transformation, real-valued inputs can be fed through the network AS-IS, whereas categorical values can either be one-hot encoded or vector embedded.
+- For output transformation, real-valued outputs can be produced AS-IS. For categorical outputs, we need classifiers to classify the data.
 
 # Day 135 - 31/07/2026
 ## Deep Learning - Summary
