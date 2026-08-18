@@ -1,5 +1,7 @@
 # Day 151 - 16/08/2026
 
+# Day 151 - 16/08/2026
+
 # Day 150 - 15/08/2026
 
 # Day 149 - 14/08/2026
@@ -27,7 +29,14 @@
 # Day 138 - 03/08/2026
 
 # Day 137 - 02/08/2026
-## 
+## Training deep Network
+- Loss Function
+  1. Regression - L1, MSE Loss
+  2. Classification - BCEWithLogitsLoss, CrossEntropyLoss
+- The training objective is to minimize the average loss difference between the parameters and the true labels truth
+- Gradient Descent uses automatic differentiation and feeds it to the optimizer
+- Optimizers change the model weights to fit the model to the labels better
+- Adam/AdamW optimizers add twice as many parameters to the model as it tracks 2 momentum terms. AdamW has an additional decay parameter
 
 # Day 136 - 01/08/2026
 ## Structure of deep networks
@@ -61,7 +70,7 @@
 - To stop overfitting, we can save the model at the point it performs the best or every few epochs
 - Even after achieving 100% training accuracy, validation accuracy can still go up
 - If Validation accuracy does not increase, the first thing that can be tried is to add more data. This can be done by synthetically creating more data from the already existing dataset.
-- This includes random resize crop, random horizontal flipping, and many more. Random crop ensures that the model is never trained on the ssame image again as it will always train on a cropped version of the image
+- This includes random resize crop, random horizontal flipping, and many more. Random crop ensures that the model is never trained on the ssame image again, as it will always train on a cropped version of the image
 - We can add normalization to both the train and validation datasets
 - We can also add weight decay to the optimizer
 
