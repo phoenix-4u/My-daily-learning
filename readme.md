@@ -1,5 +1,7 @@
 # Day 153 - 18/08/2026
 
+# Day 153 - 18/08/2026
+
 # Day 152 - 17/08/2026
 
 # Day 151 - 16/08/2026
@@ -29,6 +31,15 @@
 # Day 139 - 04/08/2026
 
 # Day 138 - 03/08/2026
+
+## GPU Architecture - Part 1
+- GPUs are massively parallel processors
+- A GPU consists of 132 streaming multiprocessors (SM)
+- Each multiprocessor contains 4 warps; each warp can execute I program at a time
+- Each warp has 32 FP32 cores which can do matrix multiplications
+- Each core in an SM shares the L1 memory ( generally 228 KB) caching  as well as shared read and write.
+- A GPU node connects 8 - 16 GPUs, generally connected via an NV link
+- 40K of such generally create an entire datacenter, which can consume up to 40% of the energy of a nuclear powerplant
 
 # Day 137 - 02/08/2026
 ## Training deep Network
