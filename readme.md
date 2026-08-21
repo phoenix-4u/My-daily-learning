@@ -29,9 +29,20 @@
 # Day 141 - 06/08/2026
 
 # Day 140 - 05/08/2026
+## GPUs - Memory Bandwidth
+- Node-to-node communication is 50 GB/seconds
+- GPU-to-GPU communication within a mnode is 900 GB/second
+- GPU main memory to SM shared memory is 3.35 TB/second
+- Computation is 130 - 1000 teraflops per second
+- So for each memory load of a floating-point read, there can be 100 floating-point operations
 
 # Day 139 - 04/08/2026
 ## GPU - Mental Model
+- Computation from a floating-point operation is much faster than reading the data from shared memory
+- For calculating a maxpool operation, it takes 100 times more time for a memory read compared to a calculation
+- All cores inside a streaming multiprocessor can only do the same operation. So often we waste computation when it is not required.
+- So instead of using 2 loops to calculate max pool, we can do it using 1 loop and execute that operation in parallel through all the GPUs
+- <img width="872" height="478" alt="image" src="https://github.com/user-attachments/assets/483871fc-f2c2-4480-99a2-f933a83b4093" />
 
 # Day 138 - 03/08/2026
 ## GPU Architecture - Part 1
