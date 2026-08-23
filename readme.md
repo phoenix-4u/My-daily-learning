@@ -1,3 +1,7 @@
+# Day 157 - 22/08/2026
+
+# Day 156 - 21/08/2026
+
 # Day 155 - 20/08/2026
 
 # Day 154 - 19/08/2026
@@ -23,10 +27,43 @@
 # Day 144 - 09/08/2026
 
 # Day 143 - 08/08/2026
+## Training with Bfloat16
+- Earlier, the master weights were kept in 32 bits, which were then casted down to float16.
+- The weights, gradient and activation calculation was all done in 16 bit precision.
+- Once the calculation was done, the weights were upcasted to 32 bits
+- <img width="1388" height="719" alt="image" src="https://github.com/user-attachments/assets/365a225a-8887-4cfb-bed1-7e6c3b381994" />
+- Certain operations like normalization is not calculated well in lower precisions. Hence we use autocast (which knows which functions do not work well with lower precisions) to convert the float16 to higher precision, compute these operations and typecast it back to lower precision
+- For lower bit floating point precision suffers from underflow i.e gradients are so small that the gradients that they cannot be represneted by 16 bit precision.
+- So the idea is to multiply and amplify the loss with large number like 2^16 and then compute it.
+- If this overflows, then we ignore that gradient and use a lower gradient scale
+- So ideally, the weights and 2nd Momentum should be in 32 bits, while reducing the gradient and 1st momentum to 16 bits
+- <img width="1375" height="751" alt="image" src="https://github.com/user-attachments/assets/a4c188a8-7648-4399-a5e6-9811e5ce9537" />
 
 # Day 142 - 07/08/2026
+## Mixed Precision training
+- For a N parameter model, you will have to use 16N bytes memory to train the model. So a 1 Billion Parameter model would ideally need 16 GB VRAM to train it.
+- <img width="1358" height="718" alt="image" src="https://github.com/user-attachments/assets/e50813c6-0752-4566-8712-268a1e986d3b" />
+- A float 32 presion contains a sign with 1 bit, exponent with 8 bits and fractional part is 23 bits
+- A float32 is enough to cover a LLM parameters, weights gradients and activation for a model like Llama 3.1
+- A float16 presion contains a sign with 1 bit, exponent with 5 bits and fractional part is 10 bits. This restricts the max and min range
+- A Bfloat16 presion contains a sign with 1 bit, exponent with 8 bits and fractional part is 7 bits. This has a big range but the precision suffers
+- Matrix multiplication can be implemented as a blockform, switching from float32 to bfloat16 ensures that speed is up by a factor of 2 as twice as much bfloats can fit into the block compared to float32
+- <img width="1386" height="711" alt="image" src="https://github.com/user-attachments/assets/bb52b8d5-a877-48ad-bf20-2d32ca84d62b" />
 
 # Day 141 - 06/08/2026
+## Training Large Models
+- Pre 2012 we had limited compute, so most of the time went into fitting the model to this limited CPU compute with efficient algorithms
+- From 2012 to 2018 we had a single GPU based networks which could learn better than hand engineered features
+- Better optimization techniques like AdamW were invented at this time
+- From 2019 to 2022 we had multi GPU architecture. Attention based model gained momentum
+- Instead of GPUs, GPU memory became the main bottleneck
+- Post 2022, training is not multinode but multi GPU. now datasets have become just data as all of internet is the data source
+- There has not been any fundamental infrastructure change for last few years.
+- The field has now evloved such that from trying to fit models to limited compute to finding algorithms to utimlize the massive compute, the focus has again shifted to managing infrastructure to utilize the established alsgorithms
+- <img width="1354" height="743" alt="image" src="https://github.com/user-attachments/assets/c46bc3cc-dd5a-4c57-975a-f5caffb08443" />
+- As models are made larger, they always get better.
+- For a N parameter model, you will have to use 16N bytes memory to train the model. So a 1 Billion Parameter model would ideally need 16 GB VRAM to train it.
+- Without optimization, it takes 16N, but with all optimization it will just take 1N - 2N
 
 # Day 140 - 05/08/2026
 ## GPUs - Memory Bandwidth
