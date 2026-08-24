@@ -25,16 +25,41 @@
 # Day 146 - 11/08/2026
 
 # Day 145 - 10/08/2026
+## Distributed Training - Model Parallelism
+- Split model across GPUs
+- Split along layers - Pipeline parallelism, dividing the model horizontally
+  1. Each GPU holds a particular layer, with layer 1 holding the dataset. This also accounts for any skip connections
+  2. The activation of each layer is passed across GPUs, and the backpropagation passes the gradient back across the GPU network
+  3. This split happens by hand, as the model needs to be split to have relatively equal weight, and the split needs to be done where there is relatively small communication overhead
+  4. <img width="1410" height="740" alt="image" src="https://github.com/user-attachments/assets/a4fe454a-1e05-4ecc-853b-f28d5704c113" />
+  5. This approach suffers from bubbles where the GPUs are idle while waiting for upstream and downstream GPUs to finish their work
+  6. This can be addressed by creating microbatches so that batches can be processed in parallel while waiting for the inputs/outputs of the previous layer
+  7. <img width="1402" height="659" alt="image" src="https://github.com/user-attachments/assets/fcb42c33-ca70-4e11-a64b-d05d3a28f36b" />
+- Split across layers - Tensor parallelism, dividing the model vertically
+  1. Incredibly difficult and complex to achieve, is rarely used now
+- Low memory use (bubbles), lower throughput
 
 # Day 144 - 09/08/2026
-
+## Distributed Training - Data Parallelism
+- To accommodate training of models whose memory bandwidth is more than the GPU size, we use a multi-GPU setup
+- One model copy per GPU and splits data among all GPUs
+- Synchronization of model weights happens as gradients are sent to the server and received back after synchronization
+- <img width="1385" height="778" alt="image" src="https://github.com/user-attachments/assets/561463ce-83b7-4519-a40b-7144552bc616" />
+- This actually speeds up due to parallel processing of data
+- Synchronization is slow as network speed and GPU computation speed can vary
+- The model still needs to fit on the GPU
+- To get around the problem, we use all-reduce to accumulate gradients from each GPU and then add and synchronize them back in each model
+- There is no longer any central server component
+- <img width="1377" height="753" alt="image" src="https://github.com/user-attachments/assets/27f22abe-883c-42bb-8b67-9047c1eb4b69" />
+- High memory use, high throughput
+  
 # Day 143 - 08/08/2026
 ## Training with Bfloat16
 - Earlier, the master weights were kept in 32 bits, which were then cast down to float16.
 - The weights, gradients, and activation calculations were all done in 16-bit precision.
 - Once the calculation was done, the weights were upcasted to 32 bits
 - <img width="1388" height="719" alt="image" src="https://github.com/user-attachments/assets/365a225a-8887-4cfb-bed1-7e6c3b381994" />
-- Certain operations, like normalization is not calculated well in lower precisions. Hence, we use autocast (which knows which functions do not work well with lower precision) to convert float16 to higher precision, compute these operations, and typecast it back to lower precision
+- Certain operations, like normalization is not calculated well in lower precision. Hence, we use autocast (which knows which functions do not work well with lower precision) to convert float16 to higher precision, compute these operations, and typecast it back to lower precision
 - For lower-bit floating-point precision, underflow occurs when gradients are so small that the gradients that they cannot be represented by 16-bit precision.
 - So the idea is to multiply and amplify the loss with a large number like 2^16 and then compute it.
 - If this overflows, then we ignore that gradient and use a lower gradient scale
@@ -57,14 +82,14 @@
 - Pre-2012, we had limited compute, so most of the time went into fitting the model to this limited CPU compute with efficient algorithms
 - From 2012 to 2018, we had single-GPU-based networks which could learn better than hand-engineered features
 - Better optimization techniques like AdamW were invented at this time
-- From 2019 to 2022, we had multi-GPU architecture. Attention-based models gained momentum
+- From 2019 to 2022, we had multi-GPU architectures. Attention-based models gained momentum
 - Instead of GPUs, GPU memory became the main bottleneck
 - Post 2022, training is not multinode but multi-GPU. Now datasets have become just data, as the entire internet is the data source
 - There has not been any fundamental infrastructure change for the last few years.
 - The field has now evolved such that, from trying to fit models to limited compute to finding algorithms to utilize the massive compute, the focus has again shifted to managing infrastructure to utilize the established algorithms
 - <img width="1354" height="743" alt="image" src="https://github.com/user-attachments/assets/c46bc3cc-dd5a-4c57-975a-f5caffb08443" />
 - As models are made larger, they always get better.
-- For an N-parameter model, you will have to use 16N bytes of memory to train the model. So a 1 Billion Parameter model would ideally need 16 GB VRAM to train it.
+- For an N-parameter model, you will have to use 16N bytes of memory to train the model. So a 1 billion-parameter model would ideally need 16 GB of VRAM to train it.
 - Without optimization, it takes 16N, but with all optimization it will just take 1N - 2N
 
 # Day 140 - 05/08/2026
