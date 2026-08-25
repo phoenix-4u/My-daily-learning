@@ -23,8 +23,30 @@
 # Day 148 - 13/08/2026
 
 # Day 147 - 12/08/2026
+## Zero redundancy training
+- Here we assume that we have 100 -1000s of GPU. We will combine data parallelism with model parallelism
+- Zero-1 - Optimizer state partitioning - Distribute the momentum parameters (1st and 2nd) across all the GPUs, while keeping the weights and gradients on each GPU
+- This reduces the overall memory requirements by 3 to 4 times
+- <img width="1377" height="744" alt="image" src="https://github.com/user-attachments/assets/4ee0248c-b72c-4ab4-b166-318bc4725c2d" />
+- Zero-2 - Here, the gradients are also distributed across all GPUs. This reduces the memory requirements by 6 to 8 times
+- The overhead is that this requires additional synchronization via reduce scatter and all reduce
+- <img width="1376" height="747" alt="image" src="https://github.com/user-attachments/assets/5d4efa76-7b33-44ad-a36b-37238ceaadb5" />
+- Zero-3  - Here, we would also distribute the weights across all the GPUs. Hence, we keep only a subset of weights, gradients, and momentum terms on each of the GPUs
+- This reduces the memory requirements by 50 times, but the overhead is that this requires additional synchronization via reduce-scatter, all-reduce, and all-gather
+- <img width="1425" height="790" alt="image" src="https://github.com/user-attachments/assets/0eca8022-95d3-4062-bcde-9d249ee16730" />
+- Full shard data parallelism is an updated version of Zero-3 which is less synchronization-heavy. This is achieved by grouping certain operations before trying to synchronize
+-<img width="1364" height="588" alt="image" src="https://github.com/user-attachments/assets/ab7b668b-5d14-4590-8750-cd909e047453" />
+- In hybrid sharding, FSDP is implemented on GPUs close by in nodes, and regular data parallelism is performed for distant nodes
+- So with a large number of GPUs(M), the memory requirements of the network parameters (without activations) come down to 16/M.
 
 # Day 146 - 11/08/2026
+## Ethics in AI
+- Traditionally, AI has been characterized as either Good or Evil. This has been portrayed in various movies such as 2001 a space oddessey, Terminator, The Matrix, Big Hero 6, and so on.
+- The actual role of AI in society is more complex, such as autonomous vehicles getting confused in certain situations
+- Autonomous vehicles have been known to have accidents involving human fatalities, but their stats are much lower than human drivers causing death.
+- Assisted use of AI rather than full autonomy provides the best value till now.
+- It is really important to have unbiased AI. Since AIs are trained on inherently biased datasets, AI is known to have bias during rental, loan, and CV screening processes
+- The public scepticism about AI therefore is more than their enthusiasm to adopt it. Hence, this is a very nuanced and complex problem to deal with.
 
 # Day 145 - 10/08/2026
 ## Distributed Training - Model Parallelism
