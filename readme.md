@@ -1,3 +1,5 @@
+# Day 159 - 24/08/2026
+
 # Day 158 - 23/08/2026
 
 # Day 157 - 22/08/2026
@@ -30,7 +32,7 @@
 - Split along layers - Pipeline parallelism, dividing the model horizontally
   1. Each GPU holds a particular layer, with layer 1 holding the dataset. This also accounts for any skip connections
   2. The activation of each layer is passed across GPUs, and the backpropagation passes the gradient back across the GPU network
-  3. This split happens by hand, as the model needs to be split to have relatively equal weight, and the split needs to be done where there is relatively small communication overhead
+  3. This split happens by hand, as the model needs to be split to have relatively equal weights, and the split needs to be done where there is relatively small communication overhead
   4. <img width="1410" height="740" alt="image" src="https://github.com/user-attachments/assets/a4fe454a-1e05-4ecc-853b-f28d5704c113" />
   5. This approach suffers from bubbles where the GPUs are idle while waiting for upstream and downstream GPUs to finish their work
   6. This can be addressed by creating microbatches so that batches can be processed in parallel while waiting for the inputs/outputs of the previous layer
@@ -59,8 +61,8 @@
 - The weights, gradients, and activation calculations were all done in 16-bit precision.
 - Once the calculation was done, the weights were upcasted to 32 bits
 - <img width="1388" height="719" alt="image" src="https://github.com/user-attachments/assets/365a225a-8887-4cfb-bed1-7e6c3b381994" />
-- Certain operations, like normalization is not calculated well in lower precision. Hence, we use autocast (which knows which functions do not work well with lower precision) to convert float16 to higher precision, compute these operations, and typecast it back to lower precision
-- For lower-bit floating-point precision, underflow occurs when gradients are so small that the gradients that they cannot be represented by 16-bit precision.
+- Certain operations, like normalization, are not calculated well in lower precision. Hence, we use autocast (which knows which functions do not work well with lower precision) to convert float16 to higher precision, compute these operations, and typecast it back to lower precision
+- For lower-bit floating-point precision, underflow occurs when gradients are so small that the gradients cannot be represented by 16-bit precision.
 - So the idea is to multiply and amplify the loss with a large number like 2^16 and then compute it.
 - If this overflows, then we ignore that gradient and use a lower gradient scale
 - So ideally, the weights and 2nd Momentum should be in 32 bits, while reducing the gradient and 1st momentum to 16 bits
