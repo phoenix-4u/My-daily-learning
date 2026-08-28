@@ -23,9 +23,10 @@
 # Day 151 - 16/08/2026
 
 # Day 150 - 15/08/2026
+## Qlora
 
 # Day 149 - 14/08/2026
-## Quantizatiom 
+## Quantization 
 - Quantization in float8 and float4 would not work because they would lose precision, and the precision values can no longer represent adjacent values.
 -  A better representation would be in terms of integers, where 1 bit is used for the sign, and the remaining 7 bits (or 3 bits) are used to represent the weights
 -  The max and min weights are equally divided across the entire range of the integer scale (-127 to 128 or 0 to 255)
