@@ -1,3 +1,5 @@
+# Day 162 - 27/08/2026
+
 # Day 161 - 26/08/2026
 
 # Day 160 - 25/08/2026
@@ -31,7 +33,7 @@
 - Low-rank adapters express the entire pretrained weight by creating two separate matrices whose matrix multiplication can represent the shape of the entire weights, but individually have a low dimension in one of their axes
 - <img width="764" height="357" alt="image" src="https://github.com/user-attachments/assets/152d397d-2cd9-4a42-9cbf-d65d75cb783b" />
 - LoRA for the A matrix should be a small random value, whereas matrix B should be initialized to 0. So during the first forward pass, the random matrix will cancel the random initialization. During backpropagation, B should be adapted to the label and the pretrained weight
-- LoRA can be applied to MLP and Attention Layer
+- LoRA can be applied to the MLP and Attention Layer
 - In practice, there is a scaling parameter alpha, which is multiplied with the LoRA weights, and the weights are divided by the Rank so that the parameters (learning rate/momentum) are independent of the Rank
 - <img width="769" height="390" alt="image" src="https://github.com/user-attachments/assets/6368eff8-e4e0-41d3-aa7b-0ee91d59f519" />
 - So, in essence, LoRA reduces the 16N memory requirement to 4N + 16 M bytes, where M is 1-5% of N
