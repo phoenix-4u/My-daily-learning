@@ -25,6 +25,17 @@
 # Day 150 - 15/08/2026
 
 # Day 149 - 14/08/2026
+## Quantizatiom 
+- Quantization in float8 and float4 would not work because they would lose precision, and the precision values can no longer represent adjacent values.
+-  A better representation would be in terms of integers, where 1 bit is used for the sign, and the remaining 7 bits (or 3 bits) are used to represent the weights
+-  The max and min weights are equally divided across the entire range of the integer scale (-127 to 128 or 0 to 255)
+-  The floating-point weights are rounded up or down to get the closest representation
+-  Integer Affine Quantization (0 to 255) is better than Integer scale quantization (-127 to 128), as negative and positive numbers can be measured in one scale (in the case of Llama 3.1, -0.83 is represented by 0 and 3.21 is represented by 255)
+- Blockwise quantization helps mitigate the outlier weight challenge.
+- <img width="1187" height="723" alt="image" src="https://github.com/user-attachments/assets/3e160467-fe2f-486b-b55c-5a63c4238b19" />
+- 8-bit Adam can be used to train a model from scratch
+- Stochastic rounding can be used to get around the problem of always rounding up or down
+- Theoretically, 2 bits are enough for holding information per parameter. Practically, we should not go below 4 bits.
 
 # Day 148 - 13/08/2026
 ## Low Rank Adapters
@@ -32,7 +43,7 @@
 - But that does not fully ensure the Network learns something interesting, as the parameters of the layers are frozen
 - Low-rank adapters express the entire pretrained weight by creating two separate matrices whose matrix multiplication can represent the shape of the entire weights, but individually have a low dimension in one of their axes
 - <img width="764" height="357" alt="image" src="https://github.com/user-attachments/assets/152d397d-2cd9-4a42-9cbf-d65d75cb783b" />
-- LoRA for the A matrix should be a small random value, whereas matrix B should be initialized to 0. So during the first forward pass, the random matrix will cancel the random initialization. During backpropagation, B should be adapted to the label and the pretrained weight
+- LoRA for the A matrix should be a small random value, whereas matrix B should be initialized to 0. So during the first forward pass, the random matrix will cancel the random initialization. During backpropagation, B should be adapted to the label and the pretrained weights
 - LoRA can be applied to the MLP and Attention Layer
 - In practice, there is a scaling parameter alpha, which is multiplied with the LoRA weights, and the weights are divided by the Rank so that the parameters (learning rate/momentum) are independent of the Rank
 - <img width="769" height="390" alt="image" src="https://github.com/user-attachments/assets/6368eff8-e4e0-41d3-aa7b-0ee91d59f519" />
