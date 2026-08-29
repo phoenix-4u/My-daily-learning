@@ -1,3 +1,5 @@
+# Day 163 - 28/08/2026
+
 # Day 162 - 27/08/2026
 
 # Day 161 - 26/08/2026
@@ -24,6 +26,13 @@
 
 # Day 150 - 15/08/2026
 ## Qlora
+- LoRA still requires the entire 4N bytes for the original weights
+- Qlora applies the concept of LoRA on top of a quantized model
+- <img width="1370" height="608" alt="image" src="https://github.com/user-attachments/assets/9f62dc9e-b0d0-4c7a-9d45-502153090f25" />
+- The weights of QLora have to be trained in full 32-bit precision, which is not an issue as the number of trainable parameters is very low
+- This has an advantage that any new weight computations are now in floating-point format and are not lossy.
+- The overall memory footprint is 1/2N bytes +16M bytes ( M ~1-5%)
+- Certain tasks in QLoRA may require a large rank R
 
 # Day 149 - 14/08/2026
 ## Quantization 
