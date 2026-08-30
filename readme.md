@@ -26,7 +26,17 @@
 
 # Day 151 - 16/08/2026
 ## Low-Rank projections
-- 
+- As we go forward through a neural network, we store all activations for backpropagation calculations
+- During backpropagation, the gradients are calculated to update individual layer weights, and the activations are discarded as each layer's gradient is calculated.
+- Peak memory usage is at the end of backpropagation, where all the gradients are stored and used for simultaneously updating the weights during `optimizer.step()`.
+- A memory-efficient backpropagation can be to call `optimizer.step()` at every layer so that the weights are updated at every layer, and there is no need to store the gradients after they have been calculated
+- <img width="1195" height="588" alt="Screenshot 2026-08-30 at 2 03 48 PM" src="https://github.com/user-attachments/assets/ec1918e8-f49d-4c53-b76d-dbaeecfa610f" />
+- Galore does 2 things at a time. It reduces the number of stored gradients. It also reduces the memory footprint of the momentum terms stored in the optimizer by performing a singular-value decomposition and then projecting it back up while updating the weights.
+- <img width="1201" height="614" alt="Screenshot 2026-08-30 at 2 15 18 PM" src="https://github.com/user-attachments/assets/22102f07-778f-446f-89d1-2b0a5d9bf0f1" />
+- Every 200 steps, this SVD needs to be calculated
+- Finally, to reduce the weight parameter and optimizer state parameters together, Quantized GaLore or QGaLore is used.
+- This approach allows us to train the model from scratch. The drawback is that this is very slow (SVD computation), single-GPU only, and still not stable.
+- In the future, A hybrid algorithm that combines QGaLore and QLoRA might be the way forward
 
 # Day 150 - 15/08/2026
 ## Qlora
