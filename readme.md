@@ -23,18 +23,32 @@
 # Day 153 - 18/08/2026
 
 # Day 152 - 17/08/2026
+## Checkpointing
+- One way to further save memory is to perform backpropagation without storing activations
+- The idea is that we compute a forward pass without storing any activations, and when backward is necessary, we compute forward again for each layer up to that layer
+- The downside is that this will require N^2 computation
+- <img width="1351" height="710" alt="image" src="https://github.com/user-attachments/assets/0db6c86c-342b-46d1-bf15-d24cd066471a" />
+- Activation checkpointing is to store a few activations within a block, compute the gradients with forward and backward passes within the block, and then discard the memory
+- <img width="1309" height="687" alt="image" src="https://github.com/user-attachments/assets/940535c2-539c-4fb1-a14a-302e152b4a90" />
+- Controlling the randomness is critical in checkpointing, as computing 2 different gradients during 2 forward passes will give garbage gradients
+- Checkpointing is done by defining a hook for the module/block that we want to checkpoint
+- <img width="1376" height="595" alt="image" src="https://github.com/user-attachments/assets/c3fa57be-25e0-4df9-9fbd-45b13d26646c" />
+- If the inputs have varying sizes, then we can offload the batch that does not fit on the GPU to the CPU for processing without crashing the training process due to GPU OOM
+- <img width="1369" height="716" alt="image" src="https://github.com/user-attachments/assets/bfb4b2d9-9891-42b8-8a76-0706ecdaeca5" />
+
 
 # Day 151 - 16/08/2026
 ## Low-Rank projections
 - As we go forward through a neural network, we store all activations for backpropagation calculations
 - During backpropagation, the gradients are calculated to update individual layer weights, and the activations are discarded as each layer's gradient is calculated.
-- Peak memory usage is at the end of backpropagation, where all the gradients are stored and used for simultaneously updating the weights during `optimizer.step()`.
+- <img width="700" height="1545" alt="image" src="https://github.com/user-attachments/assets/34acaf91-c8f3-48ce-be18-844aabc76991" />
+- Peak memory usage is at the end of backpropagation, where all the gradients are stored and used to simultaneously update the weights during `optimizer.step()`.
 - A memory-efficient backpropagation can be to call `optimizer.step()` at every layer so that the weights are updated at every layer, and there is no need to store the gradients after they have been calculated
 - <img width="1195" height="588" alt="Screenshot 2026-08-30 at 2 03 48 PM" src="https://github.com/user-attachments/assets/ec1918e8-f49d-4c53-b76d-dbaeecfa610f" />
 - Galore does 2 things at a time. It reduces the number of stored gradients. It also reduces the memory footprint of the momentum terms stored in the optimizer by performing a singular-value decomposition and then projecting it back up while updating the weights.
 - <img width="1201" height="614" alt="Screenshot 2026-08-30 at 2 15 18 PM" src="https://github.com/user-attachments/assets/22102f07-778f-446f-89d1-2b0a5d9bf0f1" />
 - Every 200 steps, this SVD needs to be calculated
-- Finally, to reduce the weight parameter and optimizer state parameters together, Quantized GaLore or QGaLore is used.
+- Finally, to reduce the weight parameters and optimizer state parameters together, Quantized GaLore or QGaLore is used.
 - This approach allows us to train the model from scratch. The drawback is that this is very slow (SVD computation), single-GPU only, and still not stable.
 - In the future, A hybrid algorithm that combines QGaLore and QLoRA might be the way forward
 
