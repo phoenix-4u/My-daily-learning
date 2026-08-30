@@ -25,6 +25,8 @@
 # Day 152 - 17/08/2026
 
 # Day 151 - 16/08/2026
+## Low-Rank projections
+- 
 
 # Day 150 - 15/08/2026
 ## Qlora
