@@ -21,6 +21,19 @@
 # Day 154 - 19/08/2026
 
 # Day 153 - 18/08/2026
+## Flash Attention
+- During attention calculations, we need to compute the self-attention operation for each of the tokens in the sequence. Depending on the context window, this can be 8k or more tokens (N), whereas the token embedding dimension (d) can be relatively small.
+- So the idea of FlashAttention is never to store these N*N calculations in memory, but to compute them transiently till the final output and then discard these big matrices without storing them in memory
+- It does so by calculating each cell of a matrix and then computing the overall softmax, so it only requires O (d) memory.
+- <img width="1266" height="612" alt="image" src="https://github.com/user-attachments/assets/063ae29d-7d4b-420a-b03b-0a22c2ed487e" />
+- Since the intermediate tokens are discarded, they are recomputed during backpropagation. So only the block whose operation is ongoing is stored in SRAM
+- <img width="1271" height="641" alt="image" src="https://github.com/user-attachments/assets/2921dc96-b4a6-4a1d-a8da-aedd95414c17" />
+- Flash attention architecture 1 can only achieve 30-40 % utilization of the teraflops available in the GPU
+- Flash attention 2 and 3 address this, where it can utilize up to 75% of the teraflop capability by reversing the loops of computation of the attention weights and heavily focusing on matrix multiplication. The downside is that it has to be human-engineered, specific to a GPU.
+- Fusing operations such as Matmul + softmax, Matmul + non-linear saves a lot of memory. Chunking strategy (breaking the Key and query matrices into blocks also saves memory
+- The alternative to writing a specific FlashAttention implementation is to use `torch.compile()`. This abstracts the low-level GPU-specific coding and helps to keep the focus on implementation. A parallel analogy of these would be compilers for programming languages
+- <img width="617" height="725" alt="image" src="https://github.com/user-attachments/assets/65a3f2f7-8c7b-44d9-b3b2-a911f55d1883" />
+
 
 # Day 152 - 17/08/2026
 ## Checkpointing
@@ -35,7 +48,6 @@
 - <img width="1376" height="595" alt="image" src="https://github.com/user-attachments/assets/c3fa57be-25e0-4df9-9fbd-45b13d26646c" />
 - If the inputs have varying sizes, then we can offload the batch that does not fit on the GPU to the CPU for processing without crashing the training process due to GPU OOM
 - <img width="1369" height="716" alt="image" src="https://github.com/user-attachments/assets/bfb4b2d9-9891-42b8-8a76-0706ecdaeca5" />
-
 
 # Day 151 - 16/08/2026
 ## Low-Rank projections
