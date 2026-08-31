@@ -22,9 +22,16 @@
 ## Open Source infrastructure for model training Part 2
 - Fully Sharded Data Parallel is the most memory-efficient way to train the model
 - This will distribute the weights of a group of layers to all GPUs for forward and backward passes, and then it will scatter the gradients across all GPUs. Each GPU is responsible for keeping its weights and gradients
-- FSDP works very similarly to DDP. So FSDP can be implemented after setting up DDP
+- FSDP works very similarly to DDP. So FSDP can be implemented after setting up DDP. This can also be called using torchrun
 - <img width="1285" height="701" alt="image" src="https://github.com/user-attachments/assets/8d1435d8-0bd2-409a-b572-edd5bd6dc6c5" />
-
+- FSDP reduces the model weight memory footprint to 1/2 compared to DDP (if there are 2 GPUs)
+- DeepSpeed is a framework for training Deep networks. Under the hood, DeepSpeed takes care of multiple things, as shown below
+- <img width="1367" height="601" alt="image" src="https://github.com/user-attachments/assets/9c60ed2f-2131-404d-baf5-56e1f4e743e4" />
+- DeepSpeed settings can be saved in an optimizer file.
+- PyTorch Lightning is an abstraction of multiple training methods and takes care of logging DP, DDP, and FSDP by itself. We import the Lightning module
+- <img width="981" height="757" alt="image" src="https://github.com/user-attachments/assets/d1a83179-5140-4cf6-946a-d686d962d2e6" />
+- <img width="1202" height="640" alt="image" src="https://github.com/user-attachments/assets/9fddbdeb-c704-456e-9de7-30861b53fc82" />
+- Debugging is more complex and gives less flexibility. It also has potential infra overhead, and the API is still changing.
 
 # Day 154 - 19/08/2026
 ## Open Source infrastructure for model training Part 1
@@ -36,7 +43,7 @@
 - If there is more than 1 GPU, DataParallel can be used.
 - <img width="1200" height="809" alt="image" src="https://github.com/user-attachments/assets/a74931a5-74f6-45b1-9aff-c11fb97feec9" />
 - DataParallel is dependent on the batch size
-- If there are multiple nodes, we use DistributedDataParallel. This runs using torchrun instead of Python. This ensures the same Python scripts run on all nodes in parallel and synchronize on forward and backward passes to ensure gradients and weights are shared. 
+- If there are multiple nodes, we use DistributedDataParallel. This runs using torchrun instead of Python. This ensures that the same Python scripts run in parallel on all nodes and synchronize during forward and backward passes, ensuring gradients and weights are shared. 
 - <img width="1401" height="745" alt="image" src="https://github.com/user-attachments/assets/b1349b3b-5ac7-430d-bab6-48c8089f80db" />
 - Distributed data parallel per GPU consumes more memory, as it will allocate additional memory to share weights across GPUs
 
