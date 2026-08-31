@@ -1,3 +1,5 @@
+# Day 165 - 30/08/2026
+
 # Day 164 - 29/08/2026
 
 # Day 163 - 28/08/2026
@@ -17,8 +19,26 @@
 # Day 156 - 21/08/2026
 
 # Day 155 - 20/08/2026
+## Open Source infrastructure for model training Part 2
+- Fully Sharded Data Parallel is the most memory-efficient way to train the model
+- This will distribute the weights of a group of layers to all GPUs for forward and backward passes, and then it will scatter the gradients across all GPUs. Each GPU is responsible for keeping its weights and gradients
+- FSDP works very similarly to DDP. So FSDP can be implemented after setting up DDP
+- <img width="1285" height="701" alt="image" src="https://github.com/user-attachments/assets/8d1435d8-0bd2-409a-b572-edd5bd6dc6c5" />
+
 
 # Day 154 - 19/08/2026
+## Open Source infrastructure for model training Part 1
+- The easiest way is to use checkpointing. We can just wrap the module type in checkpoint and also provide the input.
+- The momentum memory only comes into play when we hit the `optimizer.step()` function
+- As we increase the batch size, we run the risk of OOM
+- With checkpointer, the memory requirements are much lower, but the backward computation is much slower
+- Flash attention is already built-in in the PyTorch implementation, so we do not need to implement it separately
+- If there is more than 1 GPU, DataParallel can be used.
+- <img width="1200" height="809" alt="image" src="https://github.com/user-attachments/assets/a74931a5-74f6-45b1-9aff-c11fb97feec9" />
+- DataParallel is dependent on the batch size
+- If there are multiple nodes, we use DistributedDataParallel. This runs using torchrun instead of Python. This ensures the same Python scripts run on all nodes in parallel and synchronize on forward and backward passes to ensure gradients and weights are shared. 
+- <img width="1401" height="745" alt="image" src="https://github.com/user-attachments/assets/b1349b3b-5ac7-430d-bab6-48c8089f80db" />
+- Distributed data parallel per GPU consumes more memory, as it will allocate additional memory to share weights across GPUs
 
 # Day 153 - 18/08/2026
 ## Flash Attention
@@ -31,9 +51,8 @@
 - Flash attention architecture 1 can only achieve 30-40 % utilization of the teraflops available in the GPU
 - Flash attention 2 and 3 address this, where it can utilize up to 75% of the teraflop capability by reversing the loops of computation of the attention weights and heavily focusing on matrix multiplication. The downside is that it has to be human-engineered, specific to a GPU.
 - Fusing operations such as Matmul + softmax, Matmul + non-linear saves a lot of memory. Chunking strategy (breaking the Key and query matrices into blocks also saves memory
-- The alternative to writing a specific FlashAttention implementation is to use `torch.compile()`. This abstracts the low-level GPU-specific coding and helps to keep the focus on implementation. A parallel analogy of these would be compilers for programming languages
+- The alternative to writing a specific FlashAttention implementation is to use `torch.compile()`. This abstracts the low-level GPU-specific coding and helps to keep the focus on implementation. A parallel analogy to these would be compilers for programming languages
 - <img width="617" height="725" alt="image" src="https://github.com/user-attachments/assets/65a3f2f7-8c7b-44d9-b3b2-a911f55d1883" />
-
 
 # Day 152 - 17/08/2026
 ## Checkpointing
