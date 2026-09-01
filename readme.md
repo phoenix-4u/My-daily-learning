@@ -1,3 +1,5 @@
+# Day 166 - 31/08/2026
+
 # Day 165 - 30/08/2026
 
 # Day 164 - 29/08/2026
@@ -17,6 +19,16 @@
 # Day 157 - 22/08/2026
 
 # Day 156 - 21/08/2026
+## Generative Models
+- Discriminative models predict Y given some input X. It always needs an input and an output.
+- <img width="1326" height="664" alt="image" src="https://github.com/user-attachments/assets/7c82102c-30cd-4651-bc96-b2268b81d886" />
+- Generative models try to learn the probability over certain data samples. It does not come with any training set.
+- Generative models are very difficult to structure
+- There are 2 types of Generative models: sampling and Density estimation
+- Sampling needs to generate new data based on Random or structured noise.
+- Density estimation is to understand the distribution of data and to predict P(X) in a structured way
+- <img width="1334" height="708" alt="image" src="https://github.com/user-attachments/assets/5458688a-c086-4565-98e2-2ed55fbd183a" />
+- The current SOTA in Generative models is diffusion models and autoregressive models.
 
 # Day 155 - 20/08/2026
 ## Open Source infrastructure for model training Part 2
