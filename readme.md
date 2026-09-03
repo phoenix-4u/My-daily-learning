@@ -21,7 +21,11 @@
 - Autoencoders are a set of encoder-decoder networks, where the encoder encodes a signal into a subspace, and the decoder decodes that subspace into the signal
 - <img width="1371" height="656" alt="image" src="https://github.com/user-attachments/assets/7c8a3866-4682-4690-864a-da0545668879" />
 - The subspace variable z (bottleneck) learns to represent the image data in a very compact form. But the problem is to come up with different Z values to produce new output signals (images for this example)
-- 
+- In Variational autoencoders, both the encoder and decoder generate a probability distribution instead of one subspace and one image out of it.
+- This works with KL divergence. So the idea is to draw a sample x from a Gaussian distribution with a mean close to zero and a standard deviation close to 1
+- <img width="1412" height="731" alt="image" src="https://github.com/user-attachments/assets/3c6721ce-ad87-4b51-bc54-87d86f5c78f8" />
+- Because of the squared term in L2 loss, the variational autoencoders suffer from reconstruction loss as it mixes images, resulting in blurry output.
+- Also, because the input images cannot overlap, if the decoder network picks up samples from that subspace, they would result in output noise
 
 # Day 156 - 21/08/2026
 ## Generative Models
