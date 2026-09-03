@@ -17,6 +17,10 @@
 # Day 158 - 23/08/2026
 
 # Day 157 - 22/08/2026
+## Variational Autoencoders
+- Autoencoders are a set of encoder-decoder networks, where the encoder encodes a signal into a subspace, and the decoder decodes that subspace into the signal
+- <img width="1371" height="656" alt="image" src="https://github.com/user-attachments/assets/7c8a3866-4682-4690-864a-da0545668879" />
+- 
 
 # Day 156 - 21/08/2026
 ## Generative Models
