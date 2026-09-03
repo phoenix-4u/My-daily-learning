@@ -20,6 +20,7 @@
 ## Variational Autoencoders
 - Autoencoders are a set of encoder-decoder networks, where the encoder encodes a signal into a subspace, and the decoder decodes that subspace into the signal
 - <img width="1371" height="656" alt="image" src="https://github.com/user-attachments/assets/7c8a3866-4682-4690-864a-da0545668879" />
+- The subspace variable z (bottleneck) learns to represent the image data in a very compact form. But the problem is to come up with different Z values to produce new output signals (images for this example)
 - 
 
 # Day 156 - 21/08/2026
