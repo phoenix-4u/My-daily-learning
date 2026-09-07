@@ -23,6 +23,14 @@
 # Day 160 - 25/08/2026
 
 # Day 159 - 24/08/2026
+## Flow-based models
+- Flow-based models do both density estimation and sampling processes simultaneously, with it primarily being a density estimation model.
+- The idea is to make the network invertible such that for generative network G: z->x, G inverse exists.
+- <img width="1421" height="818" alt="image" src="https://github.com/user-attachments/assets/1a9ffe54-fff6-49fe-b012-95f40546f25c" />
+- These invertible networks have a specific structure that makes them invertible. The idea is to map this to a Gaussian distribution N(0,1) so that we learn the s and t network parameters through backward and forward propagation.
+- <img width="795" height="461" alt="image" src="https://github.com/user-attachments/assets/5ddaf2f1-ffa5-4dc4-b250-1b8f5c0aad8a" />
+- The 2 functions described above are evenly distributed in an alternating pattern so that the learning is efficient.
+- Hence, at the cost of the model being very restrictive in its architecture, the flow-based models produce very stable training and good results.
 
 # Day 158 - 23/08/2026
 ## Generative Adversarial Networks
