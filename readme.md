@@ -29,11 +29,21 @@
 # Day 161 - 26/08/2026
 
 # Day 160 - 25/08/2026
+## Autoregressive models
+- Autoregressive models are density-based models
+- Autoregressive models compute the probability one pixel at a time. They predict the next pixel conditioned on the probabilities of previous pixels
+- Training can be done using teacher forcing (see below), so it's fast, but the inference is very slow
+- WaveNet, which was used by Google for speech synthesis, is an early successful implementation of autoregressive models
+- Pixel CNN is also an implementation of these models which can generate pixel by pixel or bit by bit.
+- These models are extremely slow and computationally heavy, as we need to look at all dependencies and learn a complex function 
+- These also need to make the right decision very early, as later generations will always depend on the previously generated pixel probabilities
+- Using arithmetic coding, these models can also compress an image
+- <img width="751" height="424" alt="image" src="https://github.com/user-attachments/assets/8a211392-cd2c-4587-a59c-4297384747fa" />
 
 # Day 159 - 24/08/2026
 ## Flow-based models
 - Flow-based models do both density estimation and sampling processes simultaneously, with it primarily being a density estimation model.
-- The idea is to make the network invertible such that for generative network G: z->x, G inverse exists.
+- The idea is to make the network invertible such that, for a generative network G: z->x, G inverse exists.
 - <img width="1421" height="818" alt="image" src="https://github.com/user-attachments/assets/1a9ffe54-fff6-49fe-b012-95f40546f25c" />
 - These invertible networks have a specific structure that makes them invertible. The idea is to map this to a Gaussian distribution N(0,1) so that we learn the s and t network parameters through backward and forward propagation.
 - <img width="795" height="461" alt="image" src="https://github.com/user-attachments/assets/5ddaf2f1-ffa5-4dc4-b250-1b8f5c0aad8a" />
