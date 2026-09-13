@@ -5,13 +5,22 @@
 # Day 177 - 11/09/2026
 
 # Day 176 - 10/09/2026
+## Batya Freedman interview
+- Ethics is a personal belief system where we can define what we can be and what we should be.
+- The material implications of machine learning are huge
+  1. The compute, such as GPUs, needs a tremendous amount of power to run and is cooled by water
+  2. These need a lot of data, which comes from a lot of sensors that need maintenance, and the data needs to be stored on servers.
+  3. These AI systems are then operated on their own servers that need maintenance
+- Underrepresented groups need to be part of policymaking so that policies can be diverse. This marries technology to how they impact daily lives
+- Ethical philosophies are diverse in nature, so inherently during advancement some ethical perspectives will break down. To that effect, one should be smart to identify what is better instead of arguing over what's right.
+- Also, no one can predict how tools and technologies will be used as we go forward. They might be used in unintended ways, and therefore we should always adapt in our ways based on future developments 
 
 # Day 175 - 09/09/2026
 ## Examples of Dartmouth Conference on AI
-- John McCarthy, who coined the term AI, was first inspired by an idea where the human brain and a computer's ways or working were equated in a conference.
+- John McCarthy, who coined the term AI, was first inspired by an idea where the human brain and a computer's ways of working were equated in a conference.
 - John Macrthy believed that they could progress significantly towards replicating human AI during the Dartmouth conference, but later realized that it would be too unrealistic.
 - It is important to realize that imagination converts things to reality. Some easy problems in terms of supercomputers have been achieved, whereas some hard problems such as an invisible man or time travel are still not reality. However, progress has been made
-- LISP was the first general-purpose programming language for machine learning, whereas Eliza was the first chatbot
+- LISP was the first general-purpose programming language for machine learning, whereas ELIZA was the first chatbot
 - Some early work in the 90s included AI-guided self-driving cars, language and image pattern analysis
 - A pivotal point in AI was when Deep Blue defeated Garry Kasparov
 - In modern days, due to increased computing power and availability of large datasets, training really large AI models is possible.
