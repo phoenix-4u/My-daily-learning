@@ -1,3 +1,5 @@
+# Day 179 - 13/09/2026
+
 # Day 178 - 12/09/2026
 
 # Day 177 - 11/09/2026
@@ -6,6 +8,14 @@
 
 # Day 175 - 09/09/2026
 ## Examples of Dartmouth Conference on AI
+- John McCarthy, who coined the term AI, was first inspired by an idea where the human brain and a computer's ways or working were equated in a conference.
+- John Macrthy believed that they could progress significantly towards replicating human AI during the Dartmouth conference, but later realized that it would be too unrealistic.
+- It is important to realize that imagination converts things to reality. Some easy problems in terms of supercomputers have been achieved, whereas some hard problems such as an invisible man or time travel are still not reality. However, progress has been made
+- LISP was the first general-purpose programming language for machine learning, whereas Eliza was the first chatbot
+- Some early work in the 90s included AI-guided self-driving cars, language and image pattern analysis
+- A pivotal point in AI was when Deep Blue defeated Garry Kasparov
+- In modern days, due to increased computing power and availability of large datasets, training really large AI models is possible.
+- We have to stop and think about what AI can do versus what AI should do.
 
 # Day 174 - 08/09/2026
 ## Dartmouth Conference on AI
