@@ -9,38 +9,70 @@
 # Day 174 - 08/09/2026
 
 # Day 173 - 07/09/2026
+## Examples of Buddhist Ethics and Islamic Ethics
+
 
 # Day 172 - 06/09/2026
+## Islamic Ethics
+- Zakat provides the concept of spending wealth on family and relatives, Orphans, the poor, the travelling, the homeless, the needy, and freeing enslaved people
+- There are 5 ethical categories of action
+  1. Obligatory acts - must do - Ritual prayer, Zakat
+  2. Recommended acts - should do - Charity
+  3. Permitted acts - may or may not do - Depends on the individual
+  4. Discouraged acts - shouldn't do - Reprehensible acts that are not strictly forbidden
+  5. Forbidden acts - must not do - Murder, theft, etc.
+
 
 # Day 171 - 05/09/2026
+## Buddhist Ethics 
+- Though Buddhism was born in India, it spread its influence throughout Southeast Asia, including China and Mongolia.
+- Buddha taught 4 noble truths - Life has inevitable suffering, there is a cause of suffering, there is an end to suffering, and the end to suffering is contained in the Eightfold Path.
+- The Eightfold Path contains 8 virtues: Right understanding, thought, speech, action, livelihood, effort, mindfulness, concentration
+- These lead straight to virtues and non-virtues:
+  1. Mind - Generosity vs Greed, loving-kindness vs Harmful intent, correct vs wrong view of reality (denial of the cause-and-effect relationship)
+  2. Speech - Speaking honestly vs lying, reconciliation vs divisive speech, pleasant vs harsh speech, meaningful vs pointless gossip.
+  3. Body - protect life vs killing, donation vs stealing, discipline vs sexual misconduct
+- AI ethics corresponding to nonviolence vs. wars and its utilization is a moral conundrum
 
 # Day 170 - 04/09/2026
+## Will Griffin Interview
 
 # Day 169 - 03/09/2026
+## Examples of Babbage’s Engines
 
 # Day 168 - 02/09/2026
+## Babbage's Engine
 
 # Day 167 - 01/09/2026
+## Examples of Indian Ethics and Classical Chinese Ethics
 
 # Day 166 - 31/08/2026
+## Indian Ethics and Classical Chinese Ethics
 
 # Day 165 - 30/08/2026
+## Which Gen AI Model to use
+
 
 # Day 164 - 29/08/2026
+## Latent Diffusion and SOTA
+
 
 # Day 163 - 28/08/2026
+## Diffusion Models
 
 # Day 162 - 27/08/2026
+## Dall-E
 
 # Day 161 - 26/08/2026
+## Vector Quantization
 
 # Day 160 - 25/08/2026
 ## Autoregressive models
-- Autoregressive models are density-based models
+- Autoregressive models are density estimation-based models
 - Autoregressive models compute the probability one pixel at a time. They predict the next pixel conditioned on the probabilities of previous pixels
 - Training can be done using teacher forcing (see below), so it's fast, but the inference is very slow
 - WaveNet, which was used by Google for speech synthesis, is an early successful implementation of autoregressive models
-- Pixel CNN is also an implementation of these models which can generate pixel by pixel or bit by bit.
+- Pixel CNN is also an implementation of these models, which can generate pixel by pixel or bit by bit.
 - These models are extremely slow and computationally heavy, as we need to look at all dependencies and learn a complex function 
 - These also need to make the right decision very early, as later generations will always depend on the previously generated pixel probabilities
 - Using arithmetic coding, these models can also compress an image
