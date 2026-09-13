@@ -5,12 +5,24 @@
 # Day 176 - 10/09/2026
 
 # Day 175 - 09/09/2026
+## Examples of Dartmouth Conference on AI
 
 # Day 174 - 08/09/2026
+## Dartmouth Conference on AI
+- The idea of neural nets was originally developed in 1943
+- The neural net was inspired by the human nervous system; automata developed in the 15th century used simple mechanical clock motions that could be programmed, and telephone exchanges connected various lines to establish communication.
+- This inspired Shannon's Theory of Information in 1948 that designed a system of source -> transmitter -> signal + noise -> receiver -> destination
+- The next idea came from the Turing machine, where the concept of automata as a finite machine was established.
+- This necessitated the need to have a healthy discussion about AI and the future of AI. This led to the Dartmouth conference in 1956, funded by the Rockefeller Foundation
+- This is considered the birthplace of AI, as this is where all important historical figures converged to discuss what AI means.
 
 # Day 173 - 07/09/2026
 ## Examples of Buddhist Ethics and Islamic Ethics
-
+- Buddha understood the struggle: seeing an old man, anguish; seeing disease and pain; seeing a corpse
+- Once you cross the river using a raft (journey across life), once you understand it, there is no point in remaining attached to it.
+- Religion is now being preached through AI Robots so that people can feel close to it. The response has been positive
+- Within Islam, various sects believe in various sects.
+- Islamic ethics specifies a golden rule which specifies that one should behave with others as they expect to be treated by them 
 
 # Day 172 - 06/09/2026
 ## Islamic Ethics
@@ -21,7 +33,6 @@
   3. Permitted acts - may or may not do - Depends on the individual
   4. Discouraged acts - shouldn't do - Reprehensible acts that are not strictly forbidden
   5. Forbidden acts - must not do - Murder, theft, etc.
-
 
 # Day 171 - 05/09/2026
 ## Buddhist Ethics 
@@ -71,7 +82,7 @@
 - Autoregressive models are density estimation-based models
 - Autoregressive models compute the probability one pixel at a time. They predict the next pixel conditioned on the probabilities of previous pixels
 - Training can be done using teacher forcing (see below), so it's fast, but the inference is very slow
-- WaveNet, which was used by Google for speech synthesis, is an early successful implementation of autoregressive models
+- WaveNet, which Google used for speech synthesis, is an early successful implementation of autoregressive models
 - Pixel CNN is also an implementation of these models, which can generate pixel by pixel or bit by bit.
 - These models are extremely slow and computationally heavy, as we need to look at all dependencies and learn a complex function 
 - These also need to make the right decision very early, as later generations will always depend on the previously generated pixel probabilities
