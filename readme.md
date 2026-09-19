@@ -7,10 +7,25 @@
 # Day 180 - 14/09/2026
 
 # Day 179 - 13/09/2026
-
+## Deep Blue
+- Lucas argued that a human mind can never be modeled by any machine.
+- Any machine learning model generally follows and reduces a human mind to a model, and that is the reductionist theory. But the human mind can have infinite model possibility
+- Deep Blue lost to Kasparov the first time, but won the 2nd time.
+- The way IBM trained the model was 1 at a time.
+  
 # Day 178 - 12/09/2026
+## Examples of Kantian Ethics and Consequentialism
+- Kantian Ethics and Deantology specifies to follow the rule and do the duty. The results are not important if one follows the rule
+- Strictly following the rules might bring in moral challenges, as deontology might prohibit lying even if to someone's life
+- Osmov's law states that
+  1. A robot may not harm a human being or should not allow its inaction to cause harm to a human
+  2. A robot must obey the instructions of a human unless it violates the first law
+  3. A robot must protect itself unless it violates the first and second law
+- Consequentialism is opposite to Deontology as it judges an action by its result. The end justifies the means.
+- In The Wrath of Khan, Spock prioritizes the needs of the many over his own needs by sacrificing his own life to save the ship, even when it meant disarming and deceiving his way into the nuclear chamber
 
 # Day 177 - 11/09/2026
+
 
 # Day 176 - 10/09/2026
 ## Batya Freedman interview
@@ -90,10 +105,8 @@
 # Day 165 - 30/08/2026
 ## Which Gen AI Model to use
 
-
 # Day 164 - 29/08/2026
 ## Latent Diffusion and SOTA
-
 
 # Day 163 - 28/08/2026
 ## Diffusion Models
