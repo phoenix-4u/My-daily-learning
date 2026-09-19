@@ -3,8 +3,14 @@
 # Day 182 - 16/09/2026
 
 # Day 181 - 15/09/2026
+## Interview with Doug Schuler
+
 
 # Day 180 - 14/09/2026
+## Examples of Deep Blue
+- It took 12 years for IBM to prepare the software to defeat Deep Blue
+- Garry Kasparov argues that while the existing Chess playing softwares were brute force algorithms that were programmed, AlphaZero, which is based on a neural network architecture, was much better, as it taught itself from scratch just based on the given rules and then played 60 million games to perfect them.
+- Though a chessboard rarely makes a good simulation of AI acting in a social environment, it still shows it can understand rules and, consequently, ethical systems to behave better.
 
 # Day 179 - 13/09/2026
 ## Deep Blue
