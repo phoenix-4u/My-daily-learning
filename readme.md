@@ -25,7 +25,15 @@
 - In The Wrath of Khan, Spock prioritizes the needs of the many over his own needs by sacrificing his own life to save the ship, even when it meant disarming and deceiving his way into the nuclear chamber
 
 # Day 177 - 11/09/2026
-
+## Kantian Ethics and Consequentialism
+- Kantian Ethics advocates that one should only take any action if the rule following that action can be universally applied
+- So if rules are followed, then results are also going to be consistent and will make a stable society
+- Kant advocates that there are some perfect duties that one must do and imperfect duties that one should do
+- Humans should always be treated as a subject and not an object, as they have agency
+- Consequentialism advocates judging an action based on consequences and not just the rules, contrary to Kantian Ethics.
+- Moral Calculus is a way to attribute a monetary value to an ethical situation. Such as the value of a human life in case of an accident-related death in the workplace. Such a way of valuation is not at all recommended but is still practiced today.
+- If Moral luck, which means final luck for a moral action, leads to bad consequences, consequentialism treats this as bad.
+- To address the deficits of both act consequentialism and Kantian Ethics, we dive into rule consequentialism, which specifies that an act is morally permissible if it is permitted by rules selected for their consequences
 
 # Day 176 - 10/09/2026
 ## Batya Freedman interview
