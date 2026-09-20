@@ -4,13 +4,16 @@
 
 # Day 181 - 15/09/2026
 ## Interview with Doug Schuler
-
+- Dough argues that Ethics is the way someone lives their life, doing morally right things
+- He is a strong advocate of civic intelligence, which states that an individual ought to contribute to the society that they are living in in the morally right way. If someone is living in isolation, then he also becomes part of the problem. So it's not just enough to be not unethical; it is very important to be ethical.
+- Responsibility should not be treated as a burden but as an opportunity in a career, a sense of accomplishment that one made the world better.
+- One should look ahead and assess the consequences of their actions and then perform their moral duty.
 
 # Day 180 - 14/09/2026
 ## Examples of Deep Blue
 - It took 12 years for IBM to prepare the software to defeat Deep Blue
 - Garry Kasparov argues that while the existing Chess playing softwares were brute force algorithms that were programmed, AlphaZero, which is based on a neural network architecture, was much better, as it taught itself from scratch just based on the given rules and then played 60 million games to perfect them.
-- Though a chessboard rarely makes a good simulation of AI acting in a social environment, it still shows it can understand rules and, consequently, ethical systems to behave better.
+- Though a chessboard rarely makes a good simulation of AI acting in a social environment, it still shows it can understand rules and, consequently, ethical systems to behave better. 
 
 # Day 179 - 13/09/2026
 ## Deep Blue
@@ -21,7 +24,7 @@
   
 # Day 178 - 12/09/2026
 ## Examples of Kantian Ethics and Consequentialism
-- Kantian Ethics and Deantology specifies to follow the rule and do the duty. The results are not important if one follows the rule
+- Kantian Ethics and Deontology specify following the rule and do the duty. The results are not important if one follows the rule
 - Strictly following the rules might bring in moral challenges, as deontology might prohibit lying even if to someone's life
 - Osmov's law states that
   1. A robot may not harm a human being or should not allow its inaction to cause harm to a human
