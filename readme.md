@@ -1,3 +1,7 @@
+# Day 185 - 19/09/2026
+
+# Day 184 - 18/09/2026
+
 # Day 183 - 17/09/2026
 
 # Day 182 - 16/09/2026
@@ -53,7 +57,7 @@
   3. These AI systems are then operated on their own servers that need maintenance
 - Underrepresented groups need to be part of policymaking so that policies can be diverse. This marries technology to how they impact daily lives
 - Ethical philosophies are diverse in nature, so inherently during advancement some ethical perspectives will break down. To that effect, one should be smart to identify what is better instead of arguing over what's right.
-- Also, no one can predict how tools and technologies will be used as we go forward. They might be used in unintended ways, and therefore we should always adapt in our ways based on future developments 
+- Also, no one can predict how tools and technologies will be used as we go forward. They might be used in unintended ways, and therefore we should always adapt in our ways based on future developments.
 
 # Day 175 - 09/09/2026
 ## Examples of Dartmouth Conference on AI
