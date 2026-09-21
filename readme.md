@@ -1,3 +1,5 @@
+# Day 186 - 20/09/2026
+
 # Day 185 - 19/09/2026
 
 # Day 184 - 18/09/2026
@@ -5,6 +7,8 @@
 # Day 183 - 17/09/2026
 
 # Day 182 - 16/09/2026
+# LLM Architecture
+- 
 
 # Day 181 - 15/09/2026
 ## Interview with Doug Schuler
