@@ -13,8 +13,16 @@
 # Day 183 - 17/09/2026
 
 # Day 182 - 16/09/2026
-# LLM Architecture
-- 
+# LLM Architecture - Tokenization
+- 1 character does not always align to 1 symbol. Emojis are encoded in UTF-8 and expressed by 4 characters.
+- Ordinal encoding of characters is not a good approach, as `ord(a) + ord(b) != ord(c)`
+- Tokenization using one-hot embedding or `torch.nn.Embedding` is better, as it is independent of the characters
+- Detokenization is converting back the output tokenized characters. They sometimes produce incorrect UTF-8 encoded characters.
+- Splitting character by character will create very long autoregressive sequences. A better approach is to perform byte-pair encoding.
+- BPE encodes 2 characters that appear together most frequently at a time. This is repeated with the most frequently occurring pairs over and over again till some Threshold is reached
+- BPE also has special tokens
+- <img width="435" height="536" alt="image" src="https://github.com/user-attachments/assets/a119791d-150b-44b4-b79f-43530c43d03d" />
+- Tokenization may suffer from multiple aspects of not being good at maths; counting letters is difficult, and there is not always a 1:1 mapping.
 
 # Day 181 - 15/09/2026
 ## Interview with Doug Schuler
