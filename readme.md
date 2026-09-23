@@ -1,3 +1,5 @@
+# Day 189 - 23/09/2026
+
 # Day 188 - 22/09/2026
 
 # Day 187 - 21/09/2026
@@ -16,7 +18,7 @@
 
 # Day 181 - 15/09/2026
 ## Interview with Doug Schuler
-- Dough argues that Ethics is the way someone lives their life, doing morally right things
+- Doug argues that Ethics is the way someone lives their life, doing morally right things
 - He is a strong advocate of civic intelligence, which states that an individual ought to contribute to the society that they are living in in the morally right way. If someone is living in isolation, then he also becomes part of the problem. So it's not just enough to be not unethical; it is very important to be ethical.
 - Responsibility should not be treated as a burden but as an opportunity in a career, a sense of accomplishment that one made the world better.
 - One should look ahead and assess the consequences of their actions and then perform their moral duty.
