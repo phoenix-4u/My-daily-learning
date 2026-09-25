@@ -13,9 +13,23 @@
 # Day 185 - 19/09/2026
 
 # Day 184 - 18/09/2026
+## LLM Architecture - Decoder-only and Sequence model
+- Decoder-only models have a very simple architecture, where they only look at the current tokens and all other tokens before that. They do it using causal attention
+- They have multiple special tokens like Start, Delim, and Extract. The extract token comes last so that it can have causal attention across the network
+- GPT-1 popularized this concept, and Llama, Mistral, and all large language players followed suit. Mistral later brought in sliding window attention and mixture-of-expert models, which refined the architecture.
+- <img width="1397" height="696" alt="image" src="https://github.com/user-attachments/assets/a3800822-d76c-4bc2-a92f-8ad43d24c8c8" />
+- The input to the decoder-only architecture is a massive corpus of text (the whole of the internet), and then it performs next-token prediction
+- They use teacher forcing, where the next word prediction can be done in parallel.
+- Decoder-only models can memorize training data well and preserve the meaning of tokens in up to 2 bits per parameters
+- The information can either be stored in their weights or during fine-tuning in their context/prompt template.
+- Sequence models are like decoder-only models, but replace the causal attention with a recurrent neural network where the input features build the RNN token by token
+- <img width="1355" height="846" alt="image" src="https://github.com/user-attachments/assets/8797ebfe-df30-4ad7-801c-791efa02b718" />
+- They have an input, hidden state, and then finally the output representation
+- <img width="1241" height="543" alt="image" src="https://github.com/user-attachments/assets/17dd6da8-f2cd-48c7-b827-33af2351c054" />
+- During test time, the inference of a sequence model is very fast as it forces information into the hidden state as it builds it step by step, whereas the transformer has to attend to all previous inputs every time because of causal self-attention.
 
 # Day 183 - 17/09/2026
-## LLM Architecture - Encoder - Decoder and Encoder only
+## LLM Architecture - Encoder - Decoder and Encoder-only
 - Encoder-decoder architecture is where the encoder encodes questions or prompts as the input and produces the autoregressive probabilities one by one
 - The main difference is encoder self-attention, in which every token can look at every other token, whereas in the decoder it is causal attention, which can only look at all tokens that came before (as the next token has not been generated yet.
 - <img width="1044" height="587" alt="image" src="https://github.com/user-attachments/assets/03af5f7e-5d01-4195-ac8a-488b321ea165" />
