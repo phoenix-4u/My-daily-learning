@@ -1,3 +1,5 @@
+# Day 191 - 25/09/2026
+
 # Day 190 - 24/09/2026
 
 # Day 189 - 23/09/2026
@@ -13,13 +15,23 @@
 # Day 184 - 18/09/2026
 
 # Day 183 - 17/09/2026
+## LLM Architecture - Encoder - Decoder and Encoder only
+- Encoder-decoder architecture is where the encoder encodes questions or prompts as the input and produces the autoregressive probabilities one by one
+- The main difference is encoder self-attention, in which every token can look at every other token, whereas in the decoder it is causal attention, which can only look at all tokens that came before (as the next token has not been generated yet.
+- <img width="1044" height="587" alt="image" src="https://github.com/user-attachments/assets/03af5f7e-5d01-4195-ac8a-488b321ea165" />
+- The loss is entirely on the decoder (cross-entropy loss on shifted training set), and there is no direct loss in the encoder
+- Encoder-only models are sometimes used mainly to turn an input prompt into an output sequence embedding
+- BERT is an encoder-only model that was used for masked token and  next sentence prediction
+- <img width="1021" height="511" alt="image" src="https://github.com/user-attachments/assets/507b58b1-d50d-40ee-8410-52aee2c74218" />
+- Even though they are encoder-only models, they have a separate lightweight head to convert the embedding into text
+- They  are not good at generation and scale worse with data
 
 # Day 182 - 16/09/2026
-# LLM Architecture - Tokenization
+## LLM Architecture - Tokenization
 - 1 character does not always align to 1 symbol. Emojis are encoded in UTF-8 and expressed by 4 characters.
 - Ordinal encoding of characters is not a good approach, as `ord(a) + ord(b) != ord(c)`
 - Tokenization using one-hot embedding or `torch.nn.Embedding` is better, as it is independent of the characters
-- Detokenization is converting back the output tokenized characters. They sometimes produce incorrect UTF-8 encoded characters.
+- Detokenization is converting back the output tokenized characters. They sometimes produce incorrect UTF-8-encoded characters.
 - Splitting character by character will create very long autoregressive sequences. A better approach is to perform byte-pair encoding.
 - BPE encodes 2 characters that appear together most frequently at a time. This is repeated with the most frequently occurring pairs over and over again till some Threshold is reached
 - BPE also has special tokens
