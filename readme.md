@@ -1,3 +1,5 @@
+# Day 193 - 27/09/2026
+
 # Day 192 - 26/09/2026
 
 # Day 191 - 25/09/2026
@@ -11,8 +13,20 @@
 # Day 187 - 21/09/2026
 
 # Day 186 - 20/09/2026
+## 
 
 # Day 185 - 19/09/2026
+## Generation
+- To produce the next tokens, the easiest token generation approach is Greedy sampling, which is to sample only the most probable token
+- But the downside is that it produces a single sequence and makes bad local decisions
+- Beam search keeps K top samples around, but might produce very weird output where it may repeat the same phrase over and over again
+- Random sampling generates the next token based on the probability of that token. A downside of this is that there is very minimal probability that we sample something that is very unlikely.
+- A better approach is Top-K sampling, where, based on k, we can sample only the top most probable tokens, so that the generation is always probable
+- It is very difficult to fix k.
+- Top-p sampling sorts all token probabilities and considers only the top p probabilities for generation. This produces the most interesting texts and is used almost everywhere. Mean p is a similar approach where the probability scales them with alpha 
+- <img width="1327" height="668" alt="image" src="https://github.com/user-attachments/assets/368942fe-a98a-481a-8d12-53cd38d2fbc0" />
+- Setting temperature to 0 means greedy sampling, as the logits are raised to the power T, so as T approaches infinity, the highest probability is always the one that is chosen. Similarly, as T moves to infinity, all tokens become equally probable and hence have high creativity. 
+- [bos] and [eos] are used to begin and end a sequence and are also useful for attention representation to start and end
 
 # Day 184 - 18/09/2026
 ## LLM Architecture - Decoder-only and Sequence model
@@ -26,7 +40,7 @@
 - The information can either be stored in their weights or during fine-tuning in their context/prompt template.
 - Sequence models are like decoder-only models, but replace the causal attention with a recurrent neural network where the input features build the RNN token by token
 - <img width="1355" height="846" alt="image" src="https://github.com/user-attachments/assets/8797ebfe-df30-4ad7-801c-791efa02b718" />
-- They have an input, hidden state, and then finally the output representation
+- They have an input, a hidden state, and then finally the output representation
 - <img width="1241" height="543" alt="image" src="https://github.com/user-attachments/assets/17dd6da8-f2cd-48c7-b827-33af2351c054" />
 - During test time, the inference of a sequence model is very fast as it forces information into the hidden state as it builds it step by step, whereas the transformer has to attend to all previous inputs every time because of causal self-attention.
 
@@ -35,7 +49,7 @@
 - Encoder-decoder architecture is where the encoder encodes questions or prompts as the input and produces the autoregressive probabilities one by one
 - The main difference is encoder self-attention, in which every token can look at every other token, whereas in the decoder it is causal attention, which can only look at all tokens that came before (as the next token has not been generated yet.
 - <img width="1044" height="587" alt="image" src="https://github.com/user-attachments/assets/03af5f7e-5d01-4195-ac8a-488b321ea165" />
-- The loss is entirely on the decoder (cross-entropy loss on shifted training set), and there is no direct loss in the encoder
+- The loss is entirely on the decoder (cross-entropy loss on the shifted training set), and there is no direct loss in the encoder
 - Encoder-only models are sometimes used mainly to turn an input prompt into an output sequence embedding
 - BERT is an encoder-only model that was used for masked token and  next sentence prediction
 - <img width="1021" height="511" alt="image" src="https://github.com/user-attachments/assets/507b58b1-d50d-40ee-8410-52aee2c74218" />
