@@ -1,3 +1,5 @@
+# Day 194 - 28/09/2026
+
 # Day 193 - 27/09/2026
 
 # Day 192 - 26/09/2026
@@ -14,10 +16,18 @@
 
 # Day 189 - 23/09/2026
 ## Examples of Distributive Justice and Virtue Ethics
+- John Rawls equates justice to fairness and is much more than just efficiency. He bases justice on the institutional rather than the individual level.
+- The liberty principle states that every individual should enjoy similar freedom, provided their expression of freedom does not trample others.
+- Fair equality of opportunity states that the opportunity for any position should be based on merit.
+- Difference principle states that inequalities can be tolerated provided the person with the least privileges benefits the most.
+- Veil of ignorance by Rawls advocates that we should be ignorant of our biases and circumstances so that we can objectively consider how societies could operate
+- Aristotle advocated that, by honing virtual habits, people will make the right choice when faced with an ethical challenge. Example: Batman not killing Joker when he gets a chance is an example of virtue ethics, as Batman does not want to be the person who takes a life.
+- Arsitotole suggested that to be a good individual, we should pretend to be good, and eventually we will be good. So fake it till you make it.
+- The golden mean is where we take the middle path between two extreme courses of action
 
 # Day 188 - 22/09/2026
 ## Distributive Justice and Virtue Ethics
-- Equality means giving everyone the same chair to watch a match over a fence regardless of their height, equitable means giving the chair to whoever needs it to peek over the fence; and justice implies there should not be a fence at all.
+- Equality means giving everyone the same chair to watch a match over a fence regardless of their height; equitable means giving the chair to whoever needs it to peek over the fence; and justice implies there should not be a fence at all.
 - **The Equality principle** states that each person has an equal claim to a fully adequate scheme of basic rights and liberties. Example: the US bill of rights
 - **The fair equality of opportunity** states that citizens who possess similar sets of talents and motivation should have an equal chance to attain  the various offices and privileges in society. Voice's anonymized audition is an example of this.
 - **The difference principle** allows for a smaller share of resources for one social position only when the worse-off group does better than they would under any distribution, including an equal distribution. Progressive tax brackets are an example of this.
@@ -50,7 +60,7 @@
 - The loss is never on the user message; it is always on the LLM message with the last EOT token prediction.
 - The system message is used to fine-tune LLM behaviour globally
 - Initially, humans generated these structures, but now LLMs and previous chat interactions are used for these structured trainings.
-- The code completion training approach is a bit different: we provide them with a pre- and post block to show the start and end of the code, and the LLM needs to predict the code in between.
+- The code completion training approach is a bit different: we provide them with a pre- and post-block to show the start and end of the code, and the LLM needs to predict the code in between.
 - <img width="1379" height="576" alt="image" src="https://github.com/user-attachments/assets/7afd1114-b601-4b99-bbae-3ff6c200ad35" />
 - Instruction-tuning tells models what to do but does not tell what not to do.
 
