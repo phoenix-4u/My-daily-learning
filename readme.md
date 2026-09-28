@@ -5,10 +5,26 @@
 # Day 191 - 25/09/2026
 
 # Day 190 - 24/09/2026
+## Watson
+- John McCarthy said that AI is related to the task of using computers to understand human intelligence.
+- Turing test: Based on the response to a question that both a machine and a human answer, another human has to judge whether the response is machine- or human-generated. If the evaluator cannot tell 50% of the time who's who, then the machine would have passed the Turing test.
+- ELIZA was a very simple rule-based chatbot that parroted back the same problem that the user gave and mimicked a therapist in 1966. But even this simple chatbot was able to connect to humans on some level
+- IBM created Watson with a huge knowledge database to win Jeopardy
+- Since then watson has been increasingly used in healthcare systems to augment the doctor's knowledge for complex cases.
 
 # Day 189 - 23/09/2026
+## Examples of Distributive Justice and Virtue Ethics
 
 # Day 188 - 22/09/2026
+## Distributive Justice and Virtue Ethics
+- Equality means giving everyone the same chair to watch a match over a fence regardless of their height, equitable means giving the chair to whoever needs it to peek over the fence; and justice implies there should not be a fence at all.
+- **The Equality principle** states that each person has an equal claim to a fully adequate scheme of basic rights and liberties. Example: the US bill of rights
+- **The fair equality of opportunity** states that citizens who possess similar sets of talents and motivation should have an equal chance to attain  the various offices and privileges in society. Voice's anonymized audition is an example of this.
+- **The difference principle** allows for a smaller share of resources for one social position only when the worse-off group does better than they would under any distribution, including an equal distribution. Progressive tax brackets are an example of this.
+- Virtue ethics is attributed to Aristotle, who advocated for one to be the best version of themselves
+- Aristotle advocated the golden mean, which argued for always taking a middle ground while taking a decision
+- <img width="571" height="861" alt="image" src="https://github.com/user-attachments/assets/15936c5f-f5c9-4def-8c87-3f03133a0411" />
+- Ben Franklin used to track his virtues by noting them down and marking the days on a calendar when he violated any of them. That made him be a better person 
 
 # Day 187 - 21/09/2026
 ## Reinforcement learning using human feedback (RLHF)
