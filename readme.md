@@ -12,15 +12,26 @@
 
 # Day 187 - 21/09/2026
 
+
 # Day 186 - 20/09/2026
-## 
+## Instruction Tuning
+- A model without instruction tuning cannot respond to questions and have dialog, as it will still  focus on next-token generation.
+- Instruction training is a way to teach an LLM to have a dialog. It has a specific structure which is used to tune the model with
+- <img width="1396" height="723" alt="image" src="https://github.com/user-attachments/assets/f74b0590-37f2-4f97-88c9-8b7e4719ccd5" />
+- So it's no longer just training the LLM on an input corpus so that it just produces the next word; it is now giving it a structure so that it produces a coherent output.
+- The loss is never on the user message; it is always on the LLM message with the last EOT token prediction.
+- The system message is used to fine-tune LLM behaviour globally
+- Initially, humans generated these structures, but now LLMs and previous chat interactions are used for these structured trainings.
+- The code completion training approach is a bit different: we provide them with a pre- and post block to show the start and end of the code, and the LLM needs to predict the code in between.
+- <img width="1379" height="576" alt="image" src="https://github.com/user-attachments/assets/7afd1114-b601-4b99-bbae-3ff6c200ad35" />
+- Instruction-tuning tells models what to do but does not tell what not to do.
 
 # Day 185 - 19/09/2026
 ## Generation
 - To produce the next tokens, the easiest token generation approach is Greedy sampling, which is to sample only the most probable token
 - But the downside is that it produces a single sequence and makes bad local decisions
 - Beam search keeps K top samples around, but might produce very weird output where it may repeat the same phrase over and over again
-- Random sampling generates the next token based on the probability of that token. A downside of this is that there is very minimal probability that we sample something that is very unlikely.
+- Random sampling generates the next token based on the probability of that token. A downside of this is that there is very minimal probability that we sample something very unlikely.
 - A better approach is Top-K sampling, where, based on k, we can sample only the top most probable tokens, so that the generation is always probable
 - It is very difficult to fix k.
 - Top-p sampling sorts all token probabilities and considers only the top p probabilities for generation. This produces the most interesting texts and is used almost everywhere. Mean p is a similar approach where the probability scales them with alpha 
