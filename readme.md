@@ -11,7 +11,19 @@
 # Day 188 - 22/09/2026
 
 # Day 187 - 21/09/2026
-
+## Reinforcement learning using human feedback (RLHF)
+- RLHF follows a 3-step process: instruction tuning an LLM, using the response of the LLM to be ranked by a human to train a reward model, and then using this reward model to create a policy to fine-tune the original model
+- <img width="1165" height="720" alt="image" src="https://github.com/user-attachments/assets/b2199f08-f554-46a5-a1a1-754bff7ee6a3" />
+- In step 2, the loss of the reward model is determined by pairwise loss that maximizes the preferred request-response pair over the other ones
+- <img width="1368" height="731" alt="image" src="https://github.com/user-attachments/assets/e0231c95-3bbf-4510-bf2d-16c86cc42ddb" />
+- In step#3, the model generation is scored by the reward model, and then, based on the reward model's loss, the original model is fine-tuned.
+- The initial GPT model uses a proximal policy optimization reinforcement learning strategy
+- <img width="1428" height="825" alt="image" src="https://github.com/user-attachments/assets/b488bc89-cc11-492a-867c-93c5e8258fce" />
+- A much easier algorithm like Leave-One-Out does a better job of learning than the PPO algorithm
+- The RLOO algorithm modifies step#3 to look at all possible completions with respect to any one of them and then judge how that specific response fares compared to the mean of all of them.
+- <img width="1368" height="726" alt="image" src="https://github.com/user-attachments/assets/d606596f-6988-49f8-a09c-c12d38413691" />
+- RLHF alone degrades the model performance, as training a model intensely on such policies might make the model not answer anything.
+- The solution can be to add a KL-divergence penalty between the instruction-tuned and RLHF model or mix in pretraining data/gradient while doing RLHF training to make the model remember its original goals
 
 # Day 186 - 20/09/2026
 ## Instruction Tuning
