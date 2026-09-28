@@ -13,6 +13,8 @@
 - ELIZA was a very simple rule-based chatbot that parroted back the same problem that the user gave and mimicked a therapist in 1966. But even this simple chatbot was able to connect to humans on some level
 - IBM created Watson with a huge knowledge database to win Jeopardy
 - Since then watson has been increasingly used in healthcare systems to augment the doctor's knowledge for complex cases.
+- Watson also committed initial mistakes in Jeopardy, but it was able to win key moments. This built trust in other domains such as healthcare.
+- Watson has been trained in oncology by Memorial Sloan Kettering and now extensively helps providers.
 
 # Day 189 - 23/09/2026
 ## Examples of Distributive Justice and Virtue Ethics
@@ -20,7 +22,7 @@
 - The liberty principle states that every individual should enjoy similar freedom, provided their expression of freedom does not trample others.
 - Fair equality of opportunity states that the opportunity for any position should be based on merit.
 - Difference principle states that inequalities can be tolerated provided the person with the least privileges benefits the most.
-- Veil of ignorance by Rawls advocates that we should be ignorant of our biases and circumstances so that we can objectively consider how societies could operate
+- The veil of ignorance, proposed by Rawls, advocates that we should be ignorant of our biases and circumstances so that we can objectively consider how societies could operate
 - Aristotle advocated that, by honing virtual habits, people will make the right choice when faced with an ethical challenge. Example: Batman not killing Joker when he gets a chance is an example of virtue ethics, as Batman does not want to be the person who takes a life.
 - Arsitotole suggested that to be a good individual, we should pretend to be good, and eventually we will be good. So fake it till you make it.
 - The golden mean is where we take the middle path between two extreme courses of action
