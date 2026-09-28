@@ -23,7 +23,7 @@
 - The RLOO algorithm modifies step#3 to look at all possible completions with respect to any one of them and then judge how that specific response fares compared to the mean of all of them.
 - <img width="1368" height="726" alt="image" src="https://github.com/user-attachments/assets/d606596f-6988-49f8-a09c-c12d38413691" />
 - RLHF alone degrades the model performance, as training a model intensely on such policies might make the model not answer anything.
-- The solution can be to add a KL-divergence penalty between the instruction-tuned and RLHF model or mix in pretraining data/gradient while doing RLHF training to make the model remember its original goals
+- The solution can be to add a KL-divergence penalty between the instruction-tuned and RLHF model or mix in pretraining data/gradient while doing RLHF training to make the model remember its original goals.
 
 # Day 186 - 20/09/2026
 ## Instruction Tuning
