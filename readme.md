@@ -1,3 +1,5 @@
+# Day 198 - 02/10/2026
+
 # Day 197 - 01/10/2026
 
 # Day 196 - 30/09/2026
@@ -12,7 +14,13 @@
 # 
 
 # Day 191 - 25/09/2026
-## DPO 
+## Direct Preference Optimization (DPO)
+- DPO is a method to reduce the RL problem to a supervised learning problem.
+- It uses a closed-form RL solution objective to create a differentiable function that can be used as a loss for the supervised problem
+- <img width="1009" height="727" alt="image" src="https://github.com/user-attachments/assets/ff9fa324-43c0-44e3-8e82-2a164ebc43df" />
+- Since it is supervised, it is easy to implement and efficient
+- The downside is that it cannot generalize to new data, as steps 2 and3 are always tied together. It can only learn on preference data.
+- In industry, both RFHF as well as DPO are used in conjunction
 
 # Day 190 - 24/09/2026
 ## Watson
