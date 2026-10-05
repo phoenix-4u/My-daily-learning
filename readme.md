@@ -13,8 +13,17 @@
 # Day 193 - 27/09/2026
 
 # Day 192 - 26/09/2026
-# 
-
+# Ethics of Care and Ubuntu
+- Ethics of care started as a feminist perspective. This was proposed by Carol Gilligan to counter the patriarchal society existing today
+- Ethics of Care starts from care and moves into empathy. EoC stresses this, as without care, humans cannot become human.
+- This is followed by relationship, as with relations, human express their relations. This is followed by privacy.
+- Interdependence is another important aspect that EoC stresses, and this is where it is very similar to Ubuntu.
+- The cornerstone of Ubuntu is "I am because you are", essentially meaning that a particular human mind does not define what a human being is; it's the perspective of others that defines it.
+- Respect for human freedom and rights is a key statement of Ubuntu and stresses communal relationships.
+- Some other aspects of Ubuntu are tolerance, consensus, and diversity
+- Shared humanity also emphasises connection between humans. So while developing an AI system like HC robots in hospitals, it's important to augment and supplement human care with these systems, not replace it.
+- Ubuntu also stresses restorative justice, which teaches us how to live together and move forward from previous injustice while also ensuring that the past injustices are not repeated.
+ 
 # Day 191 - 25/09/2026
 ## Direct Preference Optimization (DPO)
 - DPO is a method to reduce the RL problem to a supervised learning problem.
