@@ -9,6 +9,12 @@
 # Day 196 - 30/09/2026
 
 # Day 195 - 29/09/2026
+## Examples of Autonomous Cars
+- The first car, Boss, that won the DARPA challenge in 2007 was based on GPS signals and had the CPU inside the car
+- It used Lasers to detect obstacles and lane markers to keep it on course. It was created in 1 and a half years. They predicted that self-driving cars could hit the roads within a decade, but that proved incorrect.
+- Elon Musk repeatedly predicted from 2013 that there would be self-driving cars next year, only to be proven wrong.
+- Not only Tesla, Waymo, Honda, and other companies also predicted that they would be ready with their self-driving cars by 2020, but none were able to meet those delivery timelines
+- The issue is that real-world AI is really hard to achieve. That is why Tesla is using Human drivers to teach their cars on edge cases.
 
 # Day 194 - 28/09/2026
 ## Autonomous Cars
