@@ -1,3 +1,5 @@
+# Day 200 - 04/10/2026
+
 # Day 199 - 03/10/2026
 
 # Day 198 - 02/10/2026
@@ -9,12 +11,18 @@
 # Day 195 - 29/09/2026
 
 # Day 194 - 28/09/2026
+## Autonomous Cars
+- In 1939, the Futurama Exhibit envisioned autonomous vehicles.
+- The first DARPA car challenge held in 2003 did not have any winners. The second one in 2007 had a winner.
+- For these vehicles, the question is how much is too much
+- <img width="1125" height="561" alt="image" src="https://github.com/user-attachments/assets/fa4456b1-b7af-480f-8d10-a4c1132f22e8" />
+- The tradeoff between driving 2 mph and causing 0 fatalities but causing deaths as patients cannot reach hospitals on time, vs. highway deaths because of first driving cars are also there. If used judiciously, partial automation can help here significantly
 
 # Day 193 - 27/09/2026
-# Examples of Ethics of Care and Ubuntu
+## Examples of Ethics of Care and Ubuntu
 - Carol Gilligan argues that women were perceived as emotional, leading them to be treated as irrational. So she introduced the concept of emotional intelligence that eventually became a human quality rather than a feminine quality.
 - These qualities are not only morally justified, but are also pragmatic, as by adopting them, companies can ensure wider acceptance within the mass.
-- Virginia Held stresses that EoC is different from Kantian, Virtue, and Utilitarian ethics. Relationships between people need to be given the utmost importance rather than individual needs.
+- Virginia Held stresses that EoC is different from Kantian, Virtue, and Utilitarian ethics. Relationships between people need to be given greater importance than individual needs.
 - The recipient of care's perspective is as important as the provider of care.
 - Care ethics started as a feminist theory to counter Gender bias, but it has now transcended to fields like violence.
 - How other ethical theories transpire is that they think only in terms of adult human beings, but no human could becomme adults if there was no one to care for them. This applies when designing an AI system.
@@ -23,9 +31,9 @@
 
 # Day 192 - 26/09/2026
 # Ethics of Care and Ubuntu
-- Ethics of care started as a feminist perspective. This was proposed by Carol Gilligan to counter the patriarchal society existing today
+- Ethics of care started as a feminist perspective. Carol Gilligan proposed this to counter the patriarchal society existing today
 - Ethics of Care starts from care and moves into empathy. EoC stresses this, as without care, humans cannot become human.
-- This is followed by relationship, as with relations, human express their relations. This is followed by privacy.
+- This is followed by relationships, as with relationships, human express their relations. This is followed by privacy.
 - Interdependence is another important aspect that EoC stresses, and this is where it is very similar to Ubuntu.
 - The cornerstone of Ubuntu is "I am because you are", essentially meaning that a particular human mind does not define what a human being is; it's the perspective of others that defines it.
 - Respect for human freedom and rights is a key statement of Ubuntu and stresses communal relationships.
