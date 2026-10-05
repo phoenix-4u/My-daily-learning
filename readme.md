@@ -11,6 +11,15 @@
 # Day 194 - 28/09/2026
 
 # Day 193 - 27/09/2026
+# Examples of Ethics of Care and Ubuntu
+- Carol Gilligan argues that women were perceived as emotional, leading them to be treated as irrational. So she introduced the concept of emotional intelligence that eventually became a human quality rather than a feminine quality.
+- These qualities are not only morally justified, but are also pragmatic, as by adopting them, companies can ensure wider acceptance within the mass.
+- Virginia Held stresses that EoC is different from Kantian, Virtue, and Utilitarian ethics. Relationships between people need to be given the utmost importance rather than individual needs.
+- The recipient of care's perspective is as important as the provider of care.
+- Care ethics started as a feminist theory to counter Gender bias, but it has now transcended to fields like violence.
+- How other ethical theories transpire is that they think only in terms of adult human beings, but no human could becomme adults if there was no one to care for them. This applies when designing an AI system.
+- Desmond Tutu argues that one does not become human on their own; they become human through other humans by learning from them. A person is a person because of other people
+- Ubuntu means to become human; it's also a deep conviction that we become a person through other persons and interdependence. It's about building bridges instead of war.
 
 # Day 192 - 26/09/2026
 # Ethics of Care and Ubuntu
