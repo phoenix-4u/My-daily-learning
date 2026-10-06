@@ -7,12 +7,27 @@
 # Day 197 - 01/10/2026
 
 # Day 196 - 30/09/2026
+## Tasks and Datasets
+- Text understanding
+  1. Reading Comprehension - here the input is a text document along with the question, and the output is the answer is the output. Here, it does not require any external knowledge. It's difficult to evaluate, as even though the answer might be unique, a little bit more info makes it tricky. Benchmark -DRPO
+  2. Common Sense reasoning - The input is Question/prompt and the output is the answer. So this requires external knowledge from the LLM's internal training knowledge. It is evaluated over 2 answers, and the LLM has to answer which is true. The downside is that it does not generate. Benchmark - PIQA
+  3. World knowledge - The input is Question/prompt and the output is the answer. The difference is that the previous one was common sense, and this one is about elementary knowledge. Benchmark MLLU
+  4. Symbolic problem solving - Question and answer, but solves a problem mathematically or with reasoning. This also does not require any external knowledge. Benchmark GSM8K
+  5. Language Understanding - Same as #4, but the reasoning is through English language rather than mathematical reasoning. Benchmark - WinoGrande
+- There are other benchmarks like BigBench, AGIEval, Mosaic Eval Gauntlets
+- The other way is to evaluate Language models by pitting them against each other on Chatbot Arena and then evaluating on human evals
+- Programming
+  1. Human Eval - Read a code snippet or documentation and complete it.
+  2. Most Basic Python Programs (MBPP) - Based on assertions, the LLM has to produce the code
+  3. Math QA - similar to symbolic problem solving but through programming
+- Safety includes counter social biases, toxicity, and Hallucinations
+- A fair method of benchmarking does not exist. As the benchmarks become public, the LLMs are trained on the benchmarks and become biased as they overfit on these benchmarks, thereby nullifying the benchmarks themselves.
 
 # Day 195 - 29/09/2026
 ## Examples of Autonomous Cars
 - The first car, Boss, that won the DARPA challenge in 2007 was based on GPS signals and had the CPU inside the car
 - It used Lasers to detect obstacles and lane markers to keep it on course. It was created in 1 and a half years. They predicted that self-driving cars could hit the roads within a decade, but that proved incorrect.
-- Elon Musk repeatedly predicted from 2013 that there would be self-driving cars next year, only to be proven wrong.
+- Elon Musk repeatedly predicted in 2013 that there would be self-driving cars next year, only to be proven wrong.
 - Not only Tesla, Waymo, Honda, and other companies also predicted that they would be ready with their self-driving cars by 2020, but none were able to meet those delivery timelines
 - The issue is that real-world AI is really hard to achieve. That is why Tesla is using Human drivers to teach their cars on edge cases.
 
