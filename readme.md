@@ -1,3 +1,5 @@
+# Day 203 - 07/10/2026
+
 # Day 202 - 06/10/2026
 
 # Day 201 - 05/10/2026
@@ -14,10 +16,10 @@
 ## Tasks and Datasets
 - Text understanding
   1. Reading Comprehension - here the input is a text document along with the question, and the output is the answer is the output. Here, it does not require any external knowledge. It's difficult to evaluate, as even though the answer might be unique, a little bit more info makes it tricky. Benchmark -DRPO
-  2. Common Sense reasoning - The input is Question/prompt and the output is the answer. So this requires external knowledge from the LLM's internal training knowledge. It is evaluated over 2 answers, and the LLM has to answer which is true. The downside is that it does not generate. Benchmark - PIQA
+  2. Common Sense reasoning - The input is Question/prompt and the output is the answer. So this requires external knowledge from the LLM's internal training knowledge. It is evaluated over 2 answers, and the LLM has to answer which one is true. The downside is that it does not generate. Benchmark - PIQA
   3. World knowledge - The input is Question/prompt and the output is the answer. The difference is that the previous one was common sense, and this one is about elementary knowledge. Benchmark MLLU
   4. Symbolic problem solving - Question and answer, but solves a problem mathematically or with reasoning. This also does not require any external knowledge. Benchmark GSM8K
-  5. Language Understanding - Same as #4, but the reasoning is through English language rather than mathematical reasoning. Benchmark - WinoGrande
+  5. Language Understanding - Same as #4, but the reasoning is through the English language rather than mathematical reasoning. Benchmark - WinoGrande
 - There are other benchmarks like BigBench, AGIEval, Mosaic Eval Gauntlets
 - The other way is to evaluate Language models by pitting them against each other on Chatbot Arena and then evaluating on human evals
 - Programming
