@@ -11,11 +11,21 @@
 # Day 198 - 02/10/2026
 
 # Day 197 - 01/10/2026
+## Efficient LLM Training and Inference
+- During the training process, we run forward and backward passes, and then we take one step of the optimizer to calculate the loss.
+- At inference time, we have to run N forward passes, as we now have n tokens, and each token has to be appended to the previously generated token
+- During training, memory usage is O(NL), whereas during runtime it is O(N^2L), as each token now has to attend to all its previous tokens
+- During training, activation checkpointing can reduce the memory usage by the square root of the number of layers, while runtime (CPU usage) increases by 2
+- <img width="724" height="461" alt="image" src="https://github.com/user-attachments/assets/39832556-339e-47e1-ae17-33228feb5fdc" />
+- But if N is very large, the memory overrun because of the number of tokens, regardless of the number of layers. At that time, we have to use sequence parallelism.
+- For inference, the memory is O(N), but runtime is cubed. Speculative decoding can help with it.
+- <img width="1223" height="743" alt="image" src="https://github.com/user-attachments/assets/74e58ce2-f68c-4eef-8b8f-20540ed56ce5" />
+
 
 # Day 196 - 30/09/2026
 ## Tasks and Datasets
 - Text understanding
-  1. Reading Comprehension - here the input is a text document along with the question, and the output is the answer is the output. Here, it does not require any external knowledge. It's difficult to evaluate, as even though the answer might be unique, a little bit more info makes it tricky. Benchmark -DRPO
+  1. Reading Comprehension - here the input is a text document along with the question, and the output is the answer. Here, it does not require any external knowledge. It's difficult to evaluate because, even if the answer is unique, a little more info can make it tricky. Benchmark -DRPO
   2. Common Sense reasoning - The input is Question/prompt and the output is the answer. So this requires external knowledge from the LLM's internal training knowledge. It is evaluated over 2 answers, and the LLM has to answer which one is true. The downside is that it does not generate. Benchmark - PIQA
   3. World knowledge - The input is Question/prompt and the output is the answer. The difference is that the previous one was common sense, and this one is about elementary knowledge. Benchmark MLLU
   4. Symbolic problem solving - Question and answer, but solves a problem mathematically or with reasoning. This also does not require any external knowledge. Benchmark GSM8K
