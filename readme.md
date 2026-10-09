@@ -11,18 +11,31 @@
 # Day 199 - 03/10/2026
 
 # Day 198 - 02/10/2026
+## Sequence Parallelism
+- Sequence parallelism is the ultimate method to reduce training time for a model
+- Data parallelism just takes multiple sequences and puts them on different GPUs. It does nothing for a single long sequence
+- Pipeline parallelism splits the layers but does nothing for long sequences
+- Sequence parallelism is the way to break the sequence into multiple sequences and put them on different GPUs.
+- MLP is easy as they process tokens independently, and each MLP is responsible for generating its own part of tokens without attention
+- LayerNorm requires statistics across all weights, but now they are being replaced by RMS norm, which does not need all weights across GPUS.
+- Attention is difficult as keys and values on one GPU have to be attended by a query, which can be on another GPU.
+- Ring attention is a way to send the keys across all GPUs and then compute attention and simultaneously send values across the ring.
+- <img width="1384" height="678" alt="image" src="https://github.com/user-attachments/assets/d09e6f6a-9fc4-4b4c-988e-3e13d10fbd9f" />
+- The idle time problem of ring attention is solved by ditFlash attention, where it first eliminates sending keys before values by just sending the queries and getting the result back. That way, all GPUs are always busy
+- <img width="1404" height="665" alt="image" src="https://github.com/user-attachments/assets/b9f2bc54-78e5-46ee-88f3-cedd28fb9816" />
+- While the memory usage goes down because of sequence parallelism, the runtime goes up to GPU^2
+- <img width="1369" height="764" alt="image" src="https://github.com/user-attachments/assets/28392114-0072-486e-93c4-40367ea5bf16" />
 
 # Day 197 - 01/10/2026
 ## Efficient LLM Training and Inference
 - During the training process, we run forward and backward passes, and then we take one step of the optimizer to calculate the loss.
 - At inference time, we have to run N forward passes, as we now have n tokens, and each token has to be appended to the previously generated token
 - During training, memory usage is O(NL), whereas during runtime it is O(N^2L), as each token now has to attend to all its previous tokens
-- During training, activation checkpointing can reduce the memory usage by the square root of the number of layers, while runtime (CPU usage) increases by 2
+- During training, activation checkpointing can reduce memory usage by the square root of the number of layers, while runtime (CPU usage) increases by 2
 - <img width="724" height="461" alt="image" src="https://github.com/user-attachments/assets/39832556-339e-47e1-ae17-33228feb5fdc" />
-- But if N is very large, the memory overrun because of the number of tokens, regardless of the number of layers. At that time, we have to use sequence parallelism.
+- But if N is very large, memory overflows because of the number of tokens, regardless of the number of layers. At that time, we have to use sequence parallelism.
 - For inference, the memory is O(N), but runtime is cubed. Speculative decoding can help with it.
 - <img width="1223" height="743" alt="image" src="https://github.com/user-attachments/assets/74e58ce2-f68c-4eef-8b8f-20540ed56ce5" />
-
 
 # Day 196 - 30/09/2026
 ## Tasks and Datasets
@@ -101,7 +114,7 @@
 
 # Day 189 - 23/09/2026
 ## Examples of Distributive Justice and Virtue Ethics
-- John Rawls equates justice to fairness and is much more than just efficiency. He bases justice on the institutional rather than the individual level.
+- John Rawls equates justice with fairness and is much more than just efficiency. He bases justice on the institutional rather than the individual level.
 - The liberty principle states that every individual should enjoy similar freedom, provided their expression of freedom does not trample others.
 - Fair equality of opportunity states that the opportunity for any position should be based on merit.
 - Difference principle states that inequalities can be tolerated provided the person with the least privileges benefits the most.
@@ -139,7 +152,7 @@
 # Day 186 - 20/09/2026
 ## Instruction Tuning
 - A model without instruction tuning cannot respond to questions and have dialog, as it will still  focus on next-token generation.
-- Instruction training is a way to teach an LLM to have a dialog. It has a specific structure which is used to tune the model with
+- Instruction training is a way to teach an LLM to have a dialog. It has a specific structure that is used to tune the model with
 - <img width="1396" height="723" alt="image" src="https://github.com/user-attachments/assets/f74b0590-37f2-4f97-88c9-8b7e4719ccd5" />
 - So it's no longer just training the LLM on an input corpus so that it just produces the next word; it is now giving it a structure so that it produces a coherent output.
 - The loss is never on the user message; it is always on the LLM message with the last EOT token prediction.
@@ -212,7 +225,7 @@
 # Day 180 - 14/09/2026
 ## Examples of Deep Blue
 - It took 12 years for IBM to prepare the software to defeat Deep Blue
-- Garry Kasparov argues that while the existing Chess playing softwares were brute force algorithms that were programmed, AlphaZero, which is based on a neural network architecture, was much better, as it taught itself from scratch just based on the given rules and then played 60 million games to perfect them.
+- Garry Kasparov argues that while the existing Chess playing softwares were brute-force algorithms that were programmed, AlphaZero, which is based on a neural network architecture, was much better, as it taught itself from scratch just based on the given rules and then played 60 million games to perfect them.
 - Though a chessboard rarely makes a good simulation of AI acting in a social environment, it still shows it can understand rules and, consequently, ethical systems to behave better. 
 
 # Day 179 - 13/09/2026
@@ -245,7 +258,7 @@
 - To address the deficits of both act consequentialism and Kantian Ethics, we dive into rule consequentialism, which specifies that an act is morally permissible if it is permitted by rules selected for their consequences
 
 # Day 176 - 10/09/2026
-## Batya Freedman interview
+## Batya Friedman interview
 - Ethics is a personal belief system where we can define what we can be and what we should be.
 - The material implications of machine learning are huge
   1. The compute, such as GPUs, needs a tremendous amount of power to run and is cooled by water
@@ -464,10 +477,10 @@
 # Day 150 - 15/08/2026
 ## Qlora
 - LoRA still requires the entire 4N bytes for the original weights
-- Qlora applies the concept of LoRA on top of a quantized model
+- QLoRA applies the concept of LoRA on top of a quantized model
 - <img width="1370" height="608" alt="image" src="https://github.com/user-attachments/assets/9f62dc9e-b0d0-4c7a-9d45-502153090f25" />
-- The weights of QLora have to be trained in full 32-bit precision, which is not an issue as the number of trainable parameters is very low
-- This has an advantage that any new weight computations are now in floating-point format and are not lossy.
+- The weights of QLoRA have to be trained in full 32-bit precision, which is not an issue as the number of trainable parameters is very low
+- This has the advantage that any new weight computations are now in floating-point format and are not lossy.
 - The overall memory footprint is 1/2N bytes +16M bytes ( M ~1-5%)
 - Certain tasks in QLoRA may require a large rank R
 
@@ -504,7 +517,7 @@
 - This reduces the overall memory requirements by 3 to 4 times
 - <img width="1377" height="744" alt="image" src="https://github.com/user-attachments/assets/4ee0248c-b72c-4ab4-b166-318bc4725c2d" />
 - Zero-2 - Here, the gradients are also distributed across all GPUs. This reduces the memory requirements by 6 to 8 times
-- The overhead is that this requires additional synchronization via reduce scatter and all-reduce
+- The overhead is that this requires additional synchronization via reduce-scatter and all-reduce
 - <img width="1376" height="747" alt="image" src="https://github.com/user-attachments/assets/5d4efa76-7b33-44ad-a36b-37238ceaadb5" />
 - Zero-3  - Here, we would also distribute the weights across all the GPUs. Hence, we keep only a subset of weights, gradients, and momentum terms on each of the GPUs
 - This reduces the memory requirements by 50 times, but the overhead is that this requires additional synchronization via reduce-scatter, all-reduce, and all-gather
