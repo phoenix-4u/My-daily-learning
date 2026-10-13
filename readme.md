@@ -9,8 +9,32 @@
 # Day 201 - 05/10/2026
 
 # Day 200 - 04/10/2026
+## Human Values and Value-Sensitive Design part 2
+- Value-sensitive design not only discusses human values but also how those values can be implemented to make technology such as AI better
+- While AI needs to be sensitive to human values, it has to be cognizant of the societal impact of those values as a whole.
+- Tripartite method of designing human values. This is a cycle
+  1. Conceptual - This is asking what and why questions related to a value
+  2. Empirical - This involves setting KPIs around the values
+  3. Technical - Implementing the values in technical fields. For example, Batya Friedman introduced the concept of private cookies in browsers to protect privacy
+- <img width="1099" height="768" alt="image" src="https://github.com/user-attachments/assets/0bc1a80a-e6ab-48e7-bcec-66f000fa9335" />
+- They advocate the human values below, which are often implicated in system design
+-  <img width="1300" height="700" alt="image" src="https://github.com/user-attachments/assets/a65718c9-75c9-413a-aa90-6038f2dc1a01" />
+- Value inventory used
+- <img width="765" height="715" alt="image" src="https://github.com/user-attachments/assets/b3fed02b-f635-4d99-b567-7a9f4b674344" />
+- And the study finds that in this inventory, the 16 most frequently occurring values are defined as below
+- <img width="755" height="718" alt="image" src="https://github.com/user-attachments/assets/5fd848d1-6356-460d-9c77-49f39563259b" />
 
 # Day 199 - 03/10/2026
+## Human Values and Value-Sensitive Design part 1
+- Different human values motivate different people.
+- AI has to be sensitive to human values.
+- Schwartz defines human values as
+  1. Transsituational goals - While the circumstances change, the goal itself transcends the situation. E.g., a person might switch from paper to electronic health records, but the goal of privacy remains constant
+  2. Varying in importance - All goals do not have similar importance. It is important to rate them instead of ranking
+  3. Serves as a guiding principle - These get inculcated for life. Can be applicable for a person or a group
+- Schwartz's motivational Continuum of values defines how values   
+- <img width="1108" height="840" alt="image" src="https://github.com/user-attachments/assets/868d767f-9010-4ef7-8a52-344eab088c3b" />
+- Values and behaviour can influence the planning towards it, and depending on them, values can be prioritized for attention. Values also need affirmation in terms of seeing if another person values the same value, followed by the person
 
 # Day 198 - 02/10/2026
 ## Sequence Parallelism
@@ -19,11 +43,11 @@
 - Pipeline parallelism splits the layers but does nothing for long sequences
 - Sequence parallelism is the way to break the sequence into multiple sequences and put them on different GPUs.
 - MLP is easy as they process tokens independently, and each MLP is responsible for generating its own part of tokens without attention
-- LayerNorm requires statistics across all weights, but now they are being replaced by RMS norm, which does not need all weights across GPUS.
+- LayerNorm requires statistics across all weights, but now they are being replaced by RMSNorm, which does not need all weights across GPUS.
 - Attention is difficult as keys and values on one GPU have to be attended by a query, which can be on another GPU.
 - Ring attention is a way to send the keys across all GPUs and then compute attention and simultaneously send values across the ring.
 - <img width="1384" height="678" alt="image" src="https://github.com/user-attachments/assets/d09e6f6a-9fc4-4b4c-988e-3e13d10fbd9f" />
-- The idle time problem of ring attention is solved by ditFlash attention, where it first eliminates sending keys before values by just sending the queries and getting the result back. That way, all GPUs are always busy
+- The idle time problem of ring attention is solved by distFlash attention, where it first eliminates sending keys before values by just sending the queries and getting the result back. That way, all GPUs are always busy
 - <img width="1404" height="665" alt="image" src="https://github.com/user-attachments/assets/b9f2bc54-78e5-46ee-88f3-cedd28fb9816" />
 - While the memory usage goes down because of sequence parallelism, the runtime goes up to GPU^2
 - <img width="1369" height="764" alt="image" src="https://github.com/user-attachments/assets/28392114-0072-486e-93c4-40367ea5bf16" />
@@ -54,7 +78,7 @@
   2. Most Basic Python Programs (MBPP) - Based on assertions, the LLM has to produce the code
   3. Math QA - similar to symbolic problem solving but through programming
 - Safety includes counter social biases, toxicity, and Hallucinations
-- A fair method of benchmarking does not exist. As the benchmarks become public, the LLMs are trained on the benchmarks and become biased as they overfit on these benchmarks, thereby nullifying the benchmarks themselves.
+- A fair method of benchmarking does not exist. As benchmarks become public, LLMs are trained on them and overfit, thereby nullifying the benchmarks themselves.
 
 # Day 195 - 29/09/2026
 ## Examples of Autonomous Cars
