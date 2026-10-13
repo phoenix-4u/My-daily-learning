@@ -7,6 +7,11 @@
 # Day 202 - 06/10/2026
 
 # Day 201 - 05/10/2026
+## Examples of Human Values and Value-Sensitive Design
+- Values hold different meanings for everyone. While a community respects the dead by wearing black, another community does the same by wearing white
+- For the design of an AI-based system, it is important to consider the 57 values defined by Schwartz.
+- In value-sensitive design, Freedman argues that we should be proactive rather than reactive, so we should think outside the box (say, with envisioning cards) before inculcating them in technology and then using them.
+- AI should not only be designed for human needs, but it should also consider human values while designing. For example, a flight booking app that not only sorts flights based on price but also sorts them based on human agony is more likely to be accepted by human beings.
 
 # Day 200 - 04/10/2026
 ## Human Values and Value-Sensitive Design part 2
