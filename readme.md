@@ -9,6 +9,15 @@
 # Day 204 - 08/10/2026
 
 # Day 203 - 07/10/2026
+## Speculative Decoding
+- Speculative decoding is the process of predicting a set of the next few tokens based on a repeatable common pattern, and then verifying if the prediction was correct.
+- A smaller, inexpensive model is used to predict this sequence for the big model. if the big model accepts the probability, then it's used; otherwise, their ratio is used to determine.
+-<img width="1377" height="756" alt="image" src="https://github.com/user-attachments/assets/cf70f479-ff2c-48e3-a7bc-dda4449afe53" />
+- Medusa is based on tree attention and can speed up decoding by 2-3 times
+- <img width="1407" height="787" alt="image" src="https://github.com/user-attachments/assets/32673b09-9560-47bb-93f3-baed44994479" />
+- There is not much use of speculative decoding against KV caching as both reduce the value to O(KN)
+- <img width="1360" height="726" alt="image" src="https://github.com/user-attachments/assets/95f61522-a35c-4952-a640-e9d1f1065fd8" />
+-
 
 # Day 202 - 06/10/2026
 ## Page Attention
