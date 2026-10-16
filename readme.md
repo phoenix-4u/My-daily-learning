@@ -11,6 +11,14 @@
 # Day 203 - 07/10/2026
 
 # Day 202 - 06/10/2026
+## Page Attention
+- Inference of a vanilla attention model runs in O(N^3), as for each of the N tokens, attention of keys, queries, and values has to be computed in O (N^2) time
+- <img width="1081" height="564" alt="image" src="https://github.com/user-attachments/assets/1ba4d5cf-ffe8-408f-9344-7a381f3f64d9" />
+- Since the keys and values that came before do not change, these can be cached without recomputing every single time, reducing the runtime to O(N^2L)
+- <img width="1369" height="770" alt="image" src="https://github.com/user-attachments/assets/c35f99d2-3049-4e25-b324-cc3c6ceb4f23" />
+- To reduce the issue of memory in KV caching, grouped and multi-query attention mechanisms are used. This reduces storage by reducing the number of parameters stored.
+- <img width="1421" height="669" alt="image" src="https://github.com/user-attachments/assets/1d4e569d-1b3d-4c94-8876-8656d17e2530" />
+- Pruning can also be used to remove certain key values for long sequences, but this risks context loss
 
 # Day 201 - 05/10/2026
 ## Examples of Human Values and Value-Sensitive Design
