@@ -1,3 +1,5 @@
+# Day 211 - 16/10/2026
+
 # Day 210 - 15/10/2026
 
 # Day 209 - 14/10/2026
@@ -11,13 +13,25 @@
 # Day 205 - 10/10/2026
 
 # Day 205 - 09/10/2026
+## Codes of Ethics part 2
 
 # Day 204 - 08/10/2026
+## Codes of Ethics part 1
+- Every profession has a code of ethics that guides which jobs can be done and what cannot be done. This also provides a set of standards for that profession
+- In the ACM Code of Computing, contribution to society holds key importance, as all people are stakeholders in computing.
+- Avoiding harm, being fair, respecting intellectual property, and respecting privacy & honoring confidentiality.
+- We should strive for high quality and hold high standards.
+- We should know and respect existing rules, hold professional reviews with proper feedback.
+- We should also assess the impacts while evaluating the system thoroughly. Facebook found that the angry emoji is worth 5 like emojis, so they started recommending posts that make people angry. But that's not the right thing to do
+- Perform work only in areas of competence
+- Foster public awareness by accessing only when needed and with robust and usable security
+- Leadership principles include centering around public good, meeting social responsibility, and treating workers humanely; these should be reflected in the code that we follow, professional development should never be stopped, using care when modifying systems, and taking care of infrastructure.
+- For any issue, the CARE approach should be followed, which stands for Consider the problem, analyze it thoroughly, review it holistically, and evaluate the effects and impacts of that system
 
 # Day 203 - 07/10/2026
 ## Speculative Decoding
 - Speculative decoding is the process of predicting a set of the next few tokens based on a repeatable common pattern, and then verifying if the prediction was correct.
-- A smaller, inexpensive model is used to predict this sequence for the big model. if the big model accepts the probability, then it's used; otherwise, their ratio is used to determine.
+- A smaller, inexpensive model is used to predict this sequence for the big model. If the big model accepts the probability, then it's used; otherwise, their ratio is used to determine.
 -<img width="1377" height="756" alt="image" src="https://github.com/user-attachments/assets/cf70f479-ff2c-48e3-a7bc-dda4449afe53" />
 - Medusa is based on tree attention and can speed up decoding by 2-3 times
 - <img width="1407" height="787" alt="image" src="https://github.com/user-attachments/assets/32673b09-9560-47bb-93f3-baed44994479" />
