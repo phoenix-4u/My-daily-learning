@@ -14,6 +14,12 @@
 
 # Day 205 - 09/10/2026
 ## Codes of Ethics part 2
+- Ethical principles for ALA include providing the highest level of service, appropriate and usefully organized resources, equitable access & service policy, and accurate, unbiased, and courteous respect for all
+- They also uphold intellectual freedom  and resist censorship, protect users' right to privacy and confidentiality, respect IP, and treat co-workers with respect
+- They do not prioritize private interest over library stakeholders; they distinguish between personal convictions and professional duties, strive for excellence through professional development, and uphold human dignity and rights
+- Core values - access, confidentiality, democracy, diversity, education and lifelong learning, and intellectual freedom
+- They also include the public good, preservation, professionalism, service orientation to users, social responsibility, and sustainability
+- The ACM code of ethics can be updated by ALA to shape human-centered computing
 
 # Day 204 - 08/10/2026
 ## Codes of Ethics part 1
@@ -35,7 +41,7 @@
 -<img width="1377" height="756" alt="image" src="https://github.com/user-attachments/assets/cf70f479-ff2c-48e3-a7bc-dda4449afe53" />
 - Medusa is based on tree attention and can speed up decoding by 2-3 times
 - <img width="1407" height="787" alt="image" src="https://github.com/user-attachments/assets/32673b09-9560-47bb-93f3-baed44994479" />
-- There is not much use of speculative decoding against KV caching as both reduce the value to O(KN)
+- There is not much use of speculative decoding against KV caching, as both reduce the value to O(KN)
 - <img width="1360" height="726" alt="image" src="https://github.com/user-attachments/assets/95f61522-a35c-4952-a640-e9d1f1065fd8" />
 -
 
