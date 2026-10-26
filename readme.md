@@ -1,24 +1,30 @@
-# Day 215 - 20/10/2026
+# Day 216 - 20/10/2026
 
-# Day 214 - 19/10/2026
+# Day 215 - 19/10/2026
 
-# Day 213 - 18/10/2026
+# Day 214 - 18/10/2026
 
-# Day 212 - 17/10/2026
+# Day 213 - 17/10/2026
 
-# Day 211 - 16/10/2026
+# Day 212 - 16/10/2026
 
-# Day 210 - 15/10/2026
+# Day 211 - 15/10/2026
 
-# Day 209 - 14/10/2026
+# Day 210 - 14/10/2026
 
-# Day 208 - 13/10/2026
+# Day 209 - 13/10/2026
 
-# Day 207 - 12/10/2026
+# Day 208 - 12/10/2026
 
-# Day 206 - 11/10/2026
+# Day 207 - 11/10/2026
 
-# Day 205 - 10/10/2026
+# Day 206 - 10/10/2026
+## Examples of Codes of Ethics
+- The ACM Code of Ethics is a living document. The community enforces the code as well as modifies it.
+- The Kansas City Hyatt Regency collapse can be attributed to oversight and no reviews.
+- The Engineering Code of Ethics has 8 rules, which try to avoid such incidents.
+- For data science, it's important to understand what questions we are answering and to understand that the decisions have real impact on others' lives
+- Safety is important, but censorship also needs to be looked at with a nuanced view
 
 # Day 205 - 09/10/2026
 ## Codes of Ethics part 2
