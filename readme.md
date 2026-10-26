@@ -15,6 +15,11 @@
 # Day 209 - 13/10/2026
 
 # Day 208 - 12/10/2026
+## Examples of AI Ethics Guidelines
+- Ethically aligned design by IEEE is an initiative to bring all practicing professionals on the same page on AI
+- The EU has played an important role in shaping AI rules from a governmental perspective
+- Health systems need specific guidelines for AI needs special attention
+- A good system at UT is a human-AI partnership that benefits society. This society asks questions about AI and its implications for society.
 
 # Day 207 - 11/10/2026
 ## AI Ethics Guidelines
@@ -40,7 +45,7 @@
 - Ethical principles for ALA include providing the highest level of service, appropriate and usefully organized resources, equitable access & service policy, and accurate, unbiased, and courteous respect for all
 - They also uphold intellectual freedom  and resist censorship, protect users' right to privacy and confidentiality, respect IP, and treat co-workers with respect
 - They do not prioritize private interest over library stakeholders; they distinguish between personal convictions and professional duties, strive for excellence through professional development, and uphold human dignity and rights
-- Core values - access, confidentiality, democracy, diversity, education and lifelong learning, and intellectual freedom
+- Core values: access, confidentiality, democracy, diversity, education and lifelong learning, and intellectual freedom
 - They also include the public good, preservation, professionalism, service orientation to users, social responsibility, and sustainability
 - ALA can update the ACM code of ethics to shape human-centered computing
 
