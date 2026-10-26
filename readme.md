@@ -17,10 +17,19 @@
 # Day 208 - 12/10/2026
 
 # Day 207 - 11/10/2026
+## AI Ethics Guidelines
+- AI ethics guidelines had a huge disparity between the Global North and the Global South
+- There are 11 core values in AI ethics guidelines
+- <img width="616" height="862" alt="image" src="https://github.com/user-attachments/assets/6f6f20bb-1fe1-4f59-b10b-3238f2be0233" />
+- The ethics of AI Ethics finds that most guidelines are framed in terms of  ethics of justice and ethics of care
+- Ethics vs. money is also studied under this guideline
+-  They also talk about global perspective and also codes.
+-  They observed that most of the guidelines stressed Kantian ethics, but stressed that more emphasis should be given to virtue ethics
+- The  AI Bill of Rights was released by the White House and stresses safety, data privacy, AI usage notice, human alternatives, and algorithmic discrimination resistance.
 
 # Day 206 - 10/10/2026
 ## Examples of Codes of Ethics
-- The ACM Code of Ethics is a living document. The community enforces the code as well as modifies it.
+- The ACM Code of Ethics is a living document. The community enforces and modifies the code.
 - The Kansas City Hyatt Regency collapse can be attributed to oversight and no reviews.
 - The Engineering Code of Ethics has 8 rules, which try to avoid such incidents.
 - For data science, it's important to understand what questions we are answering and to understand that the decisions have real impact on others' lives
@@ -33,7 +42,7 @@
 - They do not prioritize private interest over library stakeholders; they distinguish between personal convictions and professional duties, strive for excellence through professional development, and uphold human dignity and rights
 - Core values - access, confidentiality, democracy, diversity, education and lifelong learning, and intellectual freedom
 - They also include the public good, preservation, professionalism, service orientation to users, social responsibility, and sustainability
-- The ACM code of ethics can be updated by ALA to shape human-centered computing
+- ALA can update the ACM code of ethics to shape human-centered computing
 
 # Day 204 - 08/10/2026
 ## Codes of Ethics part 1
