@@ -1,10 +1,32 @@
 # Day 217 - 21/10/2026
 
 # Day 216 - 20/10/2026
+## Structured Dialogues - Part#2
+- Structured dialogue is a way to break down a problem for an LLM in a request, thought, and answer cycle for an LLM
+- Reflexion is a loop of the ReACT framework that evaluates the response produced by the LLM.
+- <img width="1350" height="488" alt="image" src="https://github.com/user-attachments/assets/2db0ff2e-bcfc-40ae-b29e-b85f69019f85" />
+- Reflexion can be performed by the same model or a different model.
+- It requires an evaluation function, but this is not strictly reinforcement learning
+- For coding problems, Reflexion can be implemented by asking the LLM to create unit test cases and then executing them to evaluate the code performance
 
 # Day 215 - 19/10/2026
+## Structured Dialogues - Part#2
+- Chain-of-thought reasoning can be used to think through the problems step-by-step and then provide the answer
+- CoT works because there is more computation, and they get specific guidance to answer it
+- Order in CoT matters. The idea is to think first and then answer; otherwise, it becomes a Chain-of-BS
+- Self-Consistency is the way for LLM to use COT multiple times using non-greedy decoding with slightly higher temperature, and then discarding the reason and taking the majority answer.
+- Tree of thought is a way to optimize the self-consistency approach by only expanding the CoT branch that sounds promising. This does need a separate state evaluator as the scoring function
+- <img width="1356" height="650" alt="image" src="https://github.com/user-attachments/assets/5d0f20a9-036a-48ea-a258-673068db7337" />
+- ReACT COT is a way to integrate tool use within an action-and-observation framework.
 
 # Day 214 - 18/10/2026
+## Structured Dialogues - Part#1
+- Transformers store information in their weights, special tokens, and in their context
+- Transformers that have been massively overfitted on the training data store information in their weights in just 2 bits per parameter
+- Language and vision models store information on special tokens (such as BOS tokens) and the background of images, respectively.
+- System prompts, RAG, and tool use are the ways that transformers use context to store information
+- The first thing to try is always in-context learning by giving multi-shot examples
+- Since during pretraining, LLMs have seen a lot of structured data, and during fine-tuning they're trained on Q&A, which are structured responses
 
 # Day 213 - 17/10/2026
 
