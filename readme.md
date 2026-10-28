@@ -1,9 +1,11 @@
 # Day 217 - 21/10/2026
+## Retrieval-Augmented Generation
+
 
 # Day 216 - 20/10/2026
 ## Structured Dialogues - Part#2
 - Structured dialogue is a way to break down a problem for an LLM in a request, thought, and answer cycle for an LLM
-- Reflexion is a loop of the ReACT framework that evaluates the response produced by the LLM.
+- Reflexion is a loop in the ReACT framework that evaluates the response produced by the LLM.
 - <img width="1350" height="488" alt="image" src="https://github.com/user-attachments/assets/2db0ff2e-bcfc-40ae-b29e-b85f69019f85" />
 - Reflexion can be performed by the same model or a different model.
 - It requires an evaluation function, but this is not strictly reinforcement learning
@@ -14,7 +16,7 @@
 - Chain-of-thought reasoning can be used to think through the problems step-by-step and then provide the answer
 - CoT works because there is more computation, and they get specific guidance to answer it
 - Order in CoT matters. The idea is to think first and then answer; otherwise, it becomes a Chain-of-BS
-- Self-Consistency is the way for LLM to use COT multiple times using non-greedy decoding with slightly higher temperature, and then discarding the reason and taking the majority answer.
+- Self-Consistency is a way for LLMs to use COT multiple times using non-greedy decoding with a slightly higher temperature, and then discarding the reason and taking the majority answer.
 - Tree of thought is a way to optimize the self-consistency approach by only expanding the CoT branch that sounds promising. This does need a separate state evaluator as the scoring function
 - <img width="1356" height="650" alt="image" src="https://github.com/user-attachments/assets/5d0f20a9-036a-48ea-a258-673068db7337" />
 - ReACT COT is a way to integrate tool use within an action-and-observation framework.
@@ -29,14 +31,19 @@
 - Since during pretraining, LLMs have seen a lot of structured data, and during fine-tuning they're trained on Q&A, which are structured responses
 
 # Day 213 - 17/10/2026
+## Long Context
 
 # Day 212 - 16/10/2026
+## Constrained Decoding
 
 # Day 211 - 15/10/2026
+## Structured Output
 
 # Day 210 - 14/10/2026
+## Tool Use
 
 # Day 209 - 13/10/2026
+## Open-Source Infrastructure for LLMs
 
 # Day 208 - 12/10/2026
 ## Examples of AI Ethics Guidelines
@@ -52,7 +59,7 @@
 - <img width="616" height="862" alt="image" src="https://github.com/user-attachments/assets/6f6f20bb-1fe1-4f59-b10b-3238f2be0233" />
 - The ethics of AI Ethics finds that most guidelines are framed in terms of  ethics of justice and ethics of care
 - Ethics vs. money is also studied under this guideline
--  They also talk about global perspective and also codes.
+-  They also talk about global perspective and codes.
 -  They observed that most of the guidelines stressed Kantian ethics, but stressed that more emphasis should be given to virtue ethics
 - The  AI Bill of Rights was released by the White House and stresses safety, data privacy, AI usage notice, human alternatives, and algorithmic discrimination resistance.
 
