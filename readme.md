@@ -3,7 +3,7 @@
 
 
 # Day 216 - 20/10/2026
-## Structured Dialogues - Part#2
+## Structured Dialogues - Part#3
 - Structured dialogue is a way to break down a problem for an LLM in a request, thought, and answer cycle for an LLM
 - Reflexion is a loop in the ReACT framework that evaluates the response produced by the LLM.
 - <img width="1350" height="488" alt="image" src="https://github.com/user-attachments/assets/2db0ff2e-bcfc-40ae-b29e-b85f69019f85" />
