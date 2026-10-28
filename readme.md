@@ -44,6 +44,14 @@
 
 # Day 209 - 13/10/2026
 ## Open-Source Infrastructure for LLMs
+- Generally, LLMs have 3 types: open models, closed models, and open-source models
+- <img width="1744" height="835" alt="image" src="https://github.com/user-attachments/assets/9d2e5c51-11b6-4b5c-aead-ccd2f9b6961e" />
+- Open models and open source models are generally hosted on Huggingface
+- While open model online chats are good for quick testing, security, rate limits, and model limitations are some of the challenges
+- Local chat using Ollama overcomes most of these challenges but can serve only single requests
+- Large-scale inference servers such as HuggingFace TGI, VLLM, and FastChat can support large-scale generation; they are, however, limited by the number of GPUs available.
+- VLLM is the most popular framework with the fastest inference and minimal latency, along with built-in privacy.
+- As a training framework, Transformers with TGI and accelerate is the most popular, followed by torchtune
 
 # Day 208 - 12/10/2026
 ## Examples of AI Ethics Guidelines
@@ -405,7 +413,7 @@
   3. These AI systems are then operated on their own servers that need maintenance
 - Underrepresented groups need to be part of policymaking so that policies can be diverse. This marries technology to how they impact daily lives
 - Ethical philosophies are diverse in nature, so inherently during advancement some ethical perspectives will break down. To that effect, one should be smart to identify what is better instead of arguing over what's right.
-- Also, no one can predict how tools and technologies will be used as we go forward. They might be used in unintended ways, and therefore we should always adapt in our ways based on future developments.
+- Also, no one can predict how tools and technologies will be used as we go forward. They might be used in unintended ways, and therefore we should always adapt our ways based on future developments.
 
 # Day 175 - 09/09/2026
 ## Examples of Dartmouth Conference on AI
