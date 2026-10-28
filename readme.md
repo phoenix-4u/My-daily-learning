@@ -1,8 +1,8 @@
-# Day 217 - 21/10/2026
-## Retrieval-Augmented Generation
+# Day 220 - 24/10/2026
 
+# Day 219 - 23/10/2026
 
-# Day 216 - 20/10/2026
+# Day 218 - 22/10/2026
 ## Structured Dialogues - Part#3
 - Structured dialogue is a way to break down a problem for an LLM in a request, thought, and answer cycle for an LLM
 - Reflexion is a loop in the ReACT framework that evaluates the response produced by the LLM.
@@ -11,7 +11,7 @@
 - It requires an evaluation function, but this is not strictly reinforcement learning
 - For coding problems, Reflexion can be implemented by asking the LLM to create unit test cases and then executing them to evaluate the code performance
 
-# Day 215 - 19/10/2026
+# Day 217 - 21/10/2026
 ## Structured Dialogues - Part#2
 - Chain-of-thought reasoning can be used to think through the problems step-by-step and then provide the answer
 - CoT works because there is more computation, and they get specific guidance to answer it
@@ -21,7 +21,7 @@
 - <img width="1356" height="650" alt="image" src="https://github.com/user-attachments/assets/5d0f20a9-036a-48ea-a258-673068db7337" />
 - ReACT COT is a way to integrate tool use within an action-and-observation framework.
 
-# Day 214 - 18/10/2026
+# Day 216 - 20/10/2026
 ## Structured Dialogues - Part#1
 - Transformers store information in their weights, special tokens, and in their context
 - Transformers that have been massively overfitted on the training data store information in their weights in just 2 bits per parameter
@@ -30,23 +30,46 @@
 - The first thing to try is always in-context learning by giving multi-shot examples
 - Since during pretraining, LLMs have seen a lot of structured data, and during fine-tuning they're trained on Q&A, which are structured responses
 
-# Day 213 - 17/10/2026
+# Day 215 - 19/10/2026
+## Retrieval-Augmented Generation
+
+# Day 214 - 18/10/2026
 ## Long Context
 
-# Day 212 - 16/10/2026
+# Day 213 - 17/10/2026
 ## Constrained Decoding
 
-# Day 211 - 15/10/2026
+# Day 212 - 16/10/2026
 ## Structured Output
+- Tool calls are one way to produce structured outputs
+- The LLMs can themselves be prompted to produce the answer in JSON or any other structured format
+- Tool calls are a better approach if there is a chance of a parse error.
+- The lecture seems to be before the advent of the structured_output parameter that the LLM takes nowadays
+- We can use a parser and then retry multiple times. But this may still not succeed. Constrained decoding is the answer for that
+
+# Day 211 - 15/10/2026
+## Tool Use - Part #2
+- The way to create input data is either to hand-design this data or use Toolformer to generate this data programmatically.
+- <img width="784" height="383" alt="image" src="https://github.com/user-attachments/assets/ba28f50e-1df8-4c16-9874-e5dc00c3aa5b" />
+- The problem with early tool-call-based models was that it was not possible to add new tools after training
+- The way to get around this is to provide many more tools during training and provide a structured JSON-formatted description of the available tools. Because of the way the LLMs were trained, they can generalize these tool calls
+- AnyTool is an early version of MCP where the tool definitions themselves are not provided in-context but are dynamically retrieved using only some metadata
 
 # Day 210 - 14/10/2026
-## Tool Use
+## Tool Use - Part #1
+- If an LLM has no way to get the answer correct (like the current time) or solve a math problem, then we can write Python code to provide the answer
+- The model-generated code should not be used directly, as the code can include hallucinations and might not be very secure.
+- A better alternative is to provide the LLM with tools that we have defined, and then the LLM can execute them to get the results
+- The tool calls are integrated into next-word predictions, and the tool and the output of the tool call are fed back into the LLM
+- <img width="789" height="464" alt="image" src="https://github.com/user-attachments/assets/82fc833e-7f5d-4d26-a12a-d0a519476e8d" />
+- Training of tool calls is done using the input sequence as the output sequence shifted by 1, but without the result of the tool calls, as this will be checked in real time
+- <img width="782" height="433" alt="image" src="https://github.com/user-attachments/assets/c06693c5-58d6-47d1-bb9e-8c292813156c" />
 
 # Day 209 - 13/10/2026
 ## Open-Source Infrastructure for LLMs
 - Generally, LLMs have 3 types: open models, closed models, and open-source models
 - <img width="1744" height="835" alt="image" src="https://github.com/user-attachments/assets/9d2e5c51-11b6-4b5c-aead-ccd2f9b6961e" />
-- Open models and open source models are generally hosted on Huggingface
+- Open models and open-source models are generally hosted on Hugging Face
 - While open model online chats are good for quick testing, security, rate limits, and model limitations are some of the challenges
 - Local chat using Ollama overcomes most of these challenges but can serve only single requests
 - Large-scale inference servers such as HuggingFace TGI, VLLM, and FastChat can support large-scale generation; they are, however, limited by the number of GPUs available.
