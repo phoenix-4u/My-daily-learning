@@ -1,10 +1,25 @@
+# Day 223 - 27/10/2026
+
 # Day 222 - 26/10/2026
 
 # Day 221 - 25/10/2026
 
 # Day 220 - 24/10/2026
+## Fairness part#2
+- The AI-based computer vision systems should be unbiased in terms of detecting disability.
+- The speech-to-text and text-to-speech applications also should not be biased based on disabilities or first language.
+- The GenAI-based evaluation system should be unbiased when evaluating job applications based on abilities.
+- The system response also should not be biased so that it only provides the best answer
+- Discrimination in Captha visuals/text should be avoided with multiple validation.
+- Humans prefer human evaluation for life-changing decisions like hiring and evaluation
 
 # Day 219 - 23/10/2026
+## Fairness part#1
+- The Compass system was initially developed for generating recommendations for payroll officers, but since then has been used in the judicial system, which racially biases one group
+- Algorithm of Oppression exposed Google's autocomplete flaw that is racially biased based on users' data
+- Facebook angry emoji, which equalled 5 likes, was used for recommendation, which was prioritizing hateful content
+- The B and G found that the 3 systems of Microsoft, Face++ and IBM performed better on white European males than Black African females.
+- They concluded that the benchmark data systems should be unbiased.
 
 # Day 218 - 22/10/2026
 ## Structured Dialogues - Part#3
