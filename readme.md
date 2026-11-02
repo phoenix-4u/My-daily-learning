@@ -1,3 +1,5 @@
+# Day 224 - 28/10/2026
+
 # Day 223 - 27/10/2026
 
 # Day 222 - 26/10/2026
@@ -17,7 +19,7 @@
 ## Fairness part#1
 - The Compass system was initially developed for generating recommendations for payroll officers, but since then has been used in the judicial system, which racially biases one group
 - Algorithm of Oppression exposed Google's autocomplete flaw that is racially biased based on users' data
-- Facebook angry emoji, which equalled 5 likes, was used for recommendation, which was prioritizing hateful content
+- Facebook angry emoji, which equaled 5 likes, was used for recommendation, which was prioritizing hateful content
 - The B and G found that the 3 systems of Microsoft, Face++ and IBM performed better on white European males than Black African females.
 - They concluded that the benchmark data systems should be unbiased.
 
