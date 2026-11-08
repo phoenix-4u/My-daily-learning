@@ -1,3 +1,5 @@
+# Day 230 - 03/11/2026
+
 # Day 229 - 02/11/2026
 
 # Day 228 - 01/11/2026
@@ -18,7 +20,7 @@
 
 # Day 220 - 24/10/2026
 ## Fairness part#2
-- The AI-based computer vision systems should be unbiased in terms of detecting disability.
+- The AI-based computer vision systems should be unbiased in terms of detecting disabilities.
 - The speech-to-text and text-to-speech applications also should not be biased based on disabilities or first language.
 - The GenAI-based evaluation system should be unbiased when evaluating job applications based on abilities.
 - The system response also should not be biased so that it only provides the best answer
