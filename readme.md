@@ -19,7 +19,12 @@
 # Day 222 - 26/10/2026
 
 # Day 221 - 25/10/2026
-
+## Examples of Fairness
+- Building a fair AI system is a socio-technical challenge that needs to be mitigated by involving every stakeholder.
+- AI-based systems can be as biased as humans primarily because the underlying data that they are trained on is also biased. Hence, it is important to train systems with a wide variety of data and perspectives that include representation from all developers.
+- Incoding is an example of how to make AI inclusive. The goal is to represent all sectors in coding, since code is widely shared and any bias in it can spread quickly.
+- Some decisions, especially those that impact life, like hiring, loan approval, etc., should be left to humans, as humans are inherently distrustful of AI for those decisions
+  
 # Day 220 - 24/10/2026
 ## Fairness part#2
 - The AI-based computer vision systems should be unbiased in terms of detecting disabilities.
@@ -31,8 +36,8 @@
 
 # Day 219 - 23/10/2026
 ## Fairness part#1
-- The Compass system was initially developed for generating recommendations for payroll officers, but since then has been used in the judicial system, which racially biases one group
-- Algorithm of Oppression exposed Google's autocomplete flaw that is racially biased based on users' data
+- The COMPAS system was initially developed for generating recommendations for parole officers, but since then has been used in the judicial system, which racially biases one group
+- The Algorithm of Oppression exposed Google's autocomplete flaw that is racially biased based on users' data
 - Facebook angry emoji, which equaled 5 likes, was used for recommendation, which was prioritizing hateful content
 - The B and G found that the 3 systems of Microsoft, Face++ and IBM performed better on white European males than Black African females.
 - They concluded that the benchmark data systems should be unbiased.
@@ -42,7 +47,7 @@
 - Structured dialogue is a way to break down a problem for an LLM in a request, thought, and answer cycle for an LLM
 - Reflexion is a loop in the ReACT framework that evaluates the response produced by the LLM.
 - <img width="1350" height="488" alt="image" src="https://github.com/user-attachments/assets/2db0ff2e-bcfc-40ae-b29e-b85f69019f85" />
-- Reflexion can be performed by the same model or a different model.
+- The same model or a different model can perform reflexion.
 - It requires an evaluation function, but this is not strictly reinforcement learning
 - For coding problems, Reflexion can be implemented by asking the LLM to create unit test cases and then executing them to evaluate the code performance
 
