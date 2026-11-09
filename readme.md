@@ -17,6 +17,11 @@
 # Day 223 - 27/10/2026
 
 # Day 222 - 26/10/2026
+## Chris Shenefiel Interview
+- For GDPR, the data used to train the algorithm and model has to be unbiased.
+- A mixed team (govt, legal, internal, compliance, etc.) is necessary to ensure that all aspects are taken care of while designing data security.
+- For future AI-based systems, defining proper policies and monitoring them in production will be key for a truly responsible AI system.
+- Sometimes, because of bias embedded in data, the AI systems can also become Biased. But the question we have to ask is the result by AI a little better than what a human could have done?
 
 # Day 221 - 25/10/2026
 ## Examples of Fairness
