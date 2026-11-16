@@ -1,3 +1,5 @@
+# Day 238 - 11/11/2026
+
 # Day 237 - 10/11/2026
 
 # Day 236 - 09/11/2026
@@ -131,7 +133,7 @@
 - Local chat using Ollama overcomes most of these challenges but can serve only single requests
 - Large-scale inference servers such as HuggingFace TGI, VLLM, and FastChat can support large-scale generation; they are, however, limited by the number of GPUs available.
 - VLLM is the most popular framework with the fastest inference and minimal latency, along with built-in privacy.
-- As a training framework, Transformers with TGI and accelerate is the most popular, followed by torchtune
+- As a training framework, Transformers with TGI and accelerate is the most popular, followed by TorchTune
 
 # Day 208 - 12/10/2026
 ## Examples of AI Ethics Guidelines
@@ -145,7 +147,7 @@
 - AI ethics guidelines had a huge disparity between the Global North and the Global South
 - There are 11 core values in AI ethics guidelines
 - <img width="616" height="862" alt="image" src="https://github.com/user-attachments/assets/6f6f20bb-1fe1-4f59-b10b-3238f2be0233" />
-- The ethics of AI Ethics finds that most guidelines are framed in terms of  ethics of justice and ethics of care
+- The ethics of AI finds that most guidelines are framed in terms of  ethics of justice and ethics of care
 - Ethics vs. money is also studied under this guideline
 -  They also talk about global perspective and codes.
 -  They observed that most of the guidelines stressed Kantian ethics, but stressed that more emphasis should be given to virtue ethics
